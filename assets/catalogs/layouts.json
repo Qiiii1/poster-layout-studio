@@ -1,0 +1,2316 @@
+{
+  "schemaVersion": 1,
+  "units": "px",
+  "measurement": "Visually reconstructed from user-supplied 4 × 4 raster reference; not original CSS. Coordinates are estimates.",
+  "source": "9aaac0055ccef2706c9d5484aeab23d1.jpg",
+  "layouts": [
+    {
+      "id": "L01",
+      "name": "上下居中",
+      "description": "顶部短引题、中段图像、底部主副标题与说明。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 1,
+        "column": 1
+      },
+      "safeZone": "top-bottom",
+      "capacity": "medium",
+      "slots": [
+        {
+          "key": "kicker",
+          "x": 70,
+          "y": 28,
+          "w": 610,
+          "h": 193,
+          "fontSize": 58,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "title",
+          "x": 40,
+          "y": 607,
+          "w": 670,
+          "h": 108,
+          "fontSize": 82,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 30,
+          "y": 716,
+          "w": 690,
+          "h": 104,
+          "fontSize": 79,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 45,
+          "y": 836,
+          "w": 660,
+          "h": 63,
+          "fontSize": 27,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 54,
+          "y": 902,
+          "w": 642,
+          "h": 27,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 40,
+          "y": 235,
+          "w": 670,
+          "h": 335,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "<来财>",
+        "subtitle": "来财来财来财",
+        "kicker": "LAI CAI\nHERE WE ARE\nBAOLAO ZAI",
+        "body": "我们这的憨佬仔○脖子上喜欢挂玉牌",
+        "note": "",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L02",
+      "name": "中轴圆形",
+      "description": "顶部长标题，中心圆形图像，细密说明沿中轴递减。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 1,
+        "column": 2
+      },
+      "safeZone": "top-bottom",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 30,
+          "y": 28,
+          "w": 690,
+          "h": 115,
+          "fontSize": 83,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 155,
+          "y": 146,
+          "w": 440,
+          "h": 100,
+          "fontSize": 30,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 700,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 142,
+          "y": 692,
+          "w": 466,
+          "h": 108,
+          "fontSize": 21,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 173,
+          "y": 813,
+          "w": 404,
+          "h": 48,
+          "fontSize": 29,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 50,
+          "y": 872,
+          "w": 650,
+          "h": 40,
+          "fontSize": 28,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 700,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 175,
+          "y": 267,
+          "w": 400,
+          "h": 400,
+          "shape": "ellipse"
+        }
+      ],
+      "sampleContent": {
+        "title": "<来财来财来>",
+        "subtitle": "我们这的憨佬仔○脖子上喜欢挂玉牌",
+        "kicker": "LAI CAI\nHERE WE ARE\nBAOLAO ZAI",
+        "body": "OUR STUFF GUY HERE\nI LIKE IT ON MY NECK\nHANG A JADE PLAQUE\nGOOD LUCK / EIGHT DIRECTIONS COME",
+        "note": "○○",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L03",
+      "name": "顶部错位双栏",
+      "description": "主副标题分别占据顶部两栏，正文形成中部双栏。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 1,
+        "column": 3
+      },
+      "safeZone": "top",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 24,
+          "y": 24,
+          "w": 399,
+          "h": 274,
+          "fontSize": 96,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 431,
+          "y": 29,
+          "w": 295,
+          "h": 270,
+          "fontSize": 90,
+          "lineHeight": 1.08,
+          "align": "right",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 24,
+          "y": 303,
+          "w": 700,
+          "h": 49,
+          "fontSize": 17,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 24,
+          "y": 483,
+          "w": 338,
+          "h": 107,
+          "fontSize": 32,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 478,
+          "y": 483,
+          "w": 245,
+          "h": 107,
+          "fontSize": 32,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 0,
+          "y": 620,
+          "w": 750,
+          "h": 306,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "<来财>\n好",
+        "subtitle": "来财\n（运）",
+        "kicker": "LAI CAI                 EIGHT DIRECTIONS COME                 GOOD LUCK",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L04",
+      "name": "对角呼应",
+      "description": "左上英文引题与右中主标题形成对角，说明居下。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 1,
+        "column": 4
+      },
+      "safeZone": "corners",
+      "capacity": "medium",
+      "slots": [
+        {
+          "key": "kicker",
+          "x": 27,
+          "y": 24,
+          "w": 319,
+          "h": 320,
+          "fontSize": 55,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 365,
+          "y": 35,
+          "w": 351,
+          "h": 97,
+          "fontSize": 16,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "title",
+          "x": 412,
+          "y": 348,
+          "w": 304,
+          "h": 221,
+          "fontSize": 87,
+          "lineHeight": 1.08,
+          "align": "right",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 186,
+          "y": 574,
+          "w": 513,
+          "h": 120,
+          "fontSize": 80,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 140,
+          "y": 772,
+          "w": 486,
+          "h": 130,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 100,
+          "y": 157,
+          "w": 540,
+          "h": 626,
+          "shape": "ellipse"
+        }
+      ],
+      "sampleContent": {
+        "title": "来财来\n财来财",
+        "subtitle": "<来财>",
+        "kicker": "GOOD\nMOVE\nEIGHT\nSQUARE\nCOME",
+        "body": "OUR STUFF GUY HERE\nI LIKE IT ON MY NECK\nHANG A JADE PLAQUE\nGOOD LUCK / EIGHT DIRECTIONS COME",
+        "note": "OUR STUFF GUY HERE\nI LIKE IT ON MY NECK\nHANG A JADE PLAQUE\nGOOD LUCK / EIGHT DIRECTIONS COME",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L05",
+      "name": "边框环绕",
+      "description": "大字从左上阶梯展开，两侧形成竖向信息轨道。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 2,
+        "column": 1
+      },
+      "safeZone": "frame",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 21,
+          "y": 10,
+          "w": 530,
+          "h": 311,
+          "fontSize": 130,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 412,
+          "y": 32,
+          "w": 310,
+          "h": 123,
+          "fontSize": 26,
+          "lineHeight": 1.12,
+          "align": "right",
+          "weight": 700,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 29,
+          "y": 330,
+          "w": 47,
+          "h": 445,
+          "fontSize": 18,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 669,
+          "y": 165,
+          "w": 57,
+          "h": 665,
+          "fontSize": 32,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 12,
+          "y": 875,
+          "w": 723,
+          "h": 108,
+          "fontSize": 73,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 812,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 812,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 812,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 81,
+          "y": 293,
+          "w": 570,
+          "h": 560,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "LAI\n  *CAI",
+        "subtitle": "(来财) 好运八方来",
+        "kicker": "LAI CAI\nHERE WE ARE\nBAOLAO ZAI",
+        "body": "HERE WE ARE · I LIKE IT ON MY NECK",
+        "note": "我们这的憨佬仔／脖子上喜欢挂玉牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L06",
+      "name": "左上双重标题",
+      "description": "左上主标题与横向副标题交错，说明分布于右下。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 2,
+        "column": 2
+      },
+      "safeZone": "top-right",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 13,
+          "y": 16,
+          "w": 536,
+          "h": 132,
+          "fontSize": 96,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 548,
+          "y": 30,
+          "w": 178,
+          "h": 110,
+          "fontSize": 20,
+          "lineHeight": 1.12,
+          "align": "right",
+          "weight": 700,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 139,
+          "y": 157,
+          "w": 594,
+          "h": 154,
+          "fontSize": 85,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 337,
+          "y": 478,
+          "w": 378,
+          "h": 95,
+          "fontSize": 32,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 412,
+          "y": 692,
+          "w": 309,
+          "h": 108,
+          "fontSize": 30,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 0,
+          "y": 159,
+          "w": 534,
+          "h": 720,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "来财来财*",
+        "subtitle": "*好运八方来",
+        "kicker": "LAI CAI\nHERE WE ARE\nBAOLAO ZAI",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L07",
+      "name": "左标题右引导",
+      "description": "左上竖叠标题、右上辅助引题，正文分组靠右。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 2,
+        "column": 3
+      },
+      "safeZone": "top-right",
+      "capacity": "medium",
+      "slots": [
+        {
+          "key": "title",
+          "x": 27,
+          "y": 19,
+          "w": 256,
+          "h": 260,
+          "fontSize": 110,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 298,
+          "y": 27,
+          "w": 429,
+          "h": 189,
+          "fontSize": 45,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 49,
+          "y": 352,
+          "w": 229,
+          "h": 145,
+          "fontSize": 43,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 295,
+          "y": 437,
+          "w": 432,
+          "h": 105,
+          "fontSize": 30,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 295,
+          "y": 589,
+          "w": 408,
+          "h": 184,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 27,
+          "y": 478,
+          "w": 240,
+          "h": 419,
+          "shape": "rect"
+        }
+      ],
+      "referenceDecorations": [
+        {
+          "type": "arrow",
+          "x": 300,
+          "y": 229,
+          "w": 410,
+          "h": 32
+        }
+      ],
+      "sampleContent": {
+        "title": "来财\n来财",
+        "subtitle": "<好运>\n八方来",
+        "kicker": "GOOD LUCK\nALL DIRECTIONS\nCOME",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "OUR STUFF GUY HERE\nI LIKE IT ON MY NECK\nHANG A JADE PLAQUE\nGOOD LUCK / EIGHT DIRECTIONS COME",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L08",
+      "name": "顶部括号标题",
+      "description": "宽标题置顶，中心说明与横幅图像依次展开。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 2,
+        "column": 4
+      },
+      "safeZone": "top-bottom",
+      "capacity": "medium",
+      "slots": [
+        {
+          "key": "title",
+          "x": 22,
+          "y": 27,
+          "w": 706,
+          "h": 226,
+          "fontSize": 80,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 108,
+          "y": 318,
+          "w": 534,
+          "h": 105,
+          "fontSize": 38,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 600,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 118,
+          "y": 423,
+          "w": 514,
+          "h": 49,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 48,
+          "y": 766,
+          "w": 315,
+          "h": 104,
+          "fontSize": 20,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 426,
+          "y": 766,
+          "w": 282,
+          "h": 104,
+          "fontSize": 20,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 29,
+          "y": 537,
+          "w": 692,
+          "h": 223,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "(来财好运八方来)\n来财",
+        "subtitle": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "kicker": "OUR STUFF GUY HERE\nI LIKE TO HANG JADE PLAQUES AROUND MY NECK",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L09",
+      "name": "阶梯标题右下图",
+      "description": "标题逐级向右展开，正文左下与图像错开。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 3,
+        "column": 1
+      },
+      "safeZone": "top-left",
+      "capacity": "medium",
+      "slots": [
+        {
+          "key": "title",
+          "x": 20,
+          "y": 22,
+          "w": 349,
+          "h": 128,
+          "fontSize": 101,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 375,
+          "y": 31,
+          "w": 352,
+          "h": 98,
+          "fontSize": 23,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 700,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 231,
+          "y": 157,
+          "w": 496,
+          "h": 153,
+          "fontSize": 83,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 23,
+          "y": 570,
+          "w": 303,
+          "h": 253,
+          "fontSize": 34,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 30,
+          "y": 319,
+          "w": 280,
+          "h": 207,
+          "fontSize": 66,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 336,
+          "y": 501,
+          "w": 390,
+          "h": 392,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "来财来",
+        "subtitle": "好运八方来",
+        "kicker": "GOOD LUCK\nEIGHT DIRECTIONS COME\nLAI CAI",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "LAI CAI\n来财",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L10",
+      "name": "左侧长竖排",
+      "description": "主副标题合为左侧竖向书脊，其余信息沿窄栏排列。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 3,
+        "column": 2
+      },
+      "safeZone": "left",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 22,
+          "y": 19,
+          "w": 224,
+          "h": 249,
+          "fontSize": 104,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 25,
+          "y": 273,
+          "w": 121,
+          "h": 330,
+          "fontSize": 88,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 247,
+          "y": 24,
+          "w": 187,
+          "h": 90,
+          "fontSize": 17,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 30,
+          "y": 632,
+          "w": 374,
+          "h": 190,
+          "fontSize": 22,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 244,
+          "y": 208,
+          "w": 172,
+          "h": 287,
+          "fontSize": 19,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 429,
+          "y": 0,
+          "w": 321,
+          "h": 864,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "好来\n运财",
+        "subtitle": "八方来",
+        "kicker": "LAI CAI\nHERE WE ARE\nBAOLAO ZAI",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L11",
+      "name": "中部横题凹口图",
+      "description": "横向主标题下方为凹口式图片区域，说明分为左右两栏。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 3,
+        "column": 3
+      },
+      "safeZone": "top-bottom",
+      "capacity": "medium",
+      "slots": [
+        {
+          "key": "kicker",
+          "x": 33,
+          "y": 25,
+          "w": 300,
+          "h": 64,
+          "fontSize": 19,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "title",
+          "x": 30,
+          "y": 110,
+          "w": 690,
+          "h": 145,
+          "fontSize": 95,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 354,
+          "y": 302,
+          "w": 350,
+          "h": 187,
+          "fontSize": 24,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 600,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 35,
+          "y": 709,
+          "w": 312,
+          "h": 145,
+          "fontSize": 23,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 429,
+          "y": 709,
+          "w": 289,
+          "h": 145,
+          "fontSize": 23,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 35,
+          "y": 286,
+          "w": 300,
+          "h": 410,
+          "shape": "rect"
+        },
+        {
+          "x": 335,
+          "y": 494,
+          "w": 369,
+          "h": 202,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "(来财来财)",
+        "subtitle": "好运\n八方来\n\nGOOD LUCK\nEIGHT DIRECTIONS COME",
+        "kicker": "LAI CAI\nHERE WE ARE\nBAOLAO ZAI",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L12",
+      "name": "竖向标题双圆",
+      "description": "左上双列竖标题与右侧竖引题，信息落在右下。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 3,
+        "column": 4
+      },
+      "safeZone": "top-left",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 28,
+          "y": 18,
+          "w": 107,
+          "h": 492,
+          "fontSize": 91,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 139,
+          "y": 18,
+          "w": 107,
+          "h": 450,
+          "fontSize": 91,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 265,
+          "y": 147,
+          "w": 76,
+          "h": 382,
+          "fontSize": 24,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 282,
+          "y": 604,
+          "w": 429,
+          "h": 98,
+          "fontSize": 31,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 281,
+          "y": 746,
+          "w": 419,
+          "h": 166,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 359,
+          "y": 187,
+          "w": 344,
+          "h": 344,
+          "shape": "ellipse"
+        },
+        {
+          "x": 28,
+          "y": 531,
+          "w": 204,
+          "h": 369,
+          "shape": "ellipse"
+        }
+      ],
+      "sampleContent": {
+        "title": "好运八方来",
+        "subtitle": "来财来财*",
+        "kicker": "GOOD LUCK\nEIGHT DIRECTIONS COME",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "OUR STUFF GUY HERE\nI LIKE IT ON MY NECK\nHANG A JADE PLAQUE\nGOOD LUCK / EIGHT DIRECTIONS COME",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L13",
+      "name": "圆形之间的文字",
+      "description": "主标题右上，英文引题左中，正文右下，形成三点节奏。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 4,
+        "column": 1
+      },
+      "safeZone": "corners",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 220,
+          "y": 22,
+          "w": 509,
+          "h": 106,
+          "fontSize": 86,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 221,
+          "y": 126,
+          "w": 508,
+          "h": 100,
+          "fontSize": 76,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 50,
+          "y": 289,
+          "w": 367,
+          "h": 284,
+          "fontSize": 58,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 424,
+          "y": 618,
+          "w": 304,
+          "h": 80,
+          "fontSize": 27,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 288,
+          "y": 728,
+          "w": 436,
+          "h": 165,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 46,
+          "y": 64,
+          "w": 163,
+          "h": 163,
+          "shape": "ellipse"
+        },
+        {
+          "x": 334,
+          "y": 226,
+          "w": 375,
+          "h": 375,
+          "shape": "ellipse"
+        },
+        {
+          "x": 49,
+          "y": 653,
+          "w": 241,
+          "h": 241,
+          "shape": "ellipse"
+        }
+      ],
+      "sampleContent": {
+        "title": "来财来财*",
+        "subtitle": "好运八方来",
+        "kicker": "GOOD\nMOVEEIGHT\nSQUARE\nCOME",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "OUR STUFF GUY HERE\nI LIKE IT ON MY NECK\nHANG A JADE PLAQUE\nGOOD LUCK / EIGHT DIRECTIONS COME",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L14",
+      "name": "三段图像底部大字",
+      "description": "顶部两端标题，三段横向图像，以底部超大英文收尾。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 4,
+        "column": 2
+      },
+      "safeZone": "top-bottom",
+      "capacity": "short",
+      "slots": [
+        {
+          "key": "title",
+          "x": 18,
+          "y": 21,
+          "w": 288,
+          "h": 80,
+          "fontSize": 69,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 392,
+          "y": 21,
+          "w": 338,
+          "h": 80,
+          "fontSize": 60,
+          "lineHeight": 1.08,
+          "align": "right",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 29,
+          "y": 801,
+          "w": 585,
+          "h": 146,
+          "fontSize": 118,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 29,
+          "y": 113,
+          "w": 39,
+          "h": 201,
+          "fontSize": 17,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 674,
+          "y": 369,
+          "w": 39,
+          "h": 229,
+          "fontSize": 17,
+          "lineHeight": 1.04,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "vertical": true,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 951,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 951,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 951,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 100,
+          "y": 108,
+          "w": 611,
+          "h": 197,
+          "shape": "rect"
+        },
+        {
+          "x": 31,
+          "y": 341,
+          "w": 604,
+          "h": 210,
+          "shape": "rect"
+        },
+        {
+          "x": 99,
+          "y": 588,
+          "w": 615,
+          "h": 209,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "(来财)",
+        "subtitle": "好运八方来",
+        "kicker": "LAICAI*",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L15",
+      "name": "大刊头与图内注释",
+      "description": "大刊头在顶，副标题紧随，正文落入图像的上下边缘。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 4,
+        "column": 3
+      },
+      "safeZone": "top-bottom",
+      "capacity": "medium",
+      "slots": [
+        {
+          "key": "title",
+          "x": 24,
+          "y": 12,
+          "w": 537,
+          "h": 146,
+          "fontSize": 122,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "kicker",
+          "x": 572,
+          "y": 24,
+          "w": 154,
+          "h": 101,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "right",
+          "weight": 700,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 102,
+          "y": 159,
+          "w": 627,
+          "h": 108,
+          "fontSize": 58,
+          "lineHeight": 1.08,
+          "align": "center",
+          "weight": 800,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 31,
+          "y": 282,
+          "w": 567,
+          "h": 107,
+          "fontSize": 37,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 345,
+          "y": 632,
+          "w": 380,
+          "h": 120,
+          "fontSize": 36,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 933,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 933,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 933,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 25,
+          "y": 272,
+          "w": 697,
+          "h": 518,
+          "shape": "rect"
+        }
+      ],
+      "sampleContent": {
+        "title": "LAICAI*",
+        "subtitle": "(来财) 好运八方来",
+        "kicker": "LAI CAI\nHERE WE ARE\nBAOLAO ZAI",
+        "body": "我们这的憨佬仔\n脖子上喜欢挂玉牌",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    },
+    {
+      "id": "L16",
+      "name": "大字横压信息底栏",
+      "description": "顶部双层强标题，右侧短说明，底部用边框容纳长说明。",
+      "canvas": {
+        "width": 750,
+        "height": 1000
+      },
+      "sourceCell": {
+        "row": 4,
+        "column": 4
+      },
+      "safeZone": "top",
+      "capacity": "long",
+      "slots": [
+        {
+          "key": "kicker",
+          "x": 20,
+          "y": 27,
+          "w": 461,
+          "h": 65,
+          "fontSize": 22,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "title",
+          "x": 22,
+          "y": 92,
+          "w": 706,
+          "h": 123,
+          "fontSize": 100,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "subtitle",
+          "x": 22,
+          "y": 216,
+          "w": 706,
+          "h": 133,
+          "fontSize": 96,
+          "lineHeight": 1.08,
+          "align": "left",
+          "weight": 900,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "note",
+          "x": 474,
+          "y": 365,
+          "w": 240,
+          "h": 134,
+          "fontSize": 27,
+          "lineHeight": 1.12,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "body",
+          "x": 30,
+          "y": 810,
+          "w": 692,
+          "h": 153,
+          "fontSize": 18,
+          "lineHeight": 1.12,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer1",
+          "x": 24,
+          "y": 737,
+          "w": 270,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "left",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer2",
+          "x": 338,
+          "y": 737,
+          "w": 90,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "center",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        },
+        {
+          "key": "footer3",
+          "x": 457,
+          "y": 737,
+          "w": 269,
+          "h": 45,
+          "fontSize": 17,
+          "lineHeight": 1.15,
+          "align": "right",
+          "weight": 500,
+          "tracking": 0,
+          "fontFamily": "Arial, \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        }
+      ],
+      "referenceImageRegions": [
+        {
+          "x": 21,
+          "y": 353,
+          "w": 701,
+          "h": 361,
+          "shape": "rect"
+        }
+      ],
+      "referenceDecorations": [
+        {
+          "type": "frame",
+          "x": 20,
+          "y": 797,
+          "w": 710,
+          "h": 178
+        }
+      ],
+      "sampleContent": {
+        "title": "来　来财!!",
+        "subtitle": "好运八方来",
+        "kicker": "好运　　GOOD LUCK\n八方来　EIGHT DIRECTIONS COME",
+        "body": "来财来财，好运八方来。\n这是一段用于检验信息容量的示例文案。\n在这里放置活动说明、主办方与补充信息。\n替换文案后，请重新检查文字换行与可读性。",
+        "note": "香炉供台上摆\n长大才 开白黄牌",
+        "footer1": "HERE WE ARE\nBAOLAO ZAI",
+        "footer2": "好运\n八方来",
+        "footer3": "I LIKE IT ON MY NECK\nHANG A JADE PLAQUE"
+      }
+    }
+  ]
+}

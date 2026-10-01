@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "generationOwner": "Codex image-generation tool; the offline HTML editor does not call a model",
+  "styles": [
+    {
+      "id": "mono-color", "name": "Mono-color", "label": "限色印刷", "sourceSkill": "mono-color",
+      "tags": ["文化", "印刷", "网点", "单色", "双色", "编辑", "展览"],
+      "summary": "中性纸面、最多两种油墨、网点与露纸；以一个明确的视觉主体组织画面。",
+      "needsPhoto": false, "paper": "#FAFAF7", "ink": "#2148B8", "accent": "#C65F38",
+      "preferredLayouts": ["L01", "L06", "L07", "L09", "L11", "L15"],
+      "prompt": "Create a text-free print artwork on a flat neutral paper substrate, color {paper}. Subject: {subject}. Use at most two printing inks, {ink} dominant and {accent} as a limited accent; give each ink a clear visual role. Mechanical screening, clipped highlights and exposed paper should describe the subject rather than a digital color wash. Keep one dominant image event and a quieter release zone. Do not add aging unless requested. {geometry} No letters, numbers, headlines, captions, logos, QR codes or watermarks. Typography will be added separately in HTML.",
+      "checks": ["油墨不超过两种", "主体可识别", "通过网点与露纸形成印刷感", "指定文字区安静", "底图无生成文字"]
+    },
+    {
+      "id": "y2k", "name": "Y2K", "label": "撞色剪贴", "sourceSkill": "y2k-pop-poster",
+      "tags": ["潮流", "青年", "音乐", "人物", "宠物", "商品", "撞色"],
+      "summary": "真实主体剪贴、粗撞色描边、高饱和背景，以及围绕动作设置的少量星芒。",
+      "needsPhoto": true, "paper": "#2447FF", "ink": "#F2FF57", "accent": "#FFFFFF",
+      "preferredLayouts": ["L03", "L05", "L06", "L09", "L12", "L16"],
+      "textures": ["干净印刷", "标准 Y2K", "重度复古"],
+      "prompt": "Edit the supplied photograph into a text-free Y2K cutout artwork. Preserve the actual subject's identity, number, pose, expression and key structures. Use high-contrast grayscale for the subject unless a recognition color must be kept. Add a continuous hard contrasting outline in {ink}, approximately 2–5% of the subject's short dimension, over saturated {paper}. Use {texture}. Anchor one main starburst to an actual bend or shoulder in the silhouette, partly hidden behind the subject; at most two small supporting bursts. Keep faces and essential edges intact. {geometry} No letters, numbers, title, logo, QR code or watermark. All words will be added separately in HTML.",
+      "checks": ["主体身份、数量和姿态保持", "描边连续且有反差", "质感与所选等级一致", "星芒不遮脸或文字区", "底图无文字"]
+    },
+    {
+      "id": "gathered-scenes", "name": "Gathered Scenes", "label": "实景纸面拼贴", "sourceSkill": "scenes-gathered-zine-v1-3",
+      "tags": ["旅行", "风景", "自然", "纪实", "纸张", "安静", "拼贴"],
+      "summary": "保留真实场景，以少量抽象形状延续其结构；纤维撕纸边界与一种新增色彩建立联系。",
+      "needsPhoto": true, "paper": "#F5F1E8", "ink": "#343630", "accent": "#D84D33",
+      "preferredLayouts": ["L01", "L02", "L08", "L11", "L13", "L14"],
+      "prompt": "Transform the supplied scene photo into a text-free, flat paper collage. Preserve its core subjects, direction, perspective and key spatial relationships. Retain a truthful photographic anchor; continue one or two source-derived contours or rhythms into a larger, sparse abstract illustration field. Merge repeated foliage and micro-detail into a few large quiet forms rather than tracing them. Add exactly one extra print hue, {accent}, as a structural continuation, underprint or counterform connected to the source. Keep a narrow, visibly hand-torn fibrous boundary where the photo meets {paper} paper, without raised corners or heavy shadows. {geometry} Substantial paper stays quiet. Do not generate micro-text, titles, letters, numbers, stamps, logos or watermarks. All wording is reserved for HTML.",
+      "checks": ["真实场景关系仍可识别", "插画由原图形状推导", "细节已合并简化", "撕纸纤维边界清楚", "仅一种新增印刷色", "文字区安静且无生成文字"]
+    }
+  ]
+}

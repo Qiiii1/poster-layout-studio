@@ -1,0 +1,4 @@
+interface:
+  display_name: "Poster Layout Studio"
+  short_description: "标签推荐底图风格，搭配十六种文字模板与可编辑 HTML，导出海报和底图 PNG"
+  default_prompt: "使用 $poster-layout-studio，根据我的文案和标签推荐底图风格与文字排版，生成底图并提供可编辑 HTML。"
