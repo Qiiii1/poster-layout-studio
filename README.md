@@ -1,16 +1,17 @@
-# Poster Layout Studio V1.0
+# Poster Layout Studio V1.5
 
 海报生成与排版 Skill：一张无字底图，配合可独立编辑的文字与 16 种 CSS 排版模板。
 
 ## 流程
 
-读取素材与文案 → 推荐风格 → **用户确认风格** → 预览兼容版式 → **用户确认排版** → 生成底图 → 视觉自检查 → HTML 编辑与排版微调 → PNG 导出。
+读取素材与文案 → 确认多图组织（适用时）→ 确认主体抠图或完整背景 → 确认风格 → 确认配色 → 确认初始排版 → 确认普通或艺术标题 → 分层生成 → 视觉自检查 → HTML 编辑 → PNG 导出。
 
 - 风格：Mono-color、Y2K、Gathered Scenes。
-- 两项 human gate 均确认后才能生成底图；用户已明确指定或授权代选时不重复询问。
-- 切换模板保留底图与文案；不同模板需检查文字容量及主体遮挡。
-- 支持文字编辑、拖动、缩放、撤销、项目保存，以及成稿和纯底图分别导出 PNG。
-- 默认画布 750 × 1000；支持 1×、2×、3× 导出。
+- 所有适用的 Human Gate 确认后才能生成；用户已明确指定或授权代选时不重复询问。
+- 支持多个透明主体图层独立移动、缩放；艺术标题单独生成，改字需要重新生成图片。
+- 切换模板保留底图、文案和主体位置；艺术标题框跟随模板。不同模板需检查文字容量及主体遮挡。
+- 竖版画布：2:3（800 × 1200）、4:5（800 × 1000）、3:4（750 × 1000，默认）；支持 1×、2×、3× 导出。
+- 支持撤销、工程保存；海报 PNG 包含所有图层，底图 PNG 排除主体与文字/标题图层。
 
 ## 安装
 
@@ -36,6 +37,8 @@ python3 scripts/build_editor.py --output output/editor.html
 python3 scripts/prepare_project.py --brief /absolute/brief.json --background /absolute/background.png --output output/project.json
 python3 scripts/build_editor.py --project output/project.json --output output/editor.html
 ```
+
+使用 `--subject-image`（可重复）加入透明主体，用 `--title-image` 加入艺术标题。
 
 文案结构见 [project-contract.md](references/project-contract.md)。HTML 离线运行，图像生成与视觉检查由 Codex 完成。系统字体可能因设备不同而改变排版。
 

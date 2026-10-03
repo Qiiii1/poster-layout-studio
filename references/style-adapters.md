@@ -1,6 +1,6 @@
 # Artwork style adapters
 
-These adapters use the visual treatment requested by the user. They do not invoke the source skills' complete poster workflows: generated lettering, original output ratios, promotional response lines, or original full-poster layout defaults are not inherited. This workflow intentionally produces a text-free 3:4 background, then applies independent live typography.
+These adapters use the visual treatment requested by the user. They do not invoke the source skills' complete poster workflows: generated lettering, original output ratios, promotional response lines, or original full-poster layout defaults are not inherited. This workflow intentionally produces a text-free background at the selected portrait ratio (2:3, 4:5 or 3:4), then applies independent live typography. When the user chooses subject cutouts, split these treatments into a subject-free background and transparent foreground assets as described in [subject layers](subject-layers.md); do not flatten the subject into the background.
 
 ## Mono-color
 
@@ -8,7 +8,7 @@ Source: local skill `mono-color` (`mono-color-skill/SKILL.md`).
 
 Neutral white, gray or pale paper; at most two distinct ink plates, assigned to dominant structure and limited accent. Use screening, paper knockouts and plate separation; avoid a uniform digital color tint. Keep one strong visual event and a concentrated quiet area. Age or distress only when requested. Without a source photo, interpret one concrete theme; with a source, preserve its recognizable subject.
 
-Initial colors: paper `#FAFAF7`, cobalt `#2148B8`, terracotta `#C65F38`. Explicit one-ink requests use the same ink for both roles. Default accent should occupy a smaller share than the dominant ink. Reserve the selected text zones before generation; the original skill's title/image collision is expressed later through HTML when it remains legible.
+Proposed colors (require palette-gate approval): paper `#FAFAF7`, cobalt `#2148B8`, terracotta `#C65F38`. Explicit one-ink requests use the same ink for both roles. Default accent should occupy a smaller share than the dominant ink. Reserve the selected text zones before generation; the original skill's title/image collision is expressed later through HTML when it remains legible.
 
 Checks: ink count, material reproduction, subject identity, calm text zones, no baked lettering. Template compatibility is based on image geometry, not the style name alone.
 
