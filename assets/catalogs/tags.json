@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb",
+    "title": "文化海报案例库",
+    "importDate": "2026-10-04",
+    "sheets": {
+      "cases": "76438f",
+      "skills": "Plpjbx",
+      "minimal": "saUFCt",
+      "cyber": "wYdbUd"
+    },
+    "caseRowsRead": 1459,
+    "taggedCases": 1318,
+    "excluded": [
+      {
+        "row": 54,
+        "reason": "subject-type annotation outside the dropdown vocabulary",
+        "value": [
+          "素材是否具有关联性和相似性"
+        ]
+      }
+    ]
+  },
+  "dimensions": [
+    {
+      "id": "eventType",
+      "label": "活动类型",
+      "multiple": false,
+      "options": [
+        {
+          "value": "展览展示类",
+          "count": 531
+        },
+        {
+          "value": "演出观演类",
+          "count": 222
+        },
+        {
+          "value": "节庆体验类",
+          "count": 297
+        },
+        {
+          "value": "交流传播类",
+          "count": 129
+        },
+        {
+          "value": "无",
+          "count": 139
+        }
+      ]
+    },
+    {
+      "id": "visualFocus",
+      "label": "主视觉侧重点类型",
+      "multiple": true,
+      "options": [
+        {
+          "value": "与活动主题相关的背景",
+          "count": 477
+        },
+        {
+          "value": "无明显分区和突出主体",
+          "count": 20
+        },
+        {
+          "value": "有明显分区",
+          "count": 111
+        },
+        {
+          "value": "有突出主体",
+          "count": 74
+        },
+        {
+          "value": "添加蒙版",
+          "count": 4
+        },
+        {
+          "value": "经过设计的文字",
+          "count": 1095
+        },
+        {
+          "value": "重复文字/文字云",
+          "count": 21
+        },
+        {
+          "value": "IP/品牌logo",
+          "count": 13
+        },
+        {
+          "value": "展品/产品/活动围绕展开的人或物品",
+          "count": 700
+        },
+        {
+          "value": "single",
+          "count": 376
+        },
+        {
+          "value": "透明度与层叠",
+          "count": 50
+        },
+        {
+          "value": "嘉宾照片",
+          "count": 40
+        },
+        {
+          "value": "截断式排版",
+          "count": 6
+        },
+        {
+          "value": "宫格式拼接",
+          "count": 98
+        },
+        {
+          "value": "multiple平铺",
+          "count": 438
+        }
+      ]
+    },
+    {
+      "id": "audience",
+      "label": "受众类型",
+      "multiple": true,
+      "options": [
+        {
+          "value": "亲子家庭型",
+          "count": 95
+        },
+        {
+          "value": "年轻潮流型",
+          "count": 177
+        },
+        {
+          "value": "大众文化型",
+          "count": 478
+        },
+        {
+          "value": "专业学术型",
+          "count": 224
+        },
+        {
+          "value": "文化审美型",
+          "count": 583
+        },
+        {
+          "value": "国际受众型",
+          "count": 185
+        }
+      ]
+    },
+    {
+      "id": "contentTypes",
+      "label": "包含内容",
+      "multiple": true,
+      "options": [
+        {
+          "value": "活动名称/时间/地点",
+          "count": 986
+        },
+        {
+          "value": "报名/购票方式",
+          "count": 136
+        },
+        {
+          "value": "主题语/传播语",
+          "count": 446
+        },
+        {
+          "value": "主办方/承办方/出品方/制作方/演出方/技术支持方",
+          "count": 254
+        },
+        {
+          "value": "特邀嘉宾信息",
+          "count": 93
+        },
+        {
+          "value": "所属系列活动名称",
+          "count": 39
+        },
+        {
+          "value": "活动内容",
+          "count": 909
+        },
+        {
+          "value": "以策展人为例的其他参与方",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "subjectType",
+      "label": "主视觉侧重类型",
+      "multiple": false,
+      "options": [
+        {
+          "value": "单主体",
+          "count": 359
+        },
+        {
+          "value": "多主体",
+          "count": 499
+        },
+        {
+          "value": "无主体（不能抠图）",
+          "count": 460
+        }
+      ]
+    },
+    {
+      "id": "composition",
+      "label": "排版",
+      "multiple": false,
+      "options": [
+        {
+          "value": "上下构图",
+          "count": 174
+        },
+        {
+          "value": "居中构图",
+          "count": 632
+        },
+        {
+          "value": "左右构图",
+          "count": 179
+        },
+        {
+          "value": "对角构图",
+          "count": 48
+        },
+        {
+          "value": "四角构图",
+          "count": 12
+        },
+        {
+          "value": "对称构图",
+          "count": 10
+        },
+        {
+          "value": "S形构图",
+          "count": 17
+        },
+        {
+          "value": "散点构图",
+          "count": 199
+        },
+        {
+          "value": "包围式构图",
+          "count": 47
+        }
+      ]
+    },
+    {
+      "id": "styleFamily",
+      "label": "风格",
+      "multiple": true,
+      "options": [
+        {
+          "value": "学术风（ascii风格）",
+          "count": 262
+        },
+        {
+          "value": "复古风（油印）",
+          "count": 330
+        },
+        {
+          "value": "中国风（东方水墨）",
+          "count": 581
+        },
+        {
+          "value": "趣味风（拼贴）",
+          "count": 323
+        },
+        {
+          "value": "简约风",
+          "count": 698
+        },
+        {
+          "value": "赛博风",
+          "count": 181
+        }
+      ]
+    }
+  ],
+  "visualSubtypes": [
+    {
+      "name": "书卷编排风",
+      "family": "中国风（东方水墨）",
+      "sourceRow": 3,
+      "sourceUrls": [
+        "https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao"
+      ],
+      "note": "",
+      "referenceCount": 0
+    },
+    {
+      "name": "山水氛围风",
+      "family": "中国风（东方水墨）",
+      "sourceRow": 4,
+      "sourceUrls": [
+        "https://github.com/dacnay816y62-hub/chinese-poster-skill"
+      ],
+      "note": "这个skill有把元素转译",
+      "referenceCount": 0
+    },
+    {
+      "name": "静物留白风",
+      "family": "中国风（东方水墨）",
+      "sourceRow": 5,
+      "sourceUrls": [
+        "https://github.com/TwentyfiveBTea/ink-wash-poster",
+        "https://github.com/dacnay816y62-hub/regional-culture-poster",
+        "https://github.com/luckdvr/photo-riso-poster"
+      ],
+      "note": "",
+      "referenceCount": 0
+    },
+    {
+      "name": "拼贴图鉴风",
+      "family": "趣味风（拼贴）",
+      "sourceRow": 6,
+      "sourceUrls": [
+        "https://github.com/polgarp/collage-design",
+        "https://github.com/Starryear/S.013-Starryear-Artifact-collage",
+        "https://github.com/HeiGeAi/HeiGe-poster-lab"
+      ],
+      "note": "",
+      "referenceCount": 0
+    },
+    {
+      "name": "纸感印刷风",
+      "family": "趣味风（拼贴）",
+      "sourceRow": 7,
+      "sourceUrls": [
+        "https://github.com/jas0nh/zine-poster-skill",
+        "https://github.com/Zhang-ym92/halftone-riso-pop"
+      ],
+      "note": "用 zine-poster-skill 的 scenes --distill 生成（找不到特别类似的skill）",
+      "referenceCount": 0
+    },
+    {
+      "name": "插画叙事风",
+      "family": "趣味风（拼贴）",
+      "sourceRow": 8,
+      "sourceUrls": [
+        "https://github.com/N1kO724/scene-to-art-lab"
+      ],
+      "note": "会默认英文字体，整体还是拼贴风叙事",
+      "referenceCount": 0
+    },
+    {
+      "name": "轻插画风",
+      "family": "简约风",
+      "sourceRow": 9,
+      "sourceUrls": [
+        "https://github.com/langrenlibai/poster-forge-deluxe",
+        "https://github.com/howardz27/poster-generator-skill",
+        "https://github.com/op7418/guizang-yingzao-skill",
+        "https://github.com/LiamGvchi/gc-minimal-zine-poster"
+      ],
+      "note": "",
+      "referenceCount": 250
+    },
+    {
+      "name": "单器物风",
+      "family": "简约风",
+      "sourceRow": 10,
+      "sourceUrls": [
+        "https://github.com/langrenlibai/poster-forge-deluxe"
+      ],
+      "note": "",
+      "referenceCount": 148
+    },
+    {
+      "name": "图文秩序风",
+      "family": "简约风",
+      "sourceRow": 11,
+      "sourceUrls": [
+        "https://github.com/wendenchina-beep/culture-fragment-poster-engine",
+        "https://github.com/luckdvr/photo-riso-poster"
+      ],
+      "note": "",
+      "referenceCount": 300
+    },
+    {
+      "name": "霓虹动感风",
+      "family": "赛博风",
+      "sourceRow": 12,
+      "sourceUrls": [
+        "https://github.com/koinu32/y2k-pop-poster"
+      ],
+      "note": "",
+      "referenceCount": 97
+    },
+    {
+      "name": "数码界面风",
+      "family": "赛博风",
+      "sourceRow": 13,
+      "sourceUrls": [
+        "https://github.com/NeekChaw/indigo-riso-poster-skill",
+        "https://github.com/TaiT-tt/tait-crt-interface-skill"
+      ],
+      "note": "",
+      "referenceCount": 86
+    },
+    {
+      "name": "超现实风",
+      "family": "赛博风",
+      "sourceRow": 14,
+      "sourceUrls": [
+        "https://github.com/2998980-hue/surreal-pop-collage"
+      ],
+      "note": "",
+      "referenceCount": 0
+    },
+    {
+      "name": "数字科技风",
+      "family": "学术风（ascii风格）",
+      "sourceRow": 17,
+      "sourceUrls": [
+        "https://github.com/jjanousek/dither_app",
+        "https://github.com/Trolzie/halftone",
+        "https://github.com/haaarshsingh/halftone-dots"
+      ],
+      "note": "",
+      "referenceCount": 0
+    },
+    {
+      "name": "学术板报风",
+      "family": "学术风（ascii风格）",
+      "sourceRow": 18,
+      "sourceUrls": [],
+      "note": "这种风格的背景感觉一般都是无主体式,重点在于排版",
+      "referenceCount": 0
+    },
+    {
+      "name": "实验文化风",
+      "family": "学术风（ascii风格）",
+      "sourceRow": 19,
+      "sourceUrls": [
+        "https://github.com/JMMonte/glitch-generator",
+        "https://github.com/joshuavanderpoll/DitherMe"
+      ],
+      "note": "这个会比数字科技风更抽象一点...",
+      "referenceCount": 0
+    },
+    {
+      "name": "套色油印风",
+      "family": "复古风（油印）",
+      "sourceRow": 20,
+      "sourceUrls": [
+        "https://github.com/howardz27/poster-generator-skill",
+        "https://github.com/yanliudesign/mono-color-skill"
+      ],
+      "note": "https://github.com/howardz27/poster-generator-skill\n这个里面包含了瑞士国际主义编辑排版、粗野主义大字与块面、包豪斯模块化构成、单色字体构成、实验油印杂志风,风格可以组合混用",
+      "referenceCount": 0
+    },
+    {
+      "name": "旧报刊编排风",
+      "family": "复古风（油印）",
+      "sourceRow": 21,
+      "sourceUrls": [
+        "https://github.com/starinzlob/the-lamplighter"
+      ],
+      "note": "",
+      "referenceCount": 0
+    },
+    {
+      "name": "复古装饰插画风",
+      "family": "复古风（油印）",
+      "sourceRow": 22,
+      "sourceUrls": [
+        "https://github.com/joeseesun/qiaomu-mondo-poster-design",
+        "https://github.com/emmaCCdesign/make-journal-material-skill"
+      ],
+      "note": "这个生成效果目前是用复古手绘的skill生成,先是提取主素材然后进行拆解(如右栏所示)最后重新进行组合",
+      "referenceCount": 0
+    }
+  ],
+  "aliases": {
+    "图文秩序型": "图文秩序风",
+    "轻插画图形型": "轻插画风",
+    "留白器物型": "单器物风",
+    "霓虹动感型": "霓虹动感风",
+    "数码界面型": "数码界面风"
+  }
+}

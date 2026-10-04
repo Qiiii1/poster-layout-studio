@@ -28,6 +28,15 @@ Optional subject keys: `subjectTreatment` (`background` or `cutout`) and `subjec
 
 Optional keys: `paper` (canvas substrate), `promptPaper` (next generated background color), `ink`, `accent`, `textColor`, `texture` (`干净印刷`, `标准 Y2K`, `重度复古`), `bgFit` (`cover`, `contain`). `subjectZone` is `unknown`, `center`, `top`, `bottom`, `left` or `right` and provides a coarse overlap warning only.
 
+An explicitly approved catalog palette may supply a recipe's optional `textColor`; otherwise pass the user's accepted value. The dark Neon Blue recipe suggests pale live text. Existing accepted text colors are not changed when browsing styles or tags.
+
+Optional recommendation keys:
+
+- `selectedTags`: an object with eight dimensions, each containing a string array: `eventType`, `visualFocus`, `audience`, `contentTypes`, `subjectType`, `composition`, `styleFamily`, `visualSubtype`. Single-choice dimensions accept at most one value. Allowed values and aliases live in `assets/catalogs/tags.json`; unknown dimensions or values are rejected.
+- `hasSourcePhoto`: `true`, `false` or `null` (unconfirmed). It describes the original input, not the generated background. Routes marked `needsPhoto` are excluded from executable recommendations when this is `false`.
+
+Both fields are saved in the project. Older projects omit them and load with empty tags and unconfirmed photo status. Tags rank proposals; they do not confirm HumanGates or alter artwork, copy, accepted colors, the selected style or layout. See [tag recommendations](tag-recommendations.md).
+
 ## Saved project
 
 The browser's saved JSON includes `version:1`, the brief fields, `background`, `titleImage`, `subjectTreatment`, `subjectImages`, `edits`, and `removed`.

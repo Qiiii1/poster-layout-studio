@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "caseWeights": {"eventType": 1.2, "audience": 1.2, "contentTypes": 0.7, "visualFocus": 1.0, "subjectType": 1.3, "composition": 1.3, "styleFamily": 1.5},
+  "compositionLayouts": {
+    "上下构图": {"layouts": ["L01", "L08", "L11", "L14", "L15", "L16"], "note": "上下信息轨道；需检查图像重心与标题的位置。"},
+    "居中构图": {"layouts": ["L01", "L02", "L08", "L11"], "note": "文字围绕中轴；底图主体仍需目视确认。"},
+    "左右构图": {"layouts": ["L03", "L07", "L10", "L12"], "note": "左右栏或侧边标题；竖排与窄栏适合较短文字。"},
+    "对角构图": {"layouts": ["L04", "L06", "L09", "L13"], "note": "标题与说明形成对角呼应，图像不会自动旋转。"},
+    "四角构图": {"layouts": ["L05", "L13"], "approximate": true, "note": "现有模板仅提供周边或分散信息轨道；四角位置需要手动微调。"},
+    "对称构图": {"layouts": ["L01", "L02", "L08"], "note": "可使用中轴文字结构；主体和装饰的对称性需要另行检查。"},
+    "S形构图": {"layouts": ["L09", "L13"], "approximate": true, "note": "现有模板没有完整 S 形文字路径；这两种提供转折节奏，需要微调位置。"},
+    "散点构图": {"layouts": ["L04", "L06", "L09", "L12", "L13"], "note": "使用分散文字锚点，并保持清楚的阅读顺序。"},
+    "包围式构图": {"layouts": ["L05", "L10", "L12"], "approximate": true, "note": "侧边与周边文字最接近包围关系；完整环绕需要微调。"}
+  },
+  "tagStyleRules": [
+    {"dimension": "audience", "value": "专业学术型", "styles": ["academic-board", "ascii-tech", "editorial-order", "mono-color"], "weight": 14, "reason": "学术受众可优先比较清楚的信息层级和结构化图像"},
+    {"dimension": "audience", "value": "年轻潮流型", "styles": ["y2k", "surreal-pop", "experimental-culture"], "weight": 14, "reason": "潮流受众可比较撞色、尺度反转或实验图像"},
+    {"dimension": "audience", "value": "亲子家庭型", "styles": ["minimal-illustration", "narrative-illustration", "specimen-collage"], "weight": 14, "reason": "亲子内容可使用清楚的插画关系和易辨认的素材"},
+    {"dimension": "audience", "value": "文化审美型", "styles": ["oriental-editorial", "still-life-ink", "paper-print", "mono-color"], "weight": 10, "reason": "文化内容可从材料、印刷和意象关系建立视觉"},
+    {"dimension": "subjectType", "value": "多主体", "styles": ["specimen-collage", "narrative-illustration", "gathered-scenes", "y2k"], "weight": 15, "reason": "这条路线可组织多个已确认主体的层级"},
+    {"dimension": "subjectType", "value": "单主体", "styles": ["single-object", "still-life-ink", "mono-color", "y2k"], "weight": 12, "reason": "单主体适合用轮廓、材料或强烈焦点集中注意力"},
+    {"dimension": "subjectType", "value": "无主体（不能抠图）", "styles": ["academic-board", "editorial-order", "minimal-illustration", "landscape-ink"], "weight": 14, "reason": "可从文字层级、背景结构或抽象意象组织画面"},
+    {"dimension": "visualFocus", "value": "宫格式拼接", "styles": ["specimen-collage", "editorial-order", "digital-interface"], "weight": 14, "reason": "分组素材可使用图鉴、窗口或共享网格组织"},
+    {"dimension": "visualFocus", "value": "multiple平铺", "styles": ["specimen-collage", "narrative-illustration"], "weight": 12, "reason": "平铺多个素材时需保留数量和大小关系"},
+    {"dimension": "visualFocus", "value": "与活动主题相关的背景", "styles": ["landscape-ink", "gathered-scenes", "paper-print", "surreal-pop"], "weight": 10, "reason": "背景中的空间与节奏可以成为主视觉依据"},
+    {"dimension": "visualFocus", "value": "有明显分区", "styles": ["editorial-order", "digital-interface", "academic-board"], "weight": 12, "reason": "信息与图像分区需要明确的阅读轨道"},
+    {"dimension": "visualFocus", "value": "重复文字/文字云", "styles": ["academic-board", "experimental-culture", "editorial-order"], "weight": 10, "reason": "文字主导的关系应由独立文字图层实现"}
+  ]
+}

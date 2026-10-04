@@ -1,34 +1,809 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generationOwner": "Codex image-generation tool; the offline HTML editor does not call a model",
   "styles": [
     {
-      "id": "mono-color", "name": "Mono-color", "label": "限色印刷", "sourceSkill": "mono-color",
-      "tags": ["文化", "印刷", "网点", "单色", "双色", "编辑", "展览"],
+      "id": "mono-color",
+      "name": "Mono-color",
+      "label": "限色印刷",
+      "sourceSkill": "mono-color",
+      "tags": [
+        "文化",
+        "印刷",
+        "网点",
+        "单色",
+        "双色",
+        "编辑",
+        "展览"
+      ],
       "summary": "中性纸面、最多两种油墨、网点与露纸；以一个明确的视觉主体组织画面。",
-      "needsPhoto": false, "paper": "#FAFAF7", "ink": "#2148B8", "accent": "#C65F38",
-      "preferredLayouts": ["L01", "L06", "L07", "L09", "L11", "L15"],
+      "needsPhoto": false,
+      "paper": "#FAFAF7",
+      "ink": "#2148B8",
+      "accent": "#C65F38",
+      "preferredLayouts": [
+        "L01",
+        "L06",
+        "L07",
+        "L09",
+        "L11",
+        "L15"
+      ],
       "prompt": "Create a text-free print artwork on a flat neutral paper substrate, color {paper}. Subject: {subject}. Use at most two printing inks, {ink} dominant and {accent} as a limited accent; give each ink a clear visual role. Mechanical screening, clipped highlights and exposed paper should describe the subject rather than a digital color wash. Keep one dominant image event and a quieter release zone. Do not add aging unless requested. {geometry} No letters, numbers, headlines, captions, logos, QR codes or watermarks. Typography will be added separately in HTML.",
-      "checks": ["油墨不超过两种", "主体可识别", "通过网点与露纸形成印刷感", "指定文字区安静", "底图无生成文字"]
+      "checks": [
+        "油墨不超过两种",
+        "主体可识别",
+        "通过网点与露纸形成印刷感",
+        "指定文字区安静",
+        "底图无生成文字"
+      ],
+      "category": "复古风（油印）",
+      "visualSubtype": "套色油印风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/yanliudesign/mono-color-skill",
+        "https://github.com/howardz27/poster-generator-skill"
+      ]
     },
     {
-      "id": "y2k", "name": "Y2K", "label": "撞色剪贴", "sourceSkill": "y2k-pop-poster",
-      "tags": ["潮流", "青年", "音乐", "人物", "宠物", "商品", "撞色"],
+      "id": "y2k",
+      "name": "Y2K",
+      "label": "撞色剪贴",
+      "sourceSkill": "y2k-pop-poster",
+      "tags": [
+        "潮流",
+        "青年",
+        "音乐",
+        "人物",
+        "宠物",
+        "商品",
+        "撞色"
+      ],
       "summary": "真实主体剪贴、粗撞色描边、高饱和背景，以及围绕动作设置的少量星芒。",
-      "needsPhoto": true, "paper": "#2447FF", "ink": "#F2FF57", "accent": "#FFFFFF",
-      "preferredLayouts": ["L03", "L05", "L06", "L09", "L12", "L16"],
-      "textures": ["干净印刷", "标准 Y2K", "重度复古"],
+      "needsPhoto": true,
+      "paper": "#2447FF",
+      "ink": "#F2FF57",
+      "accent": "#FFFFFF",
+      "preferredLayouts": [
+        "L03",
+        "L05",
+        "L06",
+        "L09",
+        "L12",
+        "L16"
+      ],
+      "textures": [
+        "干净印刷",
+        "标准 Y2K",
+        "重度复古"
+      ],
       "prompt": "Edit the supplied photograph into a text-free Y2K cutout artwork. Preserve the actual subject's identity, number, pose, expression and key structures. Use high-contrast grayscale for the subject unless a recognition color must be kept. Add a continuous hard contrasting outline in {ink}, approximately 2–5% of the subject's short dimension, over saturated {paper}. Use {texture}. Anchor one main starburst to an actual bend or shoulder in the silhouette, partly hidden behind the subject; at most two small supporting bursts. Keep faces and essential edges intact. {geometry} No letters, numbers, title, logo, QR code or watermark. All words will be added separately in HTML.",
-      "checks": ["主体身份、数量和姿态保持", "描边连续且有反差", "质感与所选等级一致", "星芒不遮脸或文字区", "底图无文字"]
+      "checks": [
+        "主体身份、数量和姿态保持",
+        "描边连续且有反差",
+        "质感与所选等级一致",
+        "星芒不遮脸或文字区",
+        "底图无文字"
+      ],
+      "category": "赛博风",
+      "visualSubtype": "霓虹动感风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/koinu32/y2k-pop-poster"
+      ]
     },
     {
-      "id": "gathered-scenes", "name": "Gathered Scenes", "label": "实景纸面拼贴", "sourceSkill": "scenes-gathered-zine-v1-3",
-      "tags": ["旅行", "风景", "自然", "纪实", "纸张", "安静", "拼贴"],
+      "id": "gathered-scenes",
+      "name": "Gathered Scenes",
+      "label": "实景纸面拼贴",
+      "sourceSkill": "scenes-gathered-zine-v1-3",
+      "tags": [
+        "旅行",
+        "风景",
+        "自然",
+        "纪实",
+        "纸张",
+        "安静",
+        "拼贴"
+      ],
       "summary": "保留真实场景，以少量抽象形状延续其结构；纤维撕纸边界与一种新增色彩建立联系。",
-      "needsPhoto": true, "paper": "#F5F1E8", "ink": "#343630", "accent": "#D84D33",
-      "preferredLayouts": ["L01", "L02", "L08", "L11", "L13", "L14"],
+      "needsPhoto": true,
+      "paper": "#F5F1E8",
+      "ink": "#343630",
+      "accent": "#D84D33",
+      "preferredLayouts": [
+        "L01",
+        "L02",
+        "L08",
+        "L11",
+        "L13",
+        "L14"
+      ],
       "prompt": "Transform the supplied scene photo into a text-free, flat paper collage. Preserve its core subjects, direction, perspective and key spatial relationships. Retain a truthful photographic anchor; continue one or two source-derived contours or rhythms into a larger, sparse abstract illustration field. Merge repeated foliage and micro-detail into a few large quiet forms rather than tracing them. Add exactly one extra print hue, {accent}, as a structural continuation, underprint or counterform connected to the source. Keep a narrow, visibly hand-torn fibrous boundary where the photo meets {paper} paper, without raised corners or heavy shadows. {geometry} Substantial paper stays quiet. Do not generate micro-text, titles, letters, numbers, stamps, logos or watermarks. All wording is reserved for HTML.",
-      "checks": ["真实场景关系仍可识别", "插画由原图形状推导", "细节已合并简化", "撕纸纤维边界清楚", "仅一种新增印刷色", "文字区安静且无生成文字"]
+      "checks": [
+        "真实场景关系仍可识别",
+        "插画由原图形状推导",
+        "细节已合并简化",
+        "撕纸纤维边界清楚",
+        "仅一种新增印刷色",
+        "文字区安静且无生成文字"
+      ],
+      "category": "趣味风（拼贴）",
+      "visualSubtype": "纸感印刷风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/jas0nh/zine-poster-skill"
+      ]
+    },
+    {
+      "id": "oriental-editorial",
+      "name": "书卷编排风",
+      "label": "东方编辑",
+      "category": "中国风（东方水墨）",
+      "visualSubtype": "书卷编排风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao",
+        "https://github.com/dacnay816y62-hub/regional-culture-poster"
+      ],
+      "tags": [
+        "书卷",
+        "出版",
+        "文化",
+        "器物",
+        "材料",
+        "书法"
+      ],
+      "summary": "以一处材料细节建立主视觉，用线、裁切或轮廓回应主题，保留清楚的阅读轴。",
+      "needsPhoto": false,
+      "paper": "#F3F1EB",
+      "ink": "#333C37",
+      "accent": "#A74D3E",
+      "preferredLayouts": [
+        "L07",
+        "L10",
+        "L14"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Build a restrained contemporary editorial image around one source-specific material event. Use an asymmetric mass-to-void balance, a precise edge, thread or crop as the supporting event, matte material evidence and quiet paper. Derive the graphic relation from the actual subject; avoid generic antique ornaments, decorative shadows and tourist imagery. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "材料与主题有对应关系",
+        "留白可容纳信息",
+        "没有堆叠古典装饰",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "landscape-ink",
+      "name": "山水氛围风",
+      "label": "结构转译",
+      "category": "中国风（东方水墨）",
+      "visualSubtype": "山水氛围风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/dacnay816y62-hub/chinese-poster-skill"
+      ],
+      "tags": [
+        "山水",
+        "自然",
+        "园林",
+        "水墨",
+        "敦煌",
+        "东方"
+      ],
+      "summary": "将山、水、建筑或文化材料转成层次、线势和留白，避免通用风景明信片。",
+      "needsPhoto": false,
+      "paper": "#E8EBE7",
+      "ink": "#253A39",
+      "accent": "#5E8074",
+      "preferredLayouts": [
+        "L01",
+        "L04",
+        "L08",
+        "L11"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Translate the subject into a few landscape-like planes, contour rhythms and open intervals. Use controlled ink diffusion, mineral-like muted fields and selective dry brush on a clean tactile substrate. Preserve meaningful source structures; cultural features must be evidenced by the input, not invented. Do not add pagodas, seals or auspicious motifs by habit. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "空间关系有来源依据",
+        "墨迹有浓淡层次",
+        "没有泛化文化符号",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "still-life-ink",
+      "name": "静物留白风",
+      "label": "水墨静物",
+      "category": "中国风（东方水墨）",
+      "visualSubtype": "静物留白风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/TwentyfiveBTea/ink-wash-poster",
+        "https://github.com/luckdvr/photo-riso-poster"
+      ],
+      "tags": [
+        "静物",
+        "留白",
+        "器物",
+        "茶",
+        "花",
+        "诗"
+      ],
+      "summary": "以一件器物或一个意象为焦点，通过纸面、湿墨和局部干笔形成安静画面。",
+      "needsPhoto": false,
+      "paper": "#EDF0EE",
+      "ink": "#28332E",
+      "accent": "#9B6651",
+      "preferredLayouts": [
+        "L02",
+        "L08",
+        "L11"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Represent one concrete object or imageable motif with controlled ink wash, lost-and-found edges, exposed paper and a small decisive dark focus. Let the substrate tone follow the approved palette. Scale the image to preserve its identifying features and the reserved text space; avoid dirty yellow aging, an unrelated second object and uniform digital tint. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "意象集中",
+        "纸面与墨色有材料感",
+        "主体辨识度保留",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "specimen-collage",
+      "name": "拼贴图鉴风",
+      "label": "多素材拼贴",
+      "category": "趣味风（拼贴）",
+      "visualSubtype": "拼贴图鉴风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/polgarp/collage-design",
+        "https://github.com/Starryear/S.013-Starryear-Artifact-collage",
+        "https://github.com/HeiGeAi/HeiGe-poster-lab"
+      ],
+      "tags": [
+        "拼贴",
+        "多主体",
+        "文物",
+        "图鉴",
+        "收藏",
+        "档案"
+      ],
+      "summary": "多件素材以大小差、局部重叠和切纸边缘组织成图鉴，保留每件素材的身份。",
+      "needsPhoto": false,
+      "paper": "#F2EEE5",
+      "ink": "#274DA0",
+      "accent": "#D64E32",
+      "preferredLayouts": [
+        "L03",
+        "L05",
+        "L13",
+        "L14"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Compose only the confirmed source roster as tactile cut-paper fragments. Establish one dominant anchor and several smaller supporting fragments, with purposeful overlap and visible cut or torn edges. Use approved flat-color structures to connect the objects. Keep independent subjects as separate transparent layers in cutout mode; never invent extra collection members or force a fixed five-image count. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "素材无遗漏或重复",
+        "大小和重叠有层级",
+        "切纸边缘可信",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "paper-print",
+      "name": "纸感印刷风",
+      "label": "照片提炼",
+      "category": "趣味风（拼贴）",
+      "visualSubtype": "纸感印刷风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/jas0nh/zine-poster-skill",
+        "https://github.com/Zhang-ym92/halftone-riso-pop"
+      ],
+      "tags": [
+        "纸感",
+        "印刷",
+        "纪实",
+        "自然",
+        "风景",
+        "提炼"
+      ],
+      "summary": "从照片提取轮廓和节奏，以少量印刷形体重构画面，纸面保持平坦。",
+      "needsPhoto": true,
+      "paper": "#F2EFE6",
+      "ink": "#343833",
+      "accent": "#E95A37",
+      "preferredLayouts": [
+        "L01",
+        "L02",
+        "L08",
+        "L13"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Distill the supplied scene into one principal gesture and a few source-derived silhouettes or repeated rhythms. Remove redundant texture and keep spatial evidence readable. Use a flat scanned paper surface, selected halftone or copier reproduction and one structural accent hue. Do not trace every detail or turn the page into a scrapbook of unrelated scraps. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "照片的关键节奏仍可辨认",
+        "细节经过主动简化",
+        "强调色参与结构",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "narrative-illustration",
+      "name": "插画叙事风",
+      "label": "场景转绘",
+      "category": "趣味风（拼贴）",
+      "visualSubtype": "插画叙事风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/N1kO724/scene-to-art-lab"
+      ],
+      "tags": [
+        "插画",
+        "叙事",
+        "场景",
+        "故事",
+        "活动",
+        "亲子"
+      ],
+      "summary": "把照片中的关系转成插画，以一个叙事焦点组织形状、颜色和材质。",
+      "needsPhoto": true,
+      "paper": "#F3EAD9",
+      "ink": "#275365",
+      "accent": "#D66740",
+      "preferredLayouts": [
+        "L01",
+        "L04",
+        "L09",
+        "L15"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Redraw the actual source scene around one readable narrative relation. Choose one primary painting or print medium; use a second process only for a specific supporting region. Recompose scale, placement or figure-ground while preserving the confirmed people, objects and interactions. Keep dense detail near the focus and simplify the supporting field. Avoid an unchanged photo on a textured fill. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "人物物件与关系正确",
+        "至少有可见的结构转译",
+        "媒介语言有明确主次",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "minimal-illustration",
+      "name": "轻插画风",
+      "label": "稀疏纸面",
+      "category": "简约风",
+      "visualSubtype": "轻插画风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/langrenlibai/poster-forge-deluxe",
+        "https://github.com/LiamGvchi/gc-minimal-zine-poster",
+        "https://github.com/howardz27/poster-generator-skill"
+      ],
+      "tags": [
+        "极简",
+        "轻插画",
+        "安静",
+        "诗性",
+        "短句",
+        "自然"
+      ],
+      "summary": "用一个小型插画事件表达主题，大面积安静纸面支持简短文案。",
+      "needsPhoto": false,
+      "paper": "#F5F2EA",
+      "ink": "#3B403A",
+      "accent": "#245AF5",
+      "preferredLayouts": [
+        "L01",
+        "L02",
+        "L08",
+        "L13"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Create one small conceptually specific illustration, specimen or visual relation on a flat paper field. Keep most of the frame quiet, vary the focal position to fit the selected text regions, and let one saturated accent belong to the focal form. Use restrained print grain and hand-drawn imperfection; avoid a full scene, generic icon, hard mockup shadow or unrelated decorative dots. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "视觉事件只有一个主焦点",
+        "留白有明确用途",
+        "小主体仍能表达主题",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "single-object",
+      "name": "单器物风",
+      "label": "材料特写",
+      "category": "简约风",
+      "visualSubtype": "单器物风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao",
+        "https://github.com/langrenlibai/poster-forge-deluxe"
+      ],
+      "tags": [
+        "单主体",
+        "单器物",
+        "产品",
+        "器物",
+        "留白",
+        "材料"
+      ],
+      "summary": "围绕一件器物的轮廓、表面或局部结构建立画面，用裁切和比例代替装饰堆积。",
+      "needsPhoto": false,
+      "paper": "#F0F1ED",
+      "ink": "#353D38",
+      "accent": "#B16043",
+      "preferredLayouts": [
+        "L02",
+        "L08",
+        "L11"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Make one object-specific silhouette, close crop or material interface carry the artwork. Preserve its defining geometry and texture, choose a deliberate off-center or axial placement, and use one small source-related counterweight. Keep the remaining field calm. Avoid generic luxury product lighting, arbitrary ornaments and converting every object into the same centered icon. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "器物身份和关键结构准确",
+        "材料细节服务主题",
+        "没有无关道具",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "editorial-order",
+      "name": "图文秩序风",
+      "label": "图像分区",
+      "category": "简约风",
+      "visualSubtype": "图文秩序风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/wendenchina-beep/culture-fragment-poster-engine",
+        "https://github.com/luckdvr/photo-riso-poster"
+      ],
+      "tags": [
+        "图文",
+        "秩序",
+        "信息",
+        "展览",
+        "文化",
+        "学术",
+        "分区"
+      ],
+      "summary": "提取素材的块、线、纹理和图像窗口，为清楚的信息层级保留空间。",
+      "needsPhoto": false,
+      "paper": "#F1F1EA",
+      "ink": "#263633",
+      "accent": "#CA473D",
+      "preferredLayouts": [
+        "L03",
+        "L07",
+        "L11",
+        "L16"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Build a few coherent image fields, cropped material fragments or specimen windows derived from the subject. Use a dominant field, one supporting structure and a restrained accent to establish an editorial reading rhythm. Keep text regions numerically reserved and image borders meaningful. The independent HTML layout owns all type; do not generate fake labels, placeholder paragraphs or a complete poster. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "图像分区清楚",
+        "文化与材料依据可追溯",
+        "正文区域留足空间",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "digital-interface",
+      "name": "数码界面风",
+      "label": "CRT 图形",
+      "category": "赛博风",
+      "visualSubtype": "数码界面风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/TaiT-tt/tait-crt-interface-skill",
+        "https://github.com/NeekChaw/indigo-riso-poster-skill"
+      ],
+      "tags": [
+        "数码",
+        "界面",
+        "CRT",
+        "像素",
+        "电脑",
+        "复古科技"
+      ],
+      "summary": "用共享网格、像素切面和少量扫描线建立复古数码界面感，信息文字独立排版。",
+      "needsPhoto": true,
+      "paper": "#E8E5DF",
+      "ink": "#0D3D2D",
+      "accent": "#2CA770",
+      "preferredLayouts": [
+        "L03",
+        "L05",
+        "L07",
+        "L16"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Interpret the actual subject through hard bitmap planes, stepped contours and a shared geometric grid. Use a small number of flat palette-bound display frames, selective scanlines and restrained signal displacement. Keep identity anchors intact and the source roster correct. Treat this as an abstract interface-inspired graphic field; do not insert a literal desktop screenshot, fake menu labels or an invented computer. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "像素和界面结构有共同网格",
+        "主体身份保留",
+        "没有伪造界面文字",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "surreal-pop",
+      "name": "超现实风",
+      "label": "尺度反转",
+      "category": "赛博风",
+      "visualSubtype": "超现实风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/2998980-hue/surreal-pop-collage"
+      ],
+      "tags": [
+        "超现实",
+        "尺度",
+        "反转",
+        "荒诞",
+        "波普",
+        "拼贴"
+      ],
+      "summary": "围绕原场景设置一个可理解的尺度或语义反转，用平涂色形加强关系。",
+      "needsPhoto": true,
+      "paper": "#F3EFDF",
+      "ink": "#2344B4",
+      "accent": "#EF6847",
+      "preferredLayouts": [
+        "L04",
+        "L09",
+        "L13"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Retain a recognizable source scene and introduce one deliberate, source-related impossible scale or relation. Use a few flat-color planes tied to existing boundaries and a subordinate rhythm of small marks. One conceptual transformation should dominate. Do not introduce a second unrelated giant object, random creatures, glossy shadows or generic red-sun scenery. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "超现实变化可以一句话解释",
+        "原场景与变化有联系",
+        "只有一个主导荒诞关系",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "ascii-tech",
+      "name": "数字科技风",
+      "label": "ASCII / 网点",
+      "category": "学术风（ascii风格）",
+      "visualSubtype": "数字科技风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/jjanousek/dither_app",
+        "https://github.com/Trolzie/halftone",
+        "https://github.com/haaarshsingh/halftone-dots"
+      ],
+      "tags": [
+        "ASCII",
+        "ascii",
+        "数字",
+        "科技",
+        "像素",
+        "网点",
+        "数据"
+      ],
+      "summary": "将图像明暗转成有规律的 ASCII 密度、二值抖动或网点，正文使用可读文字。",
+      "needsPhoto": true,
+      "paper": "#EBEDE8",
+      "ink": "#1F3029",
+      "accent": "#416B58",
+      "preferredLayouts": [
+        "L03",
+        "L07",
+        "L11",
+        "L16"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Translate the source image into one chosen tonal encoding: structural ASCII glyph density, binary dither or brightness-sized halftone dots. Preserve a legible silhouette at thumbnail scale and use a consistent sampling rhythm. Keep tonal imagery separate from factual typography. Decorative ASCII characters may form image texture; do not generate readable captions, fake code, dates or labels. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "缩略图中主体仍可辨认",
+        "编码粒度与明暗逻辑一致",
+        "纹理不会侵入正文区",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "academic-board",
+      "name": "学术板报风",
+      "label": "文字主导",
+      "category": "学术风（ascii风格）",
+      "visualSubtype": "学术板报风",
+      "sourceKind": "catalog-note",
+      "sourceUrls": [],
+      "tags": [
+        "学术",
+        "板报",
+        "研讨",
+        "信息",
+        "无主体",
+        "文字"
+      ],
+      "summary": "以文字层级为核心，只使用少量线、块或低密度背景；这是按表格备注补充的配方。",
+      "needsPhoto": false,
+      "paper": "#F3F3EF",
+      "ink": "#222A26",
+      "accent": "#2B54B8",
+      "preferredLayouts": [
+        "L03",
+        "L07",
+        "L11",
+        "L16"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Create a quiet, mostly open substrate with a few subtle rules, small geometric blocks or low-density analytical marks. Reserve clear reading zones for a live typographic hierarchy. Do not invent a hero subject, data values, charts, code or text. Keep the image subordinate to the selected HTML layout and the actual content. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "视觉不会争夺信息层级",
+        "没有虚构数据或符号事实",
+        "适合多组文字阅读",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "experimental-culture",
+      "name": "实验文化风",
+      "label": "局部故障",
+      "category": "学术风（ascii风格）",
+      "visualSubtype": "实验文化风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/JMMonte/glitch-generator",
+        "https://github.com/joshuavanderpoll/DitherMe"
+      ],
+      "tags": [
+        "实验",
+        "故障",
+        "glitch",
+        "抖动",
+        "抽象",
+        "电子"
+      ],
+      "summary": "对局部图像使用位移、抖动或色阶断裂，保留能辨认的视觉锚点。",
+      "needsPhoto": true,
+      "paper": "#ECEBE5",
+      "ink": "#252B29",
+      "accent": "#E44E58",
+      "preferredLayouts": [
+        "L04",
+        "L06",
+        "L09",
+        "L13"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Apply controlled signal disruption to selected image regions: horizontal displacement, reduced tonal bands, structured dither or pixel breakup. Keep one recognition anchor intact and let disruption follow motion or material boundaries. Use one coherent palette and quiet text zones; do not cover the entire image with uniform noise or destroy every identifying feature. Deliver a static artwork, not animation. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "故障范围有主次",
+        "识别锚点完整",
+        "静态图在目标比例下成立",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "newspaper-print",
+      "name": "旧报刊编排风",
+      "label": "新闻纸材质",
+      "category": "复古风（油印）",
+      "visualSubtype": "旧报刊编排风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/starinzlob/the-lamplighter"
+      ],
+      "tags": [
+        "报刊",
+        "新闻纸",
+        "档案",
+        "复古",
+        "历史",
+        "文字"
+      ],
+      "summary": "新闻纸颗粒、局部渗墨和粗网点搭配清楚的文字网格；不会继承报纸生成器。",
+      "needsPhoto": false,
+      "paper": "#E9E3D3",
+      "ink": "#2C2924",
+      "accent": "#8E2F27",
+      "preferredLayouts": [
+        "L03",
+        "L07",
+        "L14",
+        "L16"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Use a restrained newsprint substrate with localized coarse halftone, uneven ink coverage and slight registration drift. If an illustration serves the subject, render one recognizable press-image or engraved fragment and keep ample space for live type. Do not invent articles, headlines or historical props. Avoid a uniform sepia filter, glossy 3D and illegibly dark aging. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "粗网点与纸面有局部变化",
+        "底图支持文字对比",
+        "没有虚构历史道具或报道",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "retro-illustration",
+      "name": "复古装饰插画风",
+      "label": "手绘丝印",
+      "category": "复古风（油印）",
+      "visualSubtype": "复古装饰插画风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": [
+        "https://github.com/joeseesun/qiaomu-mondo-poster-design",
+        "https://github.com/emmaCCdesign/make-journal-material-skill"
+      ],
+      "tags": [
+        "复古",
+        "手绘",
+        "装饰",
+        "丝网",
+        "花",
+        "植物",
+        "物件"
+      ],
+      "summary": "把主体转成不规则手绘色块，结合干笔、平涂和丝印肌理，细节保留在焦点附近。",
+      "needsPhoto": false,
+      "paper": "#F1E6D0",
+      "ink": "#655039",
+      "accent": "#C55937",
+      "preferredLayouts": [
+        "L01",
+        "L04",
+        "L09",
+        "L13"
+      ],
+      "prompt": "Text-free portrait artwork for {subject}. Redraw the confirmed source objects in a tactile decorative illustration language: matte opaque paint, irregular hand-cut edges, selective dry brush and flattened patterns. Use a limited approved palette, a single symbolic focal relation and supporting details with clear scale hierarchy. Preserve object identity. Avoid glossy gradients, perfect vector edges and an unrelated grid of nine motifs. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "checks": [
+        "主素材身份正确",
+        "手绘不规整与印刷肌理可见",
+        "装饰没有淹没主焦点",
+        "文字预留区安静",
+        "没有烘焙标题或正文"
+      ]
+    },
+    {
+      "id": "neon-blue",
+      "name": "霓虹蓝喷绘变体",
+      "label": "电光喷绘",
+      "category": "赛博风",
+      "visualSubtype": "数码界面风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": ["https://redskill.xiaohongshu.net/install.md"],
+      "tags": ["霓虹蓝", "电光蓝", "喷绘", "黑底", "发光", "物件", "静物"],
+      "summary": "以近黑留白、分层蓝色喷绘和微小随机颗粒转绘主体；独立于 CRT 网格和 Y2K 硬描边。其他色相须确认为改编配色。",
+      "needsPhoto": true,
+      "paper": "#05060B",
+      "ink": "#185BE7",
+      "accent": "#DDF7FF",
+      "textColor": "#E8F5FF",
+      "preferredLayouts": ["L02", "L08", "L11", "L15"],
+      "prompt": "Text-free portrait artwork based on {subject} and the supplied subject image. Keep every confirmed object's shape, functional parts, view and relative scale. Replace its surface appearance with soft digital airbrush illustration: dark interior masses, a readable blue midtone, broad lower/front light spreading into the form, and small pale highlights. Use very fine independent random specks in transitional tones, soft varied edges and intermittent glow rather than a bright continuous outline. Keep the approved background {paper} quiet; use {ink} for the dominant treatment and {accent} for sparse highlights. A requested non-blue palette is an explicitly approved adaptation. Any approved reflection is dim, blurred and subordinate. Do not copy the reference objects, add a computer interface, chrome, a neon skyline, extra props or factual lettering. {geometry} Leave titles and all informational text to independent layers.",
+      "checks": [
+        "主体数量、结构和视角正确",
+        "主体内部有明暗层次及宽阔底光，非连续亮描边",
+        "细颗粒微小、独立，未变回原材质纹理",
+        "蓝黑配色或明确批准的改编配色一致",
+        "完整主体、光晕和倒影没有侵入必要文字区或越界",
+        "抠图模式没有在空底图重复主体或倒影"
+      ]
+    },
+    {
+      "id": "cool-riso",
+      "name": "冷白套印展览变体",
+      "label": "清晰套印",
+      "category": "简约风",
+      "visualSubtype": "图文秩序风",
+      "sourceKind": "visual-adapter",
+      "sourceUrls": ["https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=N11"],
+      "tags": ["冷白", "冷色", "展览", "套印", "riso", "丝印", "清晰", "活动"],
+      "summary": "冷白或浅蓝灰纸面、清晰平涂印刷形状、少量套印错位与受控网点，为活动信息保留空间。",
+      "needsPhoto": false,
+      "paper": "#F0F4F7",
+      "ink": "#2547A5",
+      "accent": "#EA5A49",
+      "preferredLayouts": ["L01", "L03", "L08", "L11", "L16"],
+      "prompt": "Text-free contemporary exhibition artwork for {subject}, derived from the supplied image or confirmed event concept. Reduce the main structure to a few crisp arcs, strips, cropped planes or reflection marks. Use a clean flat matte paper field in the approved base {paper}, ideally cool white or faint blue-gray when that palette has been confirmed. Print clear color masses in {ink} with a supporting {accent}, controlled halftone and small registration offsets. Keep the main cluster readable and leave space for a large live title and practical event details in the selected layout. Avoid yellowed aging, muddy color, waxy crayon, chalk, loose watercolor, photographic lighting and edge-to-edge scene tracing. {geometry} Generate no titles, event details, archive labels, logos, QR codes or invented lettering; typography is handled separately.",
+      "checks": [
+        "纸面符合已确认的冷白配色或明确的改编配色",
+        "印刷形状清晰，网点与错位克制",
+        "来源结构得到提炼，非整张照片加纹理",
+        "标题与必要活动信息有实际可用空间",
+        "没有蜡笔粉彩感或发黄做旧",
+        "背景没有烘焙文字、假标签、二维码或标识"
+      ]
     }
   ]
 }

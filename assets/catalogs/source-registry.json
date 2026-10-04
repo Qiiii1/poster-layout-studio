@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "importDate": "2026-10-04",
+  "sources": [
+    {
+      "repo": "howardz27/poster-generator-skill",
+      "url": "https://github.com/howardz27/poster-generator-skill",
+      "commit": "fa2a40bf0943c14dbcf2dfd86a2efe66fa8b4cbc",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 46,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "dacnay816y62-hub/fantasy-dongfang-jianyuehaibao",
+      "url": "https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao",
+      "commit": "077a62cd2c53f1f87201421e30a60dfab4b93e03",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 118,
+      "licenseFiles": [],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "dacnay816y62-hub/chinese-poster-skill",
+      "url": "https://github.com/dacnay816y62-hub/chinese-poster-skill",
+      "commit": "b6cb73308ce945c29d4cf9bf769498b4cd9a9ad0",
+      "status": "downloaded",
+      "instructionFiles": [
+        "chinese-style-poster-skill/SKILL.md"
+      ],
+      "textFilesDownloaded": 3,
+      "licenseFiles": [],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "TwentyfiveBTea/ink-wash-poster",
+      "url": "https://github.com/TwentyfiveBTea/ink-wash-poster",
+      "commit": "f3dc0929ef92715a7a3a157285f3287f39695234",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 7,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "dacnay816y62-hub/regional-culture-poster",
+      "url": "https://github.com/dacnay816y62-hub/regional-culture-poster",
+      "commit": "a980a4ac21a073608a182cec49d6bf1fba273c79",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 11,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "luckdvr/photo-riso-poster",
+      "url": "https://github.com/luckdvr/photo-riso-poster",
+      "commit": "79564228948fd393ecf58ee9aeb74fbc3c1f1deb",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 3,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "polgarp/collage-design",
+      "url": "https://github.com/polgarp/collage-design",
+      "commit": "442f67171ae442de18e0ea3ae5a9767a380bc83c",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 6,
+      "licenseFiles": [
+        "LICENSE.txt"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "Starryear/S.013-Starryear-Artifact-collage",
+      "url": "https://github.com/Starryear/S.013-Starryear-Artifact-collage",
+      "commit": "61e70cd7e5e7a2f7db5a18fd92754182add39f9f",
+      "status": "downloaded",
+      "instructionFiles": [
+        "archive-text/SKILL.md"
+      ],
+      "textFilesDownloaded": 1,
+      "licenseFiles": [],
+      "archiveDownloaded": true
+    },
+    {
+      "repo": "HeiGeAi/HeiGe-poster-lab",
+      "url": "https://github.com/HeiGeAi/HeiGe-poster-lab",
+      "commit": "cba4adfb314edc77f5ccda39364cee20a0752c82",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 11,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "jas0nh/zine-poster-skill",
+      "url": "https://github.com/jas0nh/zine-poster-skill",
+      "commit": "c4fbac08b1dd6973456a9ba58795c91738a3e6d8",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 7,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "Zhang-ym92/halftone-riso-pop",
+      "url": "https://github.com/Zhang-ym92/halftone-riso-pop",
+      "commit": "987877ba05f757c97c3eb5e71861af7badba3a02",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 5,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "N1kO724/scene-to-art-lab",
+      "url": "https://github.com/N1kO724/scene-to-art-lab",
+      "commit": "73d70a5ccae542c7908b4d6e68910856d76534f9",
+      "status": "downloaded",
+      "instructionFiles": [
+        "scene-to-art-lab/SKILL.md"
+      ],
+      "textFilesDownloaded": 8,
+      "licenseFiles": [
+        "LICENSE",
+        "scene-to-art-lab/LICENSE.txt"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "langrenlibai/poster-forge-deluxe",
+      "url": "https://github.com/langrenlibai/poster-forge-deluxe",
+      "commit": "a94540f79415556119e1e38d48608417bc6985d3",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 25,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "op7418/guizang-yingzao-skill",
+      "url": "https://github.com/op7418/guizang-yingzao-skill",
+      "commit": "58c9b8738858bae0ab2c669d0a0fead90d4a80c9",
+      "status": "downloaded",
+      "instructionFiles": [
+        "yingzao/SKILL.md"
+      ],
+      "textFilesDownloaded": 18,
+      "licenseFiles": [],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "LiamGvchi/gc-minimal-zine-poster",
+      "url": "https://github.com/LiamGvchi/gc-minimal-zine-poster",
+      "commit": "ddb0d66b24a94f9c4fdd1f02835a836a2db3774e",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 11,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "wendenchina-beep/culture-fragment-poster-engine",
+      "url": "https://github.com/wendenchina-beep/culture-fragment-poster-engine",
+      "commit": "a2eeeb8d9bb871da4bb53f3b179ccd75bc8c3547",
+      "status": "downloaded",
+      "instructionFiles": [
+        "culture-fragment-poster-engine/SKILL.md"
+      ],
+      "textFilesDownloaded": 5,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "koinu32/y2k-pop-poster",
+      "url": "https://github.com/koinu32/y2k-pop-poster",
+      "commit": "1ad95d816d9e2e7a7a733856720d974cc62177f4",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 6,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "NeekChaw/indigo-riso-poster-skill",
+      "url": "https://github.com/NeekChaw/indigo-riso-poster-skill",
+      "commit": "3b3f54309585567053445859fff7d6c02269544f",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 7,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "TaiT-tt/tait-crt-interface-skill",
+      "url": "https://github.com/TaiT-tt/tait-crt-interface-skill",
+      "commit": "6bd76c91db0d5af9bbbf2a38ebb0880978be4105",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 6,
+      "licenseFiles": [],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "2998980-hue/surreal-pop-collage",
+      "url": "https://github.com/2998980-hue/surreal-pop-collage",
+      "commit": "5bcf6f52592b3c83a384e5314556d2eac804dcc0",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 5,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "jjanousek/dither_app",
+      "url": "https://github.com/jjanousek/dither_app",
+      "commit": "dfdeeacc778006d54f716b4d65c5496b50c66246",
+      "status": "downloaded",
+      "instructionFiles": [],
+      "textFilesDownloaded": 6,
+      "licenseFiles": [],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "Trolzie/halftone",
+      "url": "https://github.com/Trolzie/halftone",
+      "commit": "39c18e740d45a42c0a7e1359ac9e4a11b49b488b",
+      "status": "downloaded",
+      "instructionFiles": [],
+      "textFilesDownloaded": 3,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "haaarshsingh/halftone-dots",
+      "url": "https://github.com/haaarshsingh/halftone-dots",
+      "commit": "21ddfbdae84cf632dcb9cf617668c83a6f89723b",
+      "status": "downloaded",
+      "instructionFiles": [],
+      "textFilesDownloaded": 3,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "JMMonte/glitch-generator",
+      "url": "https://github.com/JMMonte/glitch-generator",
+      "commit": "5a6cfede0a3cc0d8dcd95a27fa107e4b558cd1a4",
+      "status": "downloaded",
+      "instructionFiles": [],
+      "textFilesDownloaded": 2,
+      "licenseFiles": [],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "joshuavanderpoll/DitherMe",
+      "url": "https://github.com/joshuavanderpoll/DitherMe",
+      "commit": "b800dfb6139622a211b9437579842d1444993caa",
+      "status": "downloaded",
+      "instructionFiles": [],
+      "textFilesDownloaded": 6,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "yanliudesign/mono-color-skill",
+      "url": "https://github.com/yanliudesign/mono-color-skill",
+      "commit": "c8ff70597ddedcd65f21a0b528f6a70c35690b0a",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 8,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "starinzlob/the-lamplighter",
+      "url": "https://github.com/starinzlob/the-lamplighter",
+      "commit": "6234c33f66c5f91b7edb0235d6517394f86b5bb5",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 7,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "joeseesun/qiaomu-mondo-poster-design",
+      "url": "https://github.com/joeseesun/qiaomu-mondo-poster-design",
+      "commit": "e82e411c403ca5a0327a85682c658ad155cd9cbb",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 9,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    },
+    {
+      "repo": "emmaCCdesign/make-journal-material-skill",
+      "url": "https://github.com/emmaCCdesign/make-journal-material-skill",
+      "commit": "f54e41e5f807dff4324c5baa50c07ff942021f8c",
+      "status": "downloaded",
+      "instructionFiles": [
+        "SKILL.md"
+      ],
+      "textFilesDownloaded": 6,
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "archiveDownloaded": false
+    }
+  ],
+  "additionalSources": [
+    {
+      "name": "neon-blue-illustration-cn",
+      "kind": "store-archive",
+      "sheet": "skill",
+      "cell": "Q13",
+      "status": "downloaded_and_read",
+      "url": "https://redskill.xiaohongshu.net/install.md",
+      "downloadEndpoint": "https://edith.xiaohongshu.com/api/sns/v1/creator/red_skill/get_skill_bundle?identifier=neon-blue-illustration-cn",
+      "version": "1.0.0",
+      "sha256": "42ad52b8121e85d175fc7d5fda71eb2249c3f7a154e7b38e5d092bfbe9aea1da",
+      "bytes": 3262590,
+      "instructionFiles": ["SKILL.md", "references/style-spec.md"],
+      "license": "not specified in downloaded documentation",
+      "adaptation": "Independent visual recipe; no remote installation or source scripts executed."
+    },
+    {
+      "name": "cool-riso-exhibition-poster",
+      "kind": "feishu-attachment",
+      "sheet": "skill",
+      "cell": "N11",
+      "status": "downloaded_and_read",
+      "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=N11",
+      "downloadMethod": "Feishu web attachment download",
+      "sha256": "c18833d5129c57c1a2c75d55b522e34bdb02167e8cbf6e1c3637b3466a647709",
+      "bytes": 6949,
+      "instructionFiles": ["SKILL.md"],
+      "adaptation": "Cool paper and crisp riso methods only; factual type remains separate HTML."
+    }
+  ],
+  "pending": []
+}

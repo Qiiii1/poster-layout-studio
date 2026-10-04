@@ -23,7 +23,22 @@ def main():
     if any(not isinstance(text.get(k,''),str) for k in KEYS):raise ValueError('Content fields must be strings')
     ratio=b.get('canvasRatio','3:4')
     if ratio not in ['2:3','4:5','3:4']:raise ValueError('Unsupported canvasRatio')
-    state={'version':1,'canvasRatio':ratio,'layoutId':lid,'styleId':sid,'content':{k:text.get(k,'') for k in KEYS},'edits':{},'removed':[],'background':asset(a.background) if a.background else None,'titleImage':asset(a.title_image) if a.title_image else None,'paper':b.get('paper','#FAFAF7'),'promptPaper':b.get('promptPaper',st['paper']),'ink':b.get('ink',st['ink']),'accent':b.get('accent',st['accent']),'textColor':b.get('textColor','#1d201d'),'subject':b.get('subject',''),'texture':b.get('texture','标准 Y2K'),'subjectZone':b.get('subjectZone','unknown'),'bgFit':b.get('bgFit','cover')}
+    taxonomy=json.loads((ROOT/'assets/catalogs/tags.json').read_text())
+    selected=b.get('selectedTags',{})
+    if not isinstance(selected,dict):raise ValueError('selectedTags must be an object')
+    dimensions=taxonomy['dimensions']+[{'id':'visualSubtype','multiple':True,'options':[{'value':s['name']} for s in taxonomy['visualSubtypes']]}]
+    if any(k not in {d['id'] for d in dimensions} for k in selected):raise ValueError('Unknown tag dimension')
+    clean_tags={}
+    for d in dimensions:
+        values=selected.get(d['id'],[])
+        if not isinstance(values,list) or any(not isinstance(v,str) for v in values):raise ValueError('Tag values must be string arrays')
+        values=list(dict.fromkeys(taxonomy['aliases'].get(v,v) for v in values))
+        if not d['multiple'] and len(values)>1:raise ValueError('Tag dimension permits only one value')
+        if any(v not in {o['value'] for o in d['options']} for v in values):raise ValueError('Unknown tag value')
+        clean_tags[d['id']]=values
+    has_photo=b.get('hasSourcePhoto')
+    if has_photo is not None and not isinstance(has_photo,bool):raise ValueError('hasSourcePhoto must be a boolean or null')
+    state={'version':1,'canvasRatio':ratio,'layoutId':lid,'styleId':sid,'content':{k:text.get(k,'') for k in KEYS},'edits':{},'removed':[],'background':asset(a.background) if a.background else None,'titleImage':asset(a.title_image) if a.title_image else None,'paper':b.get('paper','#FAFAF7'),'promptPaper':b.get('promptPaper',st['paper']),'ink':b.get('ink',st['ink']),'accent':b.get('accent',st['accent']),'textColor':b.get('textColor',st.get('textColor','#1d201d')),'subject':b.get('subject',''),'texture':b.get('texture','标准 Y2K'),'subjectZone':b.get('subjectZone','unknown'),'bgFit':b.get('bgFit','cover'),'selectedTags':clean_tags,'hasSourcePhoto':has_photo}
     mode=b.get('subjectTreatment','cutout' if a.subject_image else 'background')
     if mode not in ['background','cutout']:raise ValueError('Unsupported subjectTreatment')
     if a.subject_image and mode!='cutout':raise ValueError('Subject layers require cutout mode')
