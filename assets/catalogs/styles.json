@@ -43,6 +43,16 @@
       "sourceUrls": [
         "https://github.com/yanliudesign/mono-color-skill",
         "https://github.com/howardz27/poster-generator-skill"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c20",
+          "path": "references/style-images/feishu-c20.png",
+          "sourceCell": "C20",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C20",
+          "visualSubtype": "套色油印风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -90,6 +100,16 @@
       "sourceKind": "visual-adapter",
       "sourceUrls": [
         "https://github.com/koinu32/y2k-pop-poster"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c12",
+          "path": "references/style-images/feishu-c12.png",
+          "sourceCell": "C12",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C12",
+          "visualSubtype": "霓虹动感风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -133,6 +153,16 @@
       "sourceKind": "visual-adapter",
       "sourceUrls": [
         "https://github.com/jas0nh/zine-poster-skill"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c07",
+          "path": "references/style-images/feishu-c07.png",
+          "sourceCell": "C7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C7",
+          "visualSubtype": "纸感印刷风",
+          "scope": "shared-subtype"
+        }
       ]
     },
     {
@@ -171,6 +201,16 @@
         "没有堆叠古典装饰",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c03",
+          "path": "references/style-images/feishu-c03.png",
+          "sourceCell": "C3",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C3",
+          "visualSubtype": "书卷编排风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -209,6 +249,16 @@
         "没有泛化文化符号",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c04",
+          "path": "references/style-images/feishu-c04.jpg",
+          "sourceCell": "C4",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C4",
+          "visualSubtype": "山水氛围风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -247,6 +297,16 @@
         "主体辨识度保留",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c05",
+          "path": "references/style-images/feishu-c05.png",
+          "sourceCell": "C5",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C5",
+          "visualSubtype": "静物留白风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -287,6 +347,16 @@
         "切纸边缘可信",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c06",
+          "path": "references/style-images/feishu-c06.png",
+          "sourceCell": "C6",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C6",
+          "visualSubtype": "拼贴图鉴风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -326,6 +396,16 @@
         "强调色参与结构",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c07",
+          "path": "references/style-images/feishu-c07.png",
+          "sourceCell": "C7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C7",
+          "visualSubtype": "纸感印刷风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -364,6 +444,16 @@
         "媒介语言有明确主次",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c08",
+          "path": "references/style-images/feishu-c08.png",
+          "sourceCell": "C8",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C8",
+          "visualSubtype": "插画叙事风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -404,6 +494,16 @@
         "小主体仍能表达主题",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c09",
+          "path": "references/style-images/feishu-c09.png",
+          "sourceCell": "C9",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C9",
+          "visualSubtype": "轻插画风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -442,6 +542,16 @@
         "没有无关道具",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c10",
+          "path": "references/style-images/feishu-c10.jpg",
+          "sourceCell": "C10",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C10",
+          "visualSubtype": "单器物风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -482,6 +592,16 @@
         "正文区域留足空间",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c11",
+          "path": "references/style-images/feishu-c11.jpg",
+          "sourceCell": "C11",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C11",
+          "visualSubtype": "图文秩序风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -521,6 +641,16 @@
         "没有伪造界面文字",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c13",
+          "path": "references/style-images/feishu-c13.png",
+          "sourceCell": "C13",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C13",
+          "visualSubtype": "数码界面风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -558,6 +688,16 @@
         "只有一个主导荒诞关系",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c14",
+          "path": "references/style-images/feishu-c14.jpg",
+          "sourceCell": "C14",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C14",
+          "visualSubtype": "超现实风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -599,6 +739,16 @@
         "纹理不会侵入正文区",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c17",
+          "path": "references/style-images/feishu-c17.png",
+          "sourceCell": "C17",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C17",
+          "visualSubtype": "数字科技风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -635,6 +785,16 @@
         "适合多组文字阅读",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c18",
+          "path": "references/style-images/feishu-c18.png",
+          "sourceCell": "C18",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C18",
+          "visualSubtype": "学术板报风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -674,6 +834,16 @@
         "静态图在目标比例下成立",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c19",
+          "path": "references/style-images/feishu-c19.png",
+          "sourceCell": "C19",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C19",
+          "visualSubtype": "实验文化风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -712,6 +882,16 @@
         "没有虚构历史道具或报道",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c21",
+          "path": "references/style-images/feishu-c21.png",
+          "sourceCell": "C21",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C21",
+          "visualSubtype": "旧报刊编排风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -752,6 +932,16 @@
         "装饰没有淹没主焦点",
         "文字预留区安静",
         "没有烘焙标题或正文"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c22",
+          "path": "references/style-images/feishu-c22.png",
+          "sourceCell": "C22",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C22",
+          "visualSubtype": "复古装饰插画风",
+          "scope": "subtype"
+        }
       ]
     },
     {
@@ -761,15 +951,30 @@
       "category": "赛博风",
       "visualSubtype": "数码界面风",
       "sourceKind": "visual-adapter",
-      "sourceUrls": ["https://redskill.xiaohongshu.net/install.md"],
-      "tags": ["霓虹蓝", "电光蓝", "喷绘", "黑底", "发光", "物件", "静物"],
+      "sourceUrls": [
+        "https://redskill.xiaohongshu.net/install.md"
+      ],
+      "tags": [
+        "霓虹蓝",
+        "电光蓝",
+        "喷绘",
+        "黑底",
+        "发光",
+        "物件",
+        "静物"
+      ],
       "summary": "以近黑留白、分层蓝色喷绘和微小随机颗粒转绘主体；独立于 CRT 网格和 Y2K 硬描边。其他色相须确认为改编配色。",
       "needsPhoto": true,
       "paper": "#05060B",
       "ink": "#185BE7",
       "accent": "#DDF7FF",
       "textColor": "#E8F5FF",
-      "preferredLayouts": ["L02", "L08", "L11", "L15"],
+      "preferredLayouts": [
+        "L02",
+        "L08",
+        "L11",
+        "L15"
+      ],
       "prompt": "Text-free portrait artwork based on {subject} and the supplied subject image. Keep every confirmed object's shape, functional parts, view and relative scale. Replace its surface appearance with soft digital airbrush illustration: dark interior masses, a readable blue midtone, broad lower/front light spreading into the form, and small pale highlights. Use very fine independent random specks in transitional tones, soft varied edges and intermittent glow rather than a bright continuous outline. Keep the approved background {paper} quiet; use {ink} for the dominant treatment and {accent} for sparse highlights. A requested non-blue palette is an explicitly approved adaptation. Any approved reflection is dim, blurred and subordinate. Do not copy the reference objects, add a computer interface, chrome, a neon skyline, extra props or factual lettering. {geometry} Leave titles and all informational text to independent layers.",
       "checks": [
         "主体数量、结构和视角正确",
@@ -778,6 +983,16 @@
         "蓝黑配色或明确批准的改编配色一致",
         "完整主体、光晕和倒影没有侵入必要文字区或越界",
         "抠图模式没有在空底图重复主体或倒影"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c13",
+          "path": "references/style-images/feishu-c13.png",
+          "sourceCell": "C13",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C13",
+          "visualSubtype": "数码界面风",
+          "scope": "shared-subtype"
+        }
       ]
     },
     {
@@ -787,14 +1002,31 @@
       "category": "简约风",
       "visualSubtype": "图文秩序风",
       "sourceKind": "visual-adapter",
-      "sourceUrls": ["https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=N11"],
-      "tags": ["冷白", "冷色", "展览", "套印", "riso", "丝印", "清晰", "活动"],
+      "sourceUrls": [
+        "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=N11"
+      ],
+      "tags": [
+        "冷白",
+        "冷色",
+        "展览",
+        "套印",
+        "riso",
+        "丝印",
+        "清晰",
+        "活动"
+      ],
       "summary": "冷白或浅蓝灰纸面、清晰平涂印刷形状、少量套印错位与受控网点，为活动信息保留空间。",
       "needsPhoto": false,
       "paper": "#F0F4F7",
       "ink": "#2547A5",
       "accent": "#EA5A49",
-      "preferredLayouts": ["L01", "L03", "L08", "L11", "L16"],
+      "preferredLayouts": [
+        "L01",
+        "L03",
+        "L08",
+        "L11",
+        "L16"
+      ],
       "prompt": "Text-free contemporary exhibition artwork for {subject}, derived from the supplied image or confirmed event concept. Reduce the main structure to a few crisp arcs, strips, cropped planes or reflection marks. Use a clean flat matte paper field in the approved base {paper}, ideally cool white or faint blue-gray when that palette has been confirmed. Print clear color masses in {ink} with a supporting {accent}, controlled halftone and small registration offsets. Keep the main cluster readable and leave space for a large live title and practical event details in the selected layout. Avoid yellowed aging, muddy color, waxy crayon, chalk, loose watercolor, photographic lighting and edge-to-edge scene tracing. {geometry} Generate no titles, event details, archive labels, logos, QR codes or invented lettering; typography is handled separately.",
       "checks": [
         "纸面符合已确认的冷白配色或明确的改编配色",
@@ -803,6 +1035,16 @@
         "标题与必要活动信息有实际可用空间",
         "没有蜡笔粉彩感或发黄做旧",
         "背景没有烘焙文字、假标签、二维码或标识"
+      ],
+      "referenceImages": [
+        {
+          "id": "feishu-c11",
+          "path": "references/style-images/feishu-c11.jpg",
+          "sourceCell": "C11",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C11",
+          "visualSubtype": "图文秩序风",
+          "scope": "shared-subtype"
+        }
       ]
     }
   ]

@@ -2,6 +2,10 @@
 
 These adapters use the visual treatment requested by the user. They do not invoke the source skills' complete poster workflows: generated lettering, original output ratios, promotional response lines, or original full-poster layout defaults are not inherited. This workflow intentionally produces a text-free background at the selected portrait ratio (2:3, 4:5 or 3:4), then applies independent live typography. When the user chooses subject cutouts, split these treatments into a subject-free background and transparent foreground assets as described in [subject layers](subject-layers.md); do not flatten the subject into the background.
 
+## Visual reference use
+
+For each adapter, inspect its `referenceImages` in `assets/catalogs/styles.json` before recommendation and prompt construction. The user's column-C images are packaged locally; follow [style-image guidance](style-image-references.md) and preserve the confirmed subject, palette and layout. Gathered Scenes shares its paper-print subtype reference rather than an exact adapter example.
+
 ## Mono-color
 
 Source: local skill `mono-color` (`mono-color-skill/SKILL.md`).

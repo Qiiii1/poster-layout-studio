@@ -2,6 +2,7 @@
 """Embed accepted raster artwork and exact user copy for the offline editor."""
 import argparse,base64,json,struct
 from pathlib import Path
+from workflow_contract import workflow_fields
 ROOT=Path(__file__).resolve().parents[1]
 KEYS=['title','subtitle','kicker','body','note','footer1','footer2','footer3']
 def asset(path):
@@ -15,6 +16,9 @@ def asset(path):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--brief',required=True,type=Path);p.add_argument('--background',type=Path);p.add_argument('--title-image',type=Path);p.add_argument('--subject-image',type=Path,action='append',default=[]);p.add_argument('--output',required=True,type=Path);a=p.parse_args()
     b=json.loads(a.brief.read_text());layouts=json.loads((ROOT/'assets/catalogs/layouts.json').read_text())['layouts'];styles=json.loads((ROOT/'assets/catalogs/styles.json').read_text())['styles']
+    workflow=workflow_fields(b)
+    if workflow['culturalReview']['input']['status']=='hold' or workflow['culturalReview']['output']['status']=='hold':raise ValueError('Resolve recorded review holds before embedding poster assets')
+    if a.subject_image and 'subjectRoster' in b and not workflow['subjectRoster']['confirmed']:raise ValueError('Confirm the extraction roster before embedding cutouts')
     lid=b.get('layoutId','L01');sid=b.get('styleId','mono-color')
     if lid not in {l['id'] for l in layouts}:raise ValueError('Unknown layoutId')
     st=next((s for s in styles if s['id']==sid),None)
@@ -54,5 +58,11 @@ def main():
             item['rect']={k:z[k] for k in ['x','y','w','h']}
         state['subjectImages'].append(item)
     if state['titleImage']:state['titleImage']['sourceText']=state['content']['title']
+    state.update(workflow)
+    rect=b.get('backgroundRect')
+    if rect is not None:
+        if not isinstance(rect,dict) or not all(type(rect.get(k)) in (int,float) and abs(rect[k])<5000 for k in ['x','y','w','h']) or rect['w']<=0 or rect['h']<=0:raise ValueError('Invalid backgroundRect')
+        dimensions={'2:3':(800,1200),'4:5':(800,1000),'3:4':(750,1000)}[ratio]
+        state['edits']['background']={k:f'{rect[p]*dimensions[0 if p in ["x","w"] else 1]/(750 if p in ["x","w"] else 1000)}px' for k,p in [('left','x'),('top','y'),('width','w'),('height','h')]}
     a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n');print(a.output.resolve())
 if __name__=='__main__':main()

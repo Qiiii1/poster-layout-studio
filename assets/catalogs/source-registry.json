@@ -398,7 +398,10 @@
       "version": "1.0.0",
       "sha256": "42ad52b8121e85d175fc7d5fda71eb2249c3f7a154e7b38e5d092bfbe9aea1da",
       "bytes": 3262590,
-      "instructionFiles": ["SKILL.md", "references/style-spec.md"],
+      "instructionFiles": [
+        "SKILL.md",
+        "references/style-spec.md"
+      ],
       "license": "not specified in downloaded documentation",
       "adaptation": "Independent visual recipe; no remote installation or source scripts executed."
     },
@@ -412,9 +415,22 @@
       "downloadMethod": "Feishu web attachment download",
       "sha256": "c18833d5129c57c1a2c75d55b522e34bdb02167e8cbf6e1c3637b3466a647709",
       "bytes": 6949,
-      "instructionFiles": ["SKILL.md"],
+      "instructionFiles": [
+        "SKILL.md"
+      ],
       "adaptation": "Cool paper and crisp riso methods only; factual type remains separate HTML."
     }
   ],
-  "pending": []
+  "pending": [],
+  "styleReferenceImages": {
+    "kind": "user-designated-feishu-column-images",
+    "importDate": "2026-10-07",
+    "sheet": "Plpjbx",
+    "column": "C",
+    "revision": 5745,
+    "referenceImages": 18,
+    "stylesCovered": 21,
+    "manifest": "assets/catalogs/style-references.json",
+    "originalBytesPreserved": true
+  }
 }

@@ -1,7 +1,7 @@
 (function(root,factory){
-  if(typeof module==='object'&&module.exports)module.exports=factory();
-  else root.PosterRecommendations=factory();
-})(typeof globalThis!=='undefined'?globalThis:this,function(){
+  if(typeof module==='object'&&module.exports)module.exports=factory(require('./planning.js'));
+  else root.PosterRecommendations=factory(root.PosterPlanning);
+})(typeof globalThis!=='undefined'?globalThis:this,function(planning){
   'use strict';
   const unique=xs=>[...new Set(xs)];
   function normalizeTags(value,taxonomy){
@@ -50,7 +50,7 @@
       const needsPhoto=!!s.needsPhoto,eligible=!(needsPhoto&&hasPhoto===false);
       if(needsPhoto&&hasPhoto!==true)reasons.push(hasPhoto===false?'需要原始照片；当前未提供':'需要确认有原始照片素材');
       if(!selectedCount&&!topic)reasons.push('尚未选择标签；先展示不同视觉路线');
-      return {id:s.id,name:s.name,category:s.category,visualSubtype:s.visualSubtype,score:Math.round(score*10)/10,reasons:unique(reasons),needsPhoto,eligible,sourceKind:s.sourceKind,index};
+      return {id:s.id,name:s.name,category:s.category,visualSubtype:s.visualSubtype,score:Math.round(score*10)/10,reasons:unique(reasons),needsPhoto,eligible,sourceKind:s.sourceKind,referenceImages:(s.referenceImages||[]).map(r=>({...r})),index};
     }).sort((a,b)=>Number(b.eligible)-Number(a.eligible)||b.score-a.score||a.index-b.index);
     if(hasPhoto===false&&styles.some(s=>s.needsPhoto&&(s.id===input.styleId||tags.visualSubtype.includes(s.visualSubtype))))warnings.push('所选路线需要原始照片，请补充素材或明确选择另一条路线；以下候选不会自动替换你的选择。');
     // Keep broad proposals varied; an explicit family/subtype may narrow the proposals.
@@ -68,7 +68,8 @@
       if(bodyLength>160||informationGroups>=5){if(l.capacity==='long'){score+=32;reasons.push('正文较多，可优先比较长说明区');}else if(l.capacity==='short'){score-=26;reasons.push('短文案模板，当前信息可能拥挤');}else{score+=6;reasons.push('有分组说明区，仍需检查文字溢出');}}
       const title=l.slots.find(x=>x.key==='title');
       if(String(copy.title||'').replace(/\s/g,'').length>14&&title?.vertical){score-=12;reasons.push('长标题放入竖排窄栏需要检查');}
-      return {id:l.id,name:l.name,score,reasons,capacity:l.capacity,description:l.description};
+      const conflicts=planning.layoutConflicts(l,input);
+      return {id:l.id,name:l.name,score,reasons,capacity:l.capacity,description:l.description,conflicts,eligible:conflicts.length===0};
     }).sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
     for(const c of tags.composition)if(rules.compositionLayouts[c]?.approximate)warnings.push(rules.compositionLayouts[c].note);
     if(tags.subjectType.includes('无主体（不能抠图）')&&input.subjectTreatment==='cutout')warnings.push('“无主体（不能抠图）”是原案例标签。请先明确本次要抠取的对象，再通过主体 HumanGate。');
@@ -76,7 +77,11 @@
     if(bodyLength>160||informationGroups>=5)warnings.push('多组信息需要检查容量；当前八个文字字段若无法清楚容纳，应扩展文字图层，不能删掉必要信息。');
     if(selectedCount&&!evidence.length)warnings.push('未找到足够接近的案例组合；本次依据标签与配方规则推荐。');
     if(proposed.some(c=>c.sourceKind==='catalog-note'))warnings.push('学术板报风依据表格备注补充，表中没有对应的完整来源 skill。');
-    return {schemaVersion:1,selectedTags:tags,styles:proposed,allStyles:candidates,layouts:layoutCandidates.slice(0,3),evidence:evidence.slice(0,3).map(({tags,...x})=>x),evidenceCount:evidence.length,warnings:unique(warnings),requiresHumanGate:true};
+    const safeLayouts=layoutCandidates.filter(l=>l.eligible).slice(0,4);
+    if(safeLayouts.length<3)warnings.push('当前只有 '+safeLayouts.length+' 个排版候选通过区域筛选；请调整构图或文字容量，不补入遮挡方案。');
+    if(!planning.protectedRects(input).length&&(hasPhoto!==false||input.background))warnings.push('尚未标注主体保护区域；候选需先结合实际素材检查，再交给用户选择。');
+    if((input.protectedRegions||[]).length&&!input.background&&!(input.subjectImages||[]).length)warnings.push('素材尚未导入；保护区域按计划图层范围预筛，生成实际图像后须重新标注和复核。');
+    return {schemaVersion:2,selectedTags:tags,styles:proposed,allStyles:candidates,layouts:safeLayouts,allLayouts:layoutCandidates,evidence:evidence.slice(0,3).map(({tags,...x})=>x),evidenceCount:evidence.length,warnings:unique(warnings),requiresHumanGate:true};
   }
   return {normalizeTags,recommend};
 });

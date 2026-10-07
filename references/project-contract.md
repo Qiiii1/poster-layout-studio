@@ -43,7 +43,7 @@ The browser's saved JSON includes `version:1`, the brief fields, `background`, `
 
 Each asset contains `{name, data, width, height}`. `data` is an embedded PNG/JPEG/WebP base64 URL. No file path, remote image URL or executable SVG is needed for the offline file. A transparent PNG is recommended for art titles. The text title is retained while its image is displayed. A title asset also stores `sourceText`, the exact wording at generation/import time. If `content.title` changes, the editor warns that the image needs regeneration; old assets without this field remain supported. See [art title layers](art-title-layers.md) for sizing and editing.
 
-`edits` maps stable content keys to explicit CSS geometry/typography. `removed` contains deleted keys. Position units are canvas pixels regardless of display zoom. Layout switching preserves literal content and assets, resets typography geometry, and retains subject-layer geometry. It does not promise the text will fit every preset.
+`edits` maps stable content keys to explicit CSS geometry/typography. `removed` contains deleted keys. Position units are canvas pixels regardless of display zoom. Layout switching preserves literal content and assets, resets typography geometry, and retains subject-layer and background-layer geometry. It does not promise the text will fit every preset.
 
 The local browser draft is kept in IndexedDB, scoped by editor path. Save a project JSON to move between browsers or recover when storage is unavailable. A downloaded PNG is flattened and cannot reopen as an editable project. The HTML supplied by the agent contains initial state; browser changes are saved as draft/project JSON, not written back to that HTML file.
 
@@ -68,7 +68,7 @@ The generated stylesheet uses selectors such as:
 }
 ```
 
-Preview gray shapes live only in `.reference-preview`; actual background pixels belong to a single locked image layer. Some original compositions have several image areas; these are reference guides, not a request to slice the actual background.
+Preview gray shapes live only in `.reference-preview`; actual background pixels belong to a single movable image layer. Some original compositions have several image areas; these are reference guides, not a request to slice the actual background.
 
 ## Rendering and PNG
 
@@ -85,3 +85,16 @@ References for the export implementation:
 ## Portrait canvas
 
 `canvasRatio`: `2:3` → 800×1200, `4:5` → 800×1000, `3:4` → 750×1000. Older projects without this field default to 3:4. Template catalog geometry stays in the 750×1000 reference coordinate system; runtime scales rectangles and uniformly scales typography. Export scales multiply both current canvas dimensions. Downloaded template CSS remains reference geometry; the HTML runtime performs adaptation.
+
+## V1.7 planning fields
+
+All fields remain optional for loading old projects; missing reviews are pending. New production tasks must complete the skill's actual human choices and cultural checks rather than relying on defaults.
+
+- `protectedRegions`: up to 64 `{layer, name, x, y, w, h}` records, `layer` is `background` or `subject-1` through `subject-8`. Coordinates are fractions of the full corresponding image, after any input sanitization. The runtime maps them through current image fit, image-box geometry and canvas clipping.
+- `sourcePalette`: `{colors: ["#274DA0", "#E4DDD1"], source: "脱敏素材的颜色依据"}`; 1–8 HEX colors. Suggestions never automatically replace accepted role colors.
+- `subjectRoster`: `{confirmed: true, items: ["来源1的指定对象"]}`; at most eight entries. If supplied as unconfirmed, `prepare_project.py` refuses embedding cutouts.
+- `webAugmentation`: `{choice: "pending|no|suggest|use", elements: [{name, url, accepted}]}`; only accepted elements can be used by Codex. This metadata does not cause browser networking.
+- `culturalReview`: `{input: {status: "pending|reviewed|hold", findings: []}, output: {status, findings: []}}`; sanitized summaries only. Input holds block prompt generation; input/output holds block PNG export and project preparation. The browser does not perform the semantic review. Pending PNG exports are drafts.
+- `backgroundRect`: brief-only `{x,y,w,h}` initial image-box rectangle in 750×1000 reference coordinates. It becomes current-canvas pixel values in `edits.background`. The background layer can be moved, resized, deleted and restored, like subject layers; template changes preserve its geometry. Both PNG exports use its actual position, size, fit and crop.
+
+Input originals requiring isolation and private detailed audit files are excluded from HTML/project/installable packages. Persisting these fields does not itself prove human confirmation or review. See [cultural review](cultural-review.md) and [material planning](material-planning.md).
