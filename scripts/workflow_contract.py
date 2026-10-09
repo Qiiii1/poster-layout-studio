@@ -1,6 +1,22 @@
 """Validate structured review and planning records; no semantic image analysis."""
 import math,re
 
+def typography_fields(brief):
+    keys={'title','subtitle','kicker','body','note','footer1','footer2','footer3'}
+    choices=brief.get('fontChoices',{})
+    if not isinstance(choices,dict) or any(k not in keys or not isinstance(v,str) or len(v)>500 or not re.fullmatch(r'[\w\s\u3400-\u9fff,"\'-]+',v) for k,v in choices.items()):raise ValueError('Invalid fontChoices')
+    fonts=brief.get('importedFonts',[])
+    if not isinstance(fonts,list) or len(fonts)>8:raise ValueError('Invalid importedFonts')
+    clean=[];ids=set();total=0
+    for f in fonts:
+        if not isinstance(f,dict) or not re.fullmatch(r'studio-font-[a-z0-9-]{1,64}',str(f.get('id',''))) or f['id'] in ids or not isinstance(f.get('data'),str) or not re.fullmatch(r'data:font/(woff2?|ttf|otf);base64,[A-Za-z0-9+/]+={0,2}',f['data']):raise ValueError('Invalid embedded font')
+        total+=len(f['data'])
+        if len(f['data'])>16*1024*1024 or total>40*1024*1024:raise ValueError('Embedded font size limit')
+        ids.add(f['id']);clean.append({'id':f['id'],'name':str(f.get('name','本地字体'))[:100],'data':f['data']})
+    recs=brief.get('layoutRecommendations')
+    if recs is not None and (not isinstance(recs,list) or len(recs)>4 or any(not isinstance(v,str) or not re.fullmatch(r'L(0[1-9]|1[0-6])',v) for v in recs) or len(set(recs))!=len(recs)):raise ValueError('Invalid layoutRecommendations')
+    return {'fontChoices':dict(choices),'importedFonts':clean,'layoutRecommendations':recs}
+
 def workflow_fields(brief):
     def strings(value,limit,length):
         if not isinstance(value,list) or len(value)>limit or any(not isinstance(x,str) or len(x)>length for x in value):raise ValueError('Invalid review/subject string list')
@@ -33,4 +49,4 @@ def workflow_fields(brief):
     if palette is not None:
         if not isinstance(palette,dict) or not isinstance(palette.get('colors'),list) or not 1<=len(palette['colors'])<=8 or any(not isinstance(x,str) or not re.fullmatch(r'#[0-9a-fA-F]{6}',x) for x in palette['colors']):raise ValueError('Invalid sourcePalette')
         palette={'colors':list(dict.fromkeys(x.upper() for x in palette['colors'])),'source':str(palette.get('source','素材取色'))[:200]}
-    return {'protectedRegions':clean,'culturalReview':review,'subjectRoster':roster,'sourcePalette':palette,'webAugmentation':{'choice':web['choice'],'elements':elements}}
+    return {'protectedRegions':clean,'culturalReview':review,'subjectRoster':roster,'sourcePalette':palette,'webAugmentation':{'choice':web['choice'],'elements':elements},**typography_fields(brief)}

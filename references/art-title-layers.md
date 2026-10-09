@@ -2,7 +2,7 @@
 
 ## Generation
 
-Record the chosen treatment, exact `content.title`, layout ID and canvas ratio. Scale the catalog's main-title slot from 750×1000 into the selected canvas; its width/height bound the initial layer and its font size guides the intended visual hierarchy. Use the slot's orientation and line breaks in the title prompt. For a vertical slot, compose a vertical title rather than squeezing a horizontal wordmark into it.
+Default to a separate art title without a title-treatment gate. Respect an explicit ordinary-text request. Record the default or explicit override, exact `content.title`, layout ID and canvas ratio. Scale the catalog's main-title slot from 750×1000 into the selected canvas; its width/height bound the initial layer and its font size guides the intended visual hierarchy. Use the slot's orientation and line breaks in the title prompt. For a vertical slot, compose a vertical title rather than squeezing a horizontal wordmark into it.
 
 Generate only the exact title as a transparent PNG, using the confirmed poster style and palette. Specify no background, scene, subtitle, date, watermark or extra characters. Use the available image-generation tool with transparency enabled. Inspect every glyph, legibility, edges and alpha transparency. Keep padding small and even; excessive transparent margins make the visible title too small inside its slot. If the words or alpha are wrong, make at most one targeted automatic correction and report unresolved defects. Do not call an opaque rectangle a transparent title.
 

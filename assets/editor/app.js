@@ -8,6 +8,34 @@
   const defaultState={version:1,canvasRatio:'3:4',layoutId:'L01',styleId:'mono-color',content:clone(layouts[0].sampleContent),edits:{},removed:[],background:null,titleImage:null,subjectImages:[],subjectTreatment:'background',paper:'#FAFAF7',promptPaper:'#FAFAF7',ink:'#2148B8',accent:'#C65F38',textColor:'#1d201d',subject:'',texture:'标准 Y2K',subjectZone:'unknown',bgFit:'cover',selectedTags:{},hasSourcePhoto:null};
   let state=clone(B.initial||defaultState), previous=null, busy=false, ready=false, seq=0, lastPersist='', saveFailed=false, db, renderedRemoved=[];
   Object.assign(defaultState,{protectedRegions:[],sourcePalette:null,subjectRoster:{confirmed:false,items:[]},webAugmentation:{choice:'pending',elements:[]},culturalReview:plan.normalizeReview()});
+  Object.assign(defaultState,{layoutRecommendations:null,fontChoices:{},importedFonts:[]});
+  let renderedFonts={};
+  const fontPresets=[
+    {id:'sans',name:'现代黑体',family:'"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif'},
+    {id:'serif',name:'书刊宋体',family:'"Songti SC","SimSun","Noto Serif CJK SC",serif'},
+    {id:'kai',name:'人文楷体',family:'"Kaiti SC","STKaiti","KaiTi",serif'},
+    {id:'fangsong',name:'文献仿宋',family:'"STFangsong","FangSong","Songti SC",serif'},
+    {id:'rounded',name:'柔和圆体',family:'"Yuanti SC","YouYuan","PingFang SC",sans-serif'},
+    {id:'mono',name:'等宽信息体',family:'"SFMono-Regular","Courier New","PingFang SC",monospace'}
+  ];
+  const fontFamilyOK=x=>typeof x==='string'&&x.length<=500&&/^[\w\s\u3400-\u9fff,"'-]+$/.test(x);
+  function normalizeFonts(fonts=[]){
+    if(!Array.isArray(fonts)||fonts.length>8)throw new Error('最多导入 8 个字体');
+    const ids=new Set();let total=0;
+    return fonts.map(f=>{
+      if(!f||!/^studio-font-[a-z0-9-]{1,64}$/.test(f.id)||ids.has(f.id)||typeof f.data!=='string'||!/^data:font\/(woff2?|ttf|otf);base64,[A-Za-z0-9+/]+={0,2}$/.test(f.data))throw new Error('工程字体格式不支持');
+      ids.add(f.id);total+=f.data.length;if(f.data.length>16*1024*1024||total>40*1024*1024)throw new Error('导入字体文件过大');
+      return {id:f.id,name:String(f.name||'本地字体').slice(0,100),data:f.data};
+    });
+  }
+  const fontOptions=()=>[...fontPresets,...state.importedFonts.map(f=>({id:f.id,name:f.name+'（已嵌入）',family:'"'+f.id+'",sans-serif'}))];
+  function fontCSS(){
+    return state.importedFonts.map(f=>`@font-face{font-family:"${f.id}";src:url("${f.data}");font-display:block;}`).join('')+':root{'+fontOptions().map(f=>`--font-${f.id}:${f.family};`).join('')+'}';
+  }
+  async function previewFonts(){
+    let el=$('studio-font-faces');if(!el){el=document.createElement('style');el.id='studio-font-faces';document.head.append(el);}el.textContent=fontCSS();
+    await Promise.all(state.importedFonts.map(f=>document.fonts.load(`20px "${f.id}"`,'海报 Typography')));
+  }
   let reviewBaseline=null;
   const frame=$('editor-frame');
   const canvasPresets={'2:3':{width:800,height:1200},'4:5':{width:800,height:1000},'3:4':{width:750,height:1000}};
@@ -53,7 +81,7 @@
     });
     l.slots.forEach(s=>{
       if(state.removed.includes(s.key))return;
-      const ed=!preview?state.edits[s.key]||{}:{};
+      const ed={...(!preview?state.edits[s.key]||{}:{}),...(state.fontChoices[s.key]?{fontFamily:state.fontChoices[s.key]}:{})};
       const custom=Object.entries(ed).map(([k,v])=>`${k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}:${v};`).join('');
       if(artwork&&s.key==='title'&&state.titleImage){html+=`<img class="image-layer" data-layer-id="title" alt="艺术标题" src="${escape(state.titleImage.data)}" style="${escape(cssSlot(s)+custom)}object-fit:contain">`;}
       else html+=`<div class="text-layer" ${preview?'':`data-layer-id="${s.key}" data-hf-width-locked="1"`} style="${escape(cssSlot(s)+custom)}">${escape(content[s.key]||'')}</div>`;
@@ -66,6 +94,7 @@
     for(const {id,el} of a.layers()){
       if(el.tagName!=='IMG')state.content[id]=el.innerText;
       const cs=frame.contentWindow.getComputedStyle(el), props=['left','top','width','height','fontSize','fontFamily','lineHeight','letterSpacing','fontWeight','textAlign','color','writingMode','textOrientation'];
+      if(el.tagName!=='IMG'&&renderedFonts[id]!==undefined&&renderedFonts[id]!==cs.fontFamily){state.fontChoices[id]=cs.fontFamily;renderedFonts[id]=cs.fontFamily;}
       state.edits[id]=Object.fromEntries(props.map(p=>[p,cs[p]]));
     }
     const signature=visualSignature();
@@ -74,18 +103,19 @@
       else if(reviewBaseline!==signature){state.culturalReview.output={status:'pending',findings:['画面或文字已修改，需要重新审核当前输出。']};reviewBaseline=null;}
     }
   }
-  const visualSignature=()=>JSON.stringify([state.canvasRatio,state.layoutId,state.paper,state.textColor,state.bgFit,state.content,state.edits,state.removed,state.background,state.subjectImages,state.titleImage]);
+  const visualSignature=()=>JSON.stringify([state.canvasRatio,state.layoutId,state.paper,state.textColor,state.bgFit,state.content,state.edits,state.removed,state.background,state.subjectImages,state.titleImage,state.fontChoices,state.importedFonts]);
   function invalidateReview(input=false){if(state.culturalReview.output.status!=='hold')state.culturalReview.output={status:'pending',findings:[]};reviewBaseline=null;if(input&&state.culturalReview.input.status!=='hold')state.culturalReview.input={status:'pending',findings:[]};}
   function commitText(){const d=frame.contentDocument;if(d?.querySelector('[contenteditable]'))d.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));}
   async function rebuild(){
+    await previewFonts();
     ready=false;renderedRemoved=clone(state.removed);const current=++seq;
     const scriptData='data:text/javascript;base64,'+btoa(unescape(encodeURIComponent(B.runtimeJS)))+'#layer-editor.js';
     const draftPrefix='studio-'+Date.now()+'-'+seq;
-    frame.srcdoc=`<!doctype html><html lang="zh-CN" data-hf-source-revision="${draftPrefix}"><head><meta charset="utf-8"><title>海报</title><style>${canvasBase}</style><style>${B.runtimeCSS}</style><style>${themeCSS}</style></head><body>${canvasMarkup(layout(),state.content)}<script src="${scriptData}"></script></body></html>`;
+    frame.srcdoc=`<!doctype html><html lang="zh-CN" data-hf-source-revision="${draftPrefix}"><head><meta charset="utf-8"><title>海报</title><style>${canvasBase}${fontCSS()}</style><style>${B.runtimeCSS}</style><style>${themeCSS}</style></head><body>${canvasMarkup(layout(),state.content)}<script src="${scriptData}"></script></body></html>`;
     await new Promise((resolve,reject)=>{
       const started=Date.now();const timer=setInterval(()=>{
         if(current!==seq){clearInterval(timer);resolve();return;}
-        if(frame.contentDocument?.documentElement.dataset.hfSourceRevision===draftPrefix&&api()){
+        if(frame.contentDocument?.documentElement?.dataset.hfSourceRevision===draftPrefix&&api()){
           clearInterval(timer);ready=true;resolve();
         }else if(Date.now()-started>15000){clearInterval(timer);reject(new Error('编辑器加载超时，请检查导入图片是否有效'));}
       },40);
@@ -98,6 +128,7 @@
     extra.style='padding:12px 16px;border-top:1px solid #d8dfce;font:11px/1.7 sans-serif;color:#718066';
     extra.textContent='选择“底图”可拖动、缩放；切换排版保留底图位置。';panel.append(extra);
     await frame.contentDocument.fonts.ready;
+    renderedFonts=Object.fromEntries(api().layers().filter(x=>x.el.tagName!=='IMG').map(({id,el})=>[id,frame.contentWindow.getComputedStyle(el).fontFamily]));
     await Promise.all([...frame.contentDocument.querySelectorAll('img[data-layer-id]')].map(async el=>{await el.decode();const id=el.dataset.layerId,asset=id==='background'?state.background:id==='title'?state.titleImage:state.subjectImages[Number(id.slice(8))-1];if(asset){asset.width=el.naturalWidth;asset.height=el.naturalHeight;}}));
     // Fit text within its assigned region; retain a readable lower bound.
     for(const {el} of api().layers()){
@@ -135,13 +166,13 @@
     const b=document.createElement('button');b.className='layout-card'+(l.id===state.layoutId?' active':'');b.dataset.layoutId=l.id;
     b.setAttribute('aria-label',`${l.id.slice(1)} ${l.name}`);b.setAttribute('aria-pressed',l.id===state.layoutId?'true':'false');b.append(mini(l,width));
     const meta=document.createElement('div');meta.className='layout-meta';meta.innerHTML=`<b>${l.id.slice(1)}</b><span>${escape(l.name)}</span>`;b.append(meta);
-    if(conflict(l)){const p=document.createElement('span');p.className='compat';p.textContent='可能遮挡主体';b.append(p);}
+    const issues=templateIssues(l);if(issues.length){const p=document.createElement('span');p.className='compat';p.textContent='需调整：'+[...new Set(issues)].slice(0,2).join('；');p.title=issues.join('\n');b.append(p);}
     b.onclick=()=>{if(atlas)$('atlas-dialog').close();changeLayout(l.id).catch(report);};return b;
   }
   function templateIssues(l){
     const issues=plan.layoutConflicts(l,state);
     const test=document.createElement('div');test.style='position:fixed;left:-20000px;top:0;visibility:hidden;pointer-events:none';
-    test.innerHTML=canvasMarkup(l,state.content,true);document.body.append(test);
+    test.innerHTML=canvasMarkup(l,state.content,'proposal');document.body.append(test);
     const nodes=[...test.querySelectorAll('.text-layer')].filter(el=>el.textContent.trim()),textRects=[];
     for(const el of nodes){
       let fs=parseFloat(getComputedStyle(el).fontSize),floor=Math.min(16,fs);
@@ -152,14 +183,19 @@
     for(let i=0;i<textRects.length;i++)for(let j=i+1;j<textRects.length;j++)if(textRects[i].some(a=>textRects[j].some(b=>overlap(a,b)>1)))issues.push('文字相互遮挡');
     test.remove();return issues;
   }
-  function compatibleLayouts(){return recommend().allLayouts.filter(l=>l.eligible&&!templateIssues(layouts.find(x=>x.id===l.id)).length).slice(0,4);}
+  function compatibleLayouts(){
+    const candidates=recommend().allLayouts;
+    if(state.layoutRecommendations===null)state.layoutRecommendations=candidates.filter(l=>l.eligible&&!templateIssues(layouts.find(x=>x.id===l.id)).length).slice(0,4).map(l=>l.id);
+    return state.layoutRecommendations.map(id=>candidates.find(l=>l.id===id)).filter(Boolean);
+  }
+  function refreshLayoutRecommendations(){state.layoutRecommendations=null;renderCards();renderRecommendations();if($('atlas-dialog').open)renderAtlas();persist();}
   function fitPreview(grid){for(const el of grid.querySelectorAll('.text-layer')){let fs=parseFloat(getComputedStyle(el).fontSize),floor=Math.min(16,fs);while(fs>floor&&(el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)){fs=Math.max(floor,fs-1);el.style.fontSize=fs+'px';}}}
   function renderCards(){
     const grid=$('layout-grid');grid.replaceChildren();const width=(grid.clientWidth-10)/2,filter=$('zone-filter').value,safe=compatibleLayouts();
     safe.filter(l=>filter==='all'||layouts.find(x=>x.id===l.id).safeZone===filter).forEach(l=>grid.append(card(layouts.find(x=>x.id===l.id),width)));
     fitPreview(grid);
     $('layout-count').textContent=safe.length;
-    $('layout-candidates-note').textContent=safe.length<3?`仅 ${safe.length} 个方案通过区域和文字检查；可调整构图或文案，再更新候选。`:'已筛除主体区域相交、文字遮挡和容量不足的方案。请复核实际图像与文字对比。';
+    $('layout-candidates-note').textContent=`已保留 ${safe.length} 个推荐，预览按 ${state.canvasRatio} 适配。移动和比例切换保留列表；新的遮挡会提示，可点击“重新筛选排版”更新。`+(safe.length<3?'当前不足 3 个通过初始检查的方案。':'');
   }
   function renderAtlas(){const grid=$('atlas-grid');grid.replaceChildren();const width=(grid.clientWidth-54)/4;compatibleLayouts().forEach(l=>grid.append(card(layouts.find(x=>x.id===l.id),width,true)));fitPreview(grid);}
   function renderStyles(){
@@ -172,7 +208,7 @@
     $('texture-field').hidden=state.styleId!=='y2k';
     renderRecommendations();
   }
-  function chooseStyle(id){state.styleId=id;syncControls();renderStyles();persist();toast('已选择下一次生成的风格，请确认配色。当前底图和文字已保留。');}
+  function chooseStyle(id){state.styleId=id;state.layoutRecommendations=null;syncControls();renderStyles();renderCards();persist();toast('已选择下一次生成的风格，请确认配色。当前底图和文字已保留。');}
   const recommendationData={taxonomy:B.taxonomy,caseIndex:B.caseIndex,rules:B.rules,styles,layouts};
   const recommend=()=>window.PosterRecommendations.recommend({...state,subject:$('subject').value},recommendationData);
   function renderTags(){
@@ -183,7 +219,7 @@
       const select=document.createElement('select');select.dataset.tagDimension=d.id;select.setAttribute('aria-label',d.label);select.multiple=d.multiple;
       if(d.multiple){select.size=Math.min(4,d.options.length);}else select.add(new Option('尚未选择',''));
       for(const o of d.options){const option=new Option(o.value,o.value);option.selected=(state.selectedTags[d.id]||[]).includes(o.value);select.add(option);}
-      select.onchange=()=>{state.selectedTags[d.id]=[...select.selectedOptions].map(o=>o.value).filter(Boolean);renderRecommendations();persist();};
+      select.onchange=()=>{state.selectedTags[d.id]=[...select.selectedOptions].map(o=>o.value).filter(Boolean);refreshLayoutRecommendations();};
       label.append(select);if(d.multiple){const help=document.createElement('small');help.className='muted';help.textContent='可多选（⌘ / Ctrl + 点击）';label.append(help);}list.append(label);
     }
   }
@@ -192,7 +228,7 @@
     const heading=document.createElement('h3');heading.textContent='候选视觉路线';out.append(heading);
     for(const s of r.styles){const b=document.createElement('button');b.className='recommendation-card';b.dataset.recommendStyle=s.id;b.innerHTML=`<b>${escape(s.name)}</b><small>${escape(s.reasons.slice(0,2).join('；'))}</small><span>选择此风格 →</span>`;b.onclick=()=>chooseStyle(s.id);out.append(b);}
     const layoutHeading=document.createElement('h3');layoutHeading.textContent='当前风格的排版候选';out.append(layoutHeading);
-    for(const l of compatibleLayouts()){const b=document.createElement('button');b.className='recommendation-card';b.dataset.recommendLayout=l.id;b.innerHTML=`<b>${escape(l.id+' '+l.name)}</b><small>${escape(l.description)}<br>${escape(l.reasons.join('；'))}</small><span>使用此排版 →</span>`;b.onclick=()=>changeLayout(l.id).catch(report);out.append(b);}
+    for(const l of compatibleLayouts()){const b=document.createElement('button');b.className='recommendation-card';b.dataset.recommendLayout=l.id;const issues=templateIssues(layouts.find(x=>x.id===l.id));b.innerHTML=`<b>${escape(l.id+' '+l.name)}</b><small>${escape(l.description)}<br>${escape(l.reasons.join('；'))}${issues.length?'<br>需调整：'+escape([...new Set(issues)].join('；')):''}</small><span>使用此排版 →</span>`;b.onclick=()=>changeLayout(l.id).catch(report);out.append(b);}
     if(r.evidence.length){const p=document.createElement('p');p.className='muted';p.textContent='相近标签案例：'+r.evidence.map(x=>(x.name||'未命名案例')+'（第 '+x.row+' 行）').join('；')+'。这是标签关联，没有自动分析这些案例图片。';out.append(p);}
     for(const text of r.warnings){const p=document.createElement('p');p.className='recommendation-warning';p.textContent=text;out.append(p);}
   }
@@ -270,6 +306,7 @@
       });
       Object.assign(copy.style,{transform:'none',position:'relative',left:'0px',top:'0px',margin:'0px',display:'block',width:W+'px',height:H+'px'});
       copy.setAttribute('xmlns','http://www.w3.org/1999/xhtml');
+      const embedded=frame.contentDocument.createElement('style');embedded.textContent=fontCSS();copy.prepend(embedded);
       const xml=new XMLSerializer().serializeToString(copy);
       const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}"><foreignObject width="${W}" height="${H}">${xml}</foreignObject></svg>`;
       const rendered=await imgFrom('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg));ctx.drawImage(rendered,0,0);
@@ -309,6 +346,13 @@
     clean.subjectRoster=plan.normalizeRoster(v.subjectRoster);
     clean.sourcePalette=plan.normalizePalette(v.sourcePalette);
     clean.webAugmentation=plan.normalizeWeb(v.webAugmentation);
+    if(v.layoutRecommendations!==undefined&&v.layoutRecommendations!==null){
+      if(!Array.isArray(v.layoutRecommendations)||v.layoutRecommendations.length>4||new Set(v.layoutRecommendations).size!==v.layoutRecommendations.length||v.layoutRecommendations.some(id=>!layouts.some(l=>l.id===id)))throw new Error('排版推荐记录格式错误');
+      clean.layoutRecommendations=[...v.layoutRecommendations];
+    }
+    clean.importedFonts=normalizeFonts(v.importedFonts);
+    if(v.fontChoices!==undefined&&(!v.fontChoices||typeof v.fontChoices!=='object'||Array.isArray(v.fontChoices)))throw new Error('字体选择格式错误');
+    for(const [key,family] of Object.entries(v.fontChoices||{})){if(!Object.hasOwn(labels,key)||!fontFamilyOK(family))throw new Error('字体选择格式错误');clean.fontChoices[key]=family;}
     if(['标准 Y2K','干净印刷','重度复古'].includes(v.texture))clean.texture=v.texture;
     if(v.subjectZone==='unknown'||zones[v.subjectZone])clean.subjectZone=v.subjectZone;
     if(['cover','contain'].includes(v.bgFit))clean.bgFit=v.bgFit;
@@ -339,26 +383,29 @@
         if(p==='fontFamily'&&typeof x==='string'&&/^[\w\s\u3400-\u9fff,"'-]+$/.test(x))e[p]=x;
         if(p==='color'&&typeof x==='string'&&/^(#[0-9a-f]{3,8}|rgba?\([\d\s.,%]+\))$/i.test(x))e[p]=x;
       }clean.edits[k]=e;
-    }return clean;
+    }
+    for(const [key,edit] of Object.entries(clean.edits))if(Object.hasOwn(labels,key)&&edit.fontFamily&&!clean.fontChoices[key])clean.fontChoices[key]=edit.fontFamily;
+    return clean;
   }
   function report(e){console.error(e);toast(e.message||'操作失败，请重试');}
   async function transaction(fn){if(busy)return;busy=true;try{commitText();capture();previous=clone(state);await fn();invalidateReview();await rebuild();}catch(e){if(previous)state=clone(previous);report(e);}finally{busy=false;}}
   document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));for(const name of ['layouts','styles'])$('tab-'+name).hidden=name!==b.dataset.tab;if(b.dataset.tab==='layouts')renderCards();});
   document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
   $('canvas-ratio').onchange=()=>changeCanvas($('canvas-ratio').value).catch(report);
+  $('refresh-layouts').onclick=()=>{commitText();capture();refreshLayoutRecommendations();toast('已按当前素材、文案、字体和画布重新筛选排版。');};
   $('atlas-open').onclick=()=>{$('atlas-dialog').showModal();renderAtlas();};$('zone-filter').onchange=renderCards;
   // Explicit restoration keeps the previous snapshot separate from the transaction helper.
   $('undo-layout').onclick=async()=>{if(!previous||busy)return;busy=true;try{state=clone(previous);previous=null;syncControls();renderStyles();await rebuild();toast('已恢复切换前的文案、位置和素材。');}finally{busy=false;}};
   $('import-subject').onclick=()=>$('file-subject').click();
-  $('file-subject').onchange=e=>{const files=[...e.target.files];if(files.length)transaction(async()=>{if(state.subjectImages.length+files.length>8)throw new Error('最多支持 8 个主体图层');for(const file of files)state.subjectImages.push(await fileAsset(file));state.subjectTreatment='cutout';state.subjectRoster.confirmed=false;invalidateReview(true);});e.target.value='';};
+  $('file-subject').onchange=e=>{const files=[...e.target.files];if(files.length)transaction(async()=>{if(state.subjectImages.length+files.length>8)throw new Error('最多支持 8 个主体图层');for(const file of files)state.subjectImages.push(await fileAsset(file));state.layoutRecommendations=null;state.subjectTreatment='cutout';state.subjectRoster.confirmed=false;invalidateReview(true);});e.target.value='';};
   $('remove-subjects').onclick=()=>transaction(()=>{state.subjectImages=[];state.subjectTreatment='background';state.removed=state.removed.filter(k=>!/^subject-\d+$/.test(k));for(const k of Object.keys(state.edits))if(/^subject-\d+$/.test(k))delete state.edits[k];});
   $('import-background').onclick=()=>$('file-background').click();$('import-title').onclick=()=>$('file-title').click();
-  $('file-background').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{state.background=await fileAsset(f);delete state.edits.background;state.removed=state.removed.filter(x=>x!=='background');state.protectedRegions=state.protectedRegions.filter(x=>x.layer!=='background');invalidateReview(true);});e.target.value='';};
+  $('file-background').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{state.background=await fileAsset(f);state.layoutRecommendations=null;delete state.edits.background;state.removed=state.removed.filter(x=>x!=='background');state.protectedRegions=state.protectedRegions.filter(x=>x.layer!=='background');invalidateReview(true);});e.target.value='';};
   $('file-title').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{state.titleImage=await fileAsset(f);state.titleImage.sourceText=state.content.title;state.removed=state.removed.filter(x=>x!=='title');delete state.edits.title;invalidateReview(true);});e.target.value='';};
   $('remove-background').onclick=()=>transaction(()=>{state.background=null;});$('remove-title').onclick=()=>transaction(()=>{state.titleImage=null;delete state.edits.title;});
   for(const [id,key] of [['subject','subject'],['ink-color','ink'],['accent-color','accent'],['texture','texture'],['subject-zone','subjectZone']])$(id).onchange=()=>{state[key]=$(id).value;check();renderCards();renderRecommendations();persist();};
   $('source-photo').onchange=()=>{state.hasSourcePhoto=$('source-photo').value==='unknown'?null:$('source-photo').value==='yes';renderRecommendations();persist();};
-  $('refresh-recommendations').onclick=()=>{state.subject=$('subject').value;capture();renderRecommendations();persist();};
+  $('refresh-recommendations').onclick=()=>{state.subject=$('subject').value;capture();refreshLayoutRecommendations();};
   for(const family of [...new Set(styles.map(s=>s.category))])$('style-category').add(new Option(family,family));
   $('style-category').onchange=renderStyles;
   $('use-style-palette').onclick=()=>{const s=style();state.promptPaper=s.paper;state.ink=s.ink;state.accent=s.accent;syncControls();persist();toast('已采用建议配色，用于下一次生成。');};
@@ -382,6 +429,26 @@
     for(const key of Object.keys(labels)){const label=document.createElement('label');label.className='field';label.textContent=labels[key];const input=document.createElement('textarea');input.dataset.key=key;input.value=state.content[key]||'';input.rows=key==='body'||key==='note'?3:2;label.append(input);list.append(label);}
     $('text-color').value=state.textColor;$('copy-dialog').showModal();
   };
+  function renderFontDialog(){
+    const targets=$('font-target'),options=$('font-family'),previousTarget=targets.value,previousFont=options.value;
+    targets.replaceChildren(new Option('所有可编辑文字','all'));
+    for(const [id,name] of Object.entries(labels))if(state.content[id]&&!state.removed.includes(id)&&!(id==='title'&&state.titleImage))targets.add(new Option(name,id));
+    if([...targets.options].some(o=>o.value===previousTarget))targets.value=previousTarget;
+    options.replaceChildren();for(const f of fontOptions())options.add(new Option(f.name,f.id));if([...options.options].some(o=>o.value===previousFont))options.value=previousFont;
+    updateFontSample();
+  }
+  function updateFontSample(){const f=fontOptions().find(f=>f.id===$('font-family').value);$('font-sample').style.fontFamily=f?.family||'sans-serif';$('font-sample').textContent=(state.content.subtitle||'山水之间，文字有自己的声音。')+'\nPoster Studio 0123456789';}
+  $('edit-fonts').onclick=()=>{commitText();capture();renderFontDialog();$('font-dialog').showModal();};
+  $('font-family').onchange=updateFontSample;
+  $('apply-font').onclick=()=>{const f=fontOptions().find(f=>f.id===$('font-family').value),target=$('font-target').value;if(!f)return;$('font-dialog').close();transaction(()=>{for(const id of Object.keys(labels))if((target==='all'||id===target)&&!(id==='title'&&state.titleImage)){state.fontChoices[id]=f.family;if(state.edits[id])state.edits[id].fontFamily=f.family;}});};
+  $('import-font').onclick=()=>$('file-font').click();
+  $('file-font').onchange=e=>{const file=e.target.files[0];e.target.value='';if(!file)return;transaction(async()=>{
+    if(file.size>12*1024*1024)throw new Error('单个字体请小于 12 MB');
+    const bytes=new Uint8Array(await file.arrayBuffer()),magic=String.fromCharCode(...bytes.slice(0,4));
+    const mime=magic==='wOF2'?'woff2':magic==='wOFF'?'woff':magic==='OTTO'?'otf':bytes[0]===0&&bytes[1]===1&&bytes[2]===0&&bytes[3]===0?'ttf':null;if(!mime)throw new Error('请导入有效的 WOFF2、WOFF、TTF 或 OTF 字体');
+    const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve('data:font/'+mime+';base64,'+String(reader.result).split(',')[1]);reader.onerror=reject;reader.readAsDataURL(file);});
+    const f={id:'studio-font-'+crypto.randomUUID(),name:file.name,data};await new FontFace(f.id,`url("${data}")`).load();state.importedFonts=normalizeFonts([...state.importedFonts,f]);
+  }).then(()=>{renderFontDialog();$('font-family').value=state.importedFonts.at(-1)?.id||'sans';updateFontSample();});};
   $('apply-copy').onclick=()=>{const texts=Object.fromEntries([...document.querySelectorAll('#copy-fields textarea')].map(el=>[el.dataset.key,el.value]));const color=$('text-color').value;$('copy-dialog').close();transaction(()=>{state.content=texts;state.textColor=color;for(const [id,edit] of Object.entries(state.edits))if(Object.hasOwn(labels,id))edit.color=color;state.removed=state.removed.filter(k=>k==='background'||/^subject-\d+$/.test(k)||!texts[k]);});};
   $('check-layout').onclick=()=>{const issues=check();toast(issues.length?issues.join('；'):'尺寸检查通过；文字对比与主体关系仍需目视确认。');};
   $('download-css').onclick=()=>download(new Blob([B.templatesCSS],{type:'text/css;charset=utf-8'}),'layouts-16.css');
@@ -389,10 +456,11 @@
   $('load-project').onclick=()=>$('file-project').click();$('file-project').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{if(f.size>72*1024*1024)throw new Error('工程文件过大');state=validateProject(JSON.parse(await f.text()));syncControls();renderStyles();});e.target.value='';};
   window.addEventListener('resize',()=>{renderCards();if($('atlas-dialog').open)renderAtlas();});
   const styleNode=document.createElement('style');styleNode.textContent=canvasBase.replace(/html,body\{[^}]*\}/,'');document.head.append(styleNode);
-  window.posterStudio={getState:()=>{capture();return clone(state);},changeCanvas,canvasSize,changeLayout,exportPNG,checks,makePrompt,validateProject,recommend,compatibleLayouts,canvasMarkup,canvasBase,setState:async v=>{state=validateProject(v);reviewBaseline=null;syncControls();renderStyles();await rebuild();},ready:()=>ready};
+  window.posterStudio={getState:()=>{capture();return clone(state);},changeCanvas,canvasSize,changeLayout,exportPNG,checks,makePrompt,validateProject,recommend,compatibleLayouts,refreshLayoutRecommendations,canvasMarkup,canvasBase,setState:async v=>{state=validateProject(v);reviewBaseline=null;await previewFonts();syncControls();renderStyles();await rebuild();},ready:()=>ready};
   (async()=>{
     state=validateProject(state);
-    try{db=await openDB();const saved=await new Promise((resolve,reject)=>{const r=db.transaction('projects').objectStore('projects').get('draft:'+location.pathname);r.onsuccess=()=>resolve(r.result);r.onerror=reject;});if(saved)state=validateProject(saved);}
+    await previewFonts();syncControls();const originalRecommendations=compatibleLayouts().map(l=>l.id);
+    try{db=await openDB();const saved=await new Promise((resolve,reject)=>{const r=db.transaction('projects').objectStore('projects').get('draft:'+location.pathname);r.onsuccess=()=>resolve(r.result);r.onerror=reject;});if(saved){state=validateProject(saved);if(saved.layoutRecommendations==null)state.layoutRecommendations=originalRecommendations;}}
     catch{$('save-state').textContent='自动保存不可用 · 请保存工程';}
     syncControls();renderStyles();renderCards();await rebuild();
     setInterval(()=>{if(ready&&!busy){const before=JSON.stringify([state.edits,state.removed,state.content]);capture();persist();check();localizeLayers();renderWorkflow();syncBackgroundControls();if(before!==JSON.stringify([state.edits,state.removed,state.content])){renderCards();renderRecommendations();}}},2000);
