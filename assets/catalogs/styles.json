@@ -1,6 +1,18 @@
 {
   "schemaVersion": 2,
   "generationOwner": "Codex image-generation tool; the offline HTML editor does not call a model",
+  "artDirection": {
+    "default": "bold",
+    "backgroundPrompt": "Build a bold visual hierarchy around one large source-derived anchor, or two main anchors when the confirmed multi-subject plan allows it. Aim for roughly 65–90% of the available image region along the anchor's dominant axis, adjusting to actual source proportions and reserved text zones; this is a starting range, not a whole-canvas area quota. Use a close crop, off-center placement or a form extending past one canvas edge when identifying details remain intact. Give secondary forms clear scale contrast instead of making every element a small equal sticker. Minimal and ink styles use few substantial shapes with useful quiet space. Keep grain, halftone dots and technical marks at their appropriate scale. For information-led academic boards, retain copy priority and use a broad, quiet structural field without inventing a hero or data. Preserve subject identity, anatomy, confirmed count and relationships, the selected medium and approved palette. Keep essential identifying features and required text zones clear.",
+    "cutoutBackgroundPrompt": "Support an oversized, separately movable foreground composition. Generate only the empty substrate and any approved material or graphic decorations. Use a few broad, purposeful fields or one strong supporting graphic gesture where the selected style permits it; preserve quiet space for the planned foreground and text. Keep print grain and technical marks at their appropriate scale, and keep information-led academic backgrounds subordinate to copy. Do not depict extracted subjects, their silhouettes, duplicate fragments or detached body parts. Preserve the selected medium, approved palette and numerical text reservations. The separately generated transparent foreground and its initial rectangles carry the main visual scale.",
+    "subjectPrompt": "Create the confirmed subject as a large, clearly resolved transparent asset with tight, even alpha padding. Preserve its identity, anatomy, pose, functional structures, confirmed count and approved style treatment. Keep confirmed relative scale and relationships inside a grouped subject asset. Do not add a scene, solid background, baked checkerboard, text or extra subjects. Its visible shape will become the dominant anchor in the available image region, with a deliberate initial rectangle chosen after inspection; avoid a tiny subject floating inside a large transparent file.",
+    "checks": [
+      "合成图约 200 px 宽时主视觉首先可辨认，主次尺度清楚",
+      "主视觉实际可见范围足够大，透明留边没有造成假放大",
+      "放大或出框后关键识别细节及必要文字区域仍完整可用",
+      "颗粒与技术标记保留媒介所需细度，信息主导路线仍便于阅读"
+    ]
+  },
   "styles": [
     {
       "id": "mono-color",
@@ -87,7 +99,7 @@
         "标准 Y2K",
         "重度复古"
       ],
-      "prompt": "Edit the supplied photograph into a text-free Y2K cutout artwork. Preserve the actual subject's identity, number, pose, expression and key structures. Use high-contrast grayscale for the subject unless a recognition color must be kept. Add a continuous hard contrasting outline in {ink}, approximately 2–5% of the subject's short dimension, over saturated {paper}. Use {texture}. Anchor one main starburst to an actual bend or shoulder in the silhouette, partly hidden behind the subject; at most two small supporting bursts. Keep faces and essential edges intact. {geometry} No letters, numbers, title, logo, QR code or watermark. All words will be added separately in HTML.",
+      "prompt": "Edit the supplied photograph into a text-free Y2K cutout artwork. Preserve the actual subject's identity, number, pose, expression and key structures. Use high-contrast grayscale for the subject unless a recognition color must be kept. Make the actual source subject an oversized focal anchor in the useful image area, with a close crop or off-center placement that preserves key structures. Add a continuous hard contrasting outline in {ink}, approximately 2–5% of the subject's short dimension, over saturated {paper}. Use {texture}. Anchor one main starburst to an actual bend or shoulder in the silhouette, partly hidden behind the subject; at most two small supporting bursts. Keep faces and essential edges intact. {geometry} No letters, numbers, title, logo, QR code or watermark. All words will be added separately in HTML.",
       "checks": [
         "主体身份、数量和姿态保持",
         "描边连续且有反差",
@@ -139,7 +151,7 @@
         "L13",
         "L14"
       ],
-      "prompt": "Transform the supplied scene photo into a text-free, flat paper collage. Preserve its core subjects, direction, perspective and key spatial relationships. Retain a truthful photographic anchor; continue one or two source-derived contours or rhythms into a larger, sparse abstract illustration field. Merge repeated foliage and micro-detail into a few large quiet forms rather than tracing them. Add exactly one extra print hue, {accent}, as a structural continuation, underprint or counterform connected to the source. Keep a narrow, visibly hand-torn fibrous boundary where the photo meets {paper} paper, without raised corners or heavy shadows. {geometry} Substantial paper stays quiet. Do not generate micro-text, titles, letters, numbers, stamps, logos or watermarks. All wording is reserved for HTML.",
+      "prompt": "Transform the supplied scene photo into a text-free, flat paper collage. Preserve its core subjects, direction, perspective and key spatial relationships. Retain a substantial, truthful photographic anchor; continue one or two source-derived contours or rhythms into a larger, sparse abstract illustration field. Merge repeated foliage and micro-detail into a few large quiet forms rather than tracing them. Add exactly one extra print hue, {accent}, as a structural continuation, underprint or counterform connected to the source. Keep a narrow, visibly hand-torn fibrous boundary where the photo meets {paper} paper, without raised corners or heavy shadows. {geometry} Substantial paper stays quiet. Do not generate micro-text, titles, letters, numbers, stamps, logos or watermarks. All wording is reserved for HTML.",
       "checks": [
         "真实场景关系仍可识别",
         "插画由原图形状推导",
@@ -340,7 +352,7 @@
         "L13",
         "L14"
       ],
-      "prompt": "Text-free portrait artwork for {subject}. Compose only the confirmed source roster as tactile cut-paper fragments. Establish one dominant anchor and several smaller supporting fragments, with purposeful overlap and visible cut or torn edges. Use approved flat-color structures to connect the objects. Keep independent subjects as separate transparent layers in cutout mode; never invent extra collection members or force a fixed five-image count. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "prompt": "Text-free portrait artwork for {subject}. Compose only the confirmed source roster as tactile cut-paper fragments. Establish one large dominant anchor and clearly smaller supporting fragments; when source relationships permit, use roughly two- to three-fold scale contrast between the main anchor and secondary fragments, with purposeful overlap and visible cut or torn edges. Use approved flat-color structures to connect the objects. Keep independent subjects as separate transparent layers in cutout mode; never invent extra collection members or force a fixed five-image count. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
       "checks": [
         "素材无遗漏或重复",
         "大小和重叠有层级",
@@ -487,11 +499,11 @@
         "L08",
         "L13"
       ],
-      "prompt": "Text-free portrait artwork for {subject}. Create one small conceptually specific illustration, specimen or visual relation on a flat paper field. Keep most of the frame quiet, vary the focal position to fit the selected text regions, and let one saturated accent belong to the focal form. Use restrained print grain and hand-drawn imperfection; avoid a full scene, generic icon, hard mockup shadow or unrelated decorative dots. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "prompt": "Text-free portrait artwork for {subject}. Create one conceptually specific illustration, specimen or visual relation as a substantial, clean focal shape on a flat paper field. Use few elements with purposeful quiet space. Vary the focal position and crop to fit the selected text regions, and let one saturated accent belong to the focal form. Use restrained print grain and hand-drawn imperfection; avoid a full scene, generic icon, hard mockup shadow or unrelated decorative dots. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
       "checks": [
         "视觉事件只有一个主焦点",
         "留白有明确用途",
-        "小主体仍能表达主题",
+        "少量大形状在缩略图中仍能表达主题",
         "文字预留区安静",
         "没有烘焙标题或正文"
       ],
@@ -585,7 +597,7 @@
         "L11",
         "L16"
       ],
-      "prompt": "Text-free portrait artwork for {subject}. Build a few coherent image fields, cropped material fragments or specimen windows derived from the subject. Use a dominant field, one supporting structure and a restrained accent to establish an editorial reading rhythm. Keep text regions numerically reserved and image borders meaningful. The independent HTML layout owns all type; do not generate fake labels, placeholder paragraphs or a complete poster. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "prompt": "Text-free portrait artwork for {subject}. Build a few coherent image fields, cropped material fragments or specimen windows derived from the subject. Use an expansive dominant field, one supporting structure and a restrained accent to establish an editorial reading rhythm. Keep text regions numerically reserved and image borders meaningful. The independent HTML layout owns all type; do not generate fake labels, placeholder paragraphs or a complete poster. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
       "checks": [
         "图像分区清楚",
         "文化与材料依据可追溯",
@@ -778,7 +790,7 @@
         "L11",
         "L16"
       ],
-      "prompt": "Text-free portrait artwork for {subject}. Create a quiet, mostly open substrate with a few subtle rules, small geometric blocks or low-density analytical marks. Reserve clear reading zones for a live typographic hierarchy. Do not invent a hero subject, data values, charts, code or text. Keep the image subordinate to the selected HTML layout and the actual content. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
+      "prompt": "Text-free portrait artwork for {subject}. Create a quiet, mostly open substrate with a few subtle rules, broad quiet geometric fields or low-density analytical marks. Reserve clear reading zones for a live typographic hierarchy. Do not invent a hero subject, data values, charts, code or text. Keep the image subordinate to the selected HTML layout and the actual content. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
       "checks": [
         "视觉不会争夺信息层级",
         "没有虚构数据或符号事实",

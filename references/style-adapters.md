@@ -46,6 +46,8 @@ Checks: photographic fidelity, retained spatial relationships, substantial simpl
 
 ## Prompt record and inspection
 
-The catalog provides compact text-free prompt scaffolds. Fill subject, chosen colors, texture and numerical text regions. The agent must enrich the subject-preservation and abstraction clauses after inspecting the actual photo. Do not send a placeholder subject to generation.
+The catalog provides compact text-free prompt scaffolds. Fill subject, chosen colors, texture and numerical text regions, then append the mode-specific shared `artDirection` clause. The agent must enrich the subject-preservation and abstraction clauses after inspecting the actual photo. Do not send a placeholder subject to generation.
+
+Make the main image event large within the useful image area. Mono-color uses a broad ink mass or close crop; Y2K uses an oversized source subject with one strong pose-related burst; Gathered Scenes uses an expansive photographic anchor or source-derived contour while retaining useful quiet paper. Scale contrast comes from composition, not enlarged print grain or extra subjects. Cutout mode applies foreground scale to the separately generated assets and their planned rectangles; its empty background remains free of those subjects.
 
 Record actual image findings and targeted corrections alongside the prompt. The editor's “检查排版” checks geometry only; it cannot certify these style/fidelity requirements.

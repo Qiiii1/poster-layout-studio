@@ -322,8 +322,12 @@
     const geometry=`Canvas ratio ${state.canvasRatio}. Reserve these low-detail text areas without painting boxes or lettering: ${zonesText}. Keep subject-defining features outside them. These are constraints for the initial layout; other layouts will reuse this exact same background and must be checked separately.`;
     const textures={'干净印刷':'clean printing, very fine 2–4% grain, no scratches or folds','标准 Y2K':'standard Y2K texture, fine 4–7% paper grain, restrained 2–4% screen-print noise, 1–3 subtle scratches and no folds','重度复古':'heavy vintage background texture, 8–12% copier noise and 1–3 edge folds fading before the center, never across the subject'};
     const values={subject:state.subject||'the subject described by the user (resolve before generation)',paper:state.promptPaper,ink:state.ink,accent:state.accent,texture:textures[state.texture],geometry};
-    let prompt=style().prompt.replace(/\{(\w+)\}/g,(_,k)=>values[k]||'');if(state.subjectTreatment==='cutout')prompt+='\nLAYERED MODE: Generate only the empty background, material and decorations. Do not draw the subject described above or its silhouette. The subject will be generated separately as transparent foreground assets, behind live typography. Keep its planned area visually quiet.';$('prompt-output').value=prompt;
-    $('prompt-checks').textContent='生成后自检查：'+style().checks.join('；')+(style().needsPhoto?'。需要原始照片作为参考输入。':'。');$('prompt-dialog').showModal();persist();return prompt;
+    let prompt=style().prompt.replace(/\{(\w+)\}/g,(_,k)=>values[k]||'');
+    const direction=B.styles.artDirection,cutout=state.subjectTreatment==='cutout';
+    if(direction)prompt+='\nVISUAL SCALE: '+(cutout?direction.cutoutBackgroundPrompt:direction.backgroundPrompt);
+    if(cutout)prompt+='\nLAYERED MODE: Generate only the empty background, material and decorations. Do not draw the subject described above or its silhouette. The subject will be generated separately as transparent foreground assets, behind live typography. Keep its planned area visually quiet.';
+    $('prompt-output').value=prompt;
+    $('prompt-checks').textContent='生成后自检查：'+[...style().checks,...(direction?.checks||[])].join('；')+(style().needsPhoto?'。需要原始照片作为参考输入。':'。');$('prompt-dialog').showModal();persist();return prompt;
   }
   async function openDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open('poster-layout-studio-v1',1);r.onupgradeneeded=()=>r.result.createObjectStore('projects');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
   async function persist(){
