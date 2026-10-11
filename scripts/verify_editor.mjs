@@ -13,6 +13,14 @@ try {
   await page.goto(pathToFileURL(join(root,'editor.html')).href);
   await page.waitForFunction(()=>window.posterStudio?.ready(),{timeout:20000});
   const base=await page.evaluate(()=>posterStudio.getState());
+  assert.equal(await page.$$eval('[data-style-id]',els=>els.length),6);
+  assert.equal(await page.$$eval('[data-style-id="y2k"]',els=>els.length),0);
+  await page.evaluate(async base=>{await posterStudio.setState({...base,styleId:'y2k',content:{...base.content,title:'旧工程标题'}});},base);
+  assert.equal(await page.evaluate(()=>posterStudio.getState().styleId),'y2k');
+  assert.equal(await page.evaluate(()=>posterStudio.getState().content.title),'旧工程标题');
+  assert.match(await page.$eval('#style-checks',el=>el.textContent),/旧工程/);
+  await page.evaluate(async base=>{await posterStudio.setState(base);},base);
+  results.checks.push('Six active style options; retired styles reopen only as preserved project records');
   for(const l of await page.evaluate(()=>STUDIO_BUNDLE.catalog.layouts)){
     await page.evaluate(async({base,l})=>{await posterStudio.setState({...base,layoutId:l.id,content:l.sampleContent,edits:{}});},{base,l});
     const warnings=await page.evaluate(()=>posterStudio.checks());if(warnings.length)results.sampleWarnings[l.id]=warnings;

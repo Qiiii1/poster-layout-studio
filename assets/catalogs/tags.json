@@ -3,15 +3,29 @@
   "source": {
     "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb",
     "title": "文化海报案例库",
-    "importDate": "2026-10-04",
+    "importDate": "2026-10-10",
     "sheets": {
       "cases": "76438f",
       "skills": "Plpjbx",
       "minimal": "saUFCt",
       "cyber": "wYdbUd"
     },
-    "caseRowsRead": 1459,
-    "taggedCases": 1318,
+    "caseSheetUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=76438f",
+    "caseColumns": {
+      "活动名称": "A",
+      "主视觉图片": "C",
+      "活动类型": "D",
+      "主视觉侧重点类型": "E",
+      "受众类型": "F",
+      "包含内容": "G",
+      "主视觉侧重类型": "H",
+      "排版": "I",
+      "风格": "J"
+    },
+    "caseRange": "76438f!A1:J1455",
+    "caseSheetRevision": 6073,
+    "caseRowsRead": 1454,
+    "taggedCases": 1313,
     "excluded": [
       {
         "row": 54,
@@ -30,7 +44,7 @@
       "options": [
         {
           "value": "展览展示类",
-          "count": 531
+          "count": 528
         },
         {
           "value": "演出观演类",
@@ -38,7 +52,7 @@
         },
         {
           "value": "节庆体验类",
-          "count": 297
+          "count": 296
         },
         {
           "value": "交流传播类",
@@ -46,7 +60,7 @@
         },
         {
           "value": "无",
-          "count": 139
+          "count": 138
         }
       ]
     },
@@ -57,7 +71,7 @@
       "options": [
         {
           "value": "与活动主题相关的背景",
-          "count": 477
+          "count": 476
         },
         {
           "value": "无明显分区和突出主体",
@@ -65,7 +79,7 @@
         },
         {
           "value": "有明显分区",
-          "count": 111
+          "count": 110
         },
         {
           "value": "有突出主体",
@@ -77,7 +91,7 @@
         },
         {
           "value": "经过设计的文字",
-          "count": 1095
+          "count": 1091
         },
         {
           "value": "重复文字/文字云",
@@ -89,7 +103,7 @@
         },
         {
           "value": "展品/产品/活动围绕展开的人或物品",
-          "count": 700
+          "count": 698
         },
         {
           "value": "single",
@@ -109,11 +123,11 @@
         },
         {
           "value": "宫格式拼接",
-          "count": 98
+          "count": 96
         },
         {
           "value": "multiple平铺",
-          "count": 438
+          "count": 434
         }
       ]
     },
@@ -124,7 +138,7 @@
       "options": [
         {
           "value": "亲子家庭型",
-          "count": 95
+          "count": 94
         },
         {
           "value": "年轻潮流型",
@@ -132,15 +146,15 @@
         },
         {
           "value": "大众文化型",
-          "count": 478
+          "count": 476
         },
         {
           "value": "专业学术型",
-          "count": 224
+          "count": 221
         },
         {
           "value": "文化审美型",
-          "count": 583
+          "count": 581
         },
         {
           "value": "国际受众型",
@@ -155,15 +169,15 @@
       "options": [
         {
           "value": "活动名称/时间/地点",
-          "count": 986
+          "count": 983
         },
         {
           "value": "报名/购票方式",
-          "count": 136
+          "count": 135
         },
         {
           "value": "主题语/传播语",
-          "count": 446
+          "count": 444
         },
         {
           "value": "主办方/承办方/出品方/制作方/演出方/技术支持方",
@@ -179,7 +193,7 @@
         },
         {
           "value": "活动内容",
-          "count": 909
+          "count": 905
         },
         {
           "value": "以策展人为例的其他参与方",
@@ -194,15 +208,15 @@
       "options": [
         {
           "value": "单主体",
-          "count": 359
+          "count": 360
         },
         {
           "value": "多主体",
-          "count": 499
+          "count": 495
         },
         {
           "value": "无主体（不能抠图）",
-          "count": 460
+          "count": 458
         }
       ]
     },
@@ -213,11 +227,11 @@
       "options": [
         {
           "value": "上下构图",
-          "count": 174
+          "count": 172
         },
         {
           "value": "居中构图",
-          "count": 632
+          "count": 631
         },
         {
           "value": "左右构图",
@@ -233,15 +247,15 @@
         },
         {
           "value": "对称构图",
-          "count": 10
+          "count": 11
         },
         {
           "value": "S形构图",
-          "count": 17
+          "count": 18
         },
         {
           "value": "散点构图",
-          "count": 199
+          "count": 195
         },
         {
           "value": "包围式构图",
@@ -256,7 +270,7 @@
       "options": [
         {
           "value": "学术风（ascii风格）",
-          "count": 262
+          "count": 258
         },
         {
           "value": "复古风（油印）",
@@ -264,15 +278,15 @@
         },
         {
           "value": "中国风（东方水墨）",
-          "count": 581
+          "count": 578
         },
         {
           "value": "趣味风（拼贴）",
-          "count": 323
+          "count": 322
         },
         {
           "value": "简约风",
-          "count": 698
+          "count": 696
         },
         {
           "value": "赛博风",

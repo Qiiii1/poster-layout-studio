@@ -20,11 +20,13 @@ def main():
     d=ROOT/'assets/editor';catalog=json.loads((ROOT/'assets/catalogs/layouts.json').read_text());css=compile_css(catalog)
     if args.write_css:(d/'templates.css').write_text(css)
     bundle={'catalog':catalog,'styles':json.loads((ROOT/'assets/catalogs/styles.json').read_text()),'taxonomy':json.loads((ROOT/'assets/catalogs/tags.json').read_text()),'caseIndex':json.loads((ROOT/'assets/catalogs/cases.json').read_text()),'rules':json.loads((ROOT/'assets/catalogs/recommendation-rules.json').read_text()),'templatesCSS':css,'runtimeCSS':(d/'vendor/layer-editor.css').read_text(),'runtimeJS':(d/'vendor/layer-editor.js').read_text()}
+    bundle['legacyStyles']=json.loads((ROOT/'assets/catalogs/legacy-styles.json').read_text())['styles']
     if args.project:
         project=json.loads(args.project.read_text());workflow=workflow_fields(project)
         if any(workflow['culturalReview'][stage]['status']=='hold' for stage in ['input','output']):raise ValueError('Resolve recorded review holds before building a shareable editor')
         bundle['initial']=project
     shell=(d/'shell.html').read_text();shell=shell.replace('__SHELL_CSS__',(d/'shell.css').read_text()).replace('__BUNDLE__',json.dumps(bundle,ensure_ascii=False).replace('<','\\u003c')).replace('__PLANNING_JS__',(d/'planning.js').read_text().replace('</script','<\\/script')).replace('__RECOMMEND_JS__',(d/'recommendations.js').read_text().replace('</script','<\\/script')).replace('__APP_JS__',(d/'app.js').read_text().replace('</script','<\\/script'))
+    shell=shell.replace('__OPTICAL_JS__',(d/'optical.js').read_text().replace('</script','<\\/script'))
     args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(shell)
     print(args.output.resolve())
 if __name__=='__main__':main()

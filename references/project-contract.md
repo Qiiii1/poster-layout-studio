@@ -39,7 +39,7 @@ Both fields are saved in the project. Older projects omit them and load with emp
 
 ## Saved project
 
-The browser's saved JSON includes `version:1`, the brief fields, `background`, `titleImage`, `subjectTreatment`, `subjectImages`, `edits`, and `removed`.
+The browser's saved JSON includes `version:1`, `renderRevision:2`, the brief fields, `background`, `titleImage`, `subjectTreatment`, `subjectImages`, `edits`, and `removed`.
 
 Each asset contains `{name, data, width, height}`. `data` is an embedded PNG/JPEG/WebP base64 URL. No file path, remote image URL or executable SVG is needed for the offline file. A transparent PNG is recommended for art titles. The text title is retained while its image is displayed. A title asset also stores `sourceText`, the exact wording at generation/import time. If `content.title` changes, the editor warns that the image needs regeneration; old assets without this field remain supported. See [art title layers](art-title-layers.md) for sizing and editing.
 
@@ -74,7 +74,7 @@ Preview gray shapes live only in `.reference-preview`; actual background pixels 
 
 The shell embeds the original editable-design runtime and uses an iframe to isolate its DOM. All artwork is embedded. Composite export serializes the current styled canvas into an SVG `foreignObject`, rasterizes it to a browser canvas, then writes PNG. The output strips selection outlines, editor panels and reference guides. The background export uses the same cover/contain geometry and paper substrate without subject/title/text layers.
 
-Verified target should be reported per actual test run; do not assume all browsers handle `foreignObject` identically. System fonts can vary by machine. For a consistent shared result, send the PNG; exact cross-machine editable typography requires bundled licensed fonts.
+Verified target should be reported per actual test run; do not assume all browsers handle `foreignObject` identically. The optical adapter aligns horizontal visible glyph edges and fits new art-title layers to their natural aspect; see [optical alignment](optical-alignment.md). Projects reviewed with an older rendering revision are marked pending for a new output review; recorded holds remain. System fonts can vary by machine. For a consistent shared result, send the PNG; exact cross-machine editable typography requires bundled licensed fonts.
 
 References for the export implementation:
 

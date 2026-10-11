@@ -1,15 +1,38 @@
 (() => {
   'use strict';
-  const B=window.STUDIO_BUNDLE, layouts=B.catalog.layouts, styles=B.styles.styles, plan=window.PosterPlanning;
+  const B=window.STUDIO_BUNDLE, layouts=B.catalog.layouts, styles=B.styles.styles, plan=window.PosterPlanning,optical=window.PosterOptical;
+  const legacyStyles=B.legacyStyles||[], projectStyles=[...styles,...legacyStyles];
   const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
   const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const labels={title:'主标题',subtitle:'副标题',kicker:'引题',body:'主要说明',note:'补充说明',footer1:'页脚左',footer2:'页脚中',footer3:'页脚右'};
   const layerLabel=id=>id==='background'?'底图':labels[id]||(/^subject-\d+$/.test(id)?'主体 '+id.slice(8):id);
-  const defaultState={version:1,canvasRatio:'3:4',layoutId:'L01',styleId:'mono-color',content:clone(layouts[0].sampleContent),edits:{},removed:[],background:null,titleImage:null,subjectImages:[],subjectTreatment:'background',paper:'#FAFAF7',promptPaper:'#FAFAF7',ink:'#2148B8',accent:'#C65F38',textColor:'#1d201d',subject:'',texture:'标准 Y2K',subjectZone:'unknown',bgFit:'cover',selectedTags:{},hasSourcePhoto:null};
+  const defaultState={version:1,renderRevision:2,canvasRatio:'3:4',layoutId:'L01',styleId:'mono-color',content:clone(layouts[0].sampleContent),edits:{},removed:[],background:null,titleImage:null,subjectImages:[],subjectTreatment:'background',paper:'#FAFAF7',promptPaper:'#FAFAF7',ink:'#2148B8',accent:'#C65F38',textColor:'#1d201d',subject:'',texture:'标准 Y2K',subjectZone:'unknown',bgFit:'cover',selectedTags:{},hasSourcePhoto:null};
   let state=clone(B.initial||defaultState), previous=null, busy=false, ready=false, seq=0, lastPersist='', saveFailed=false, db, renderedRemoved=[];
   Object.assign(defaultState,{protectedRegions:[],sourcePalette:null,subjectRoster:{confirmed:false,items:[]},webAugmentation:{choice:'pending',elements:[]},culturalReview:plan.normalizeReview()});
   Object.assign(defaultState,{layoutRecommendations:null,fontChoices:{},importedFonts:[]});
   let renderedFonts={};
+  const inkSignatures=new WeakMap();
+  function alignText(el,force=false){
+    if(el.tagName==='IMG'||el.isContentEditable)return;
+    const cs=el.ownerDocument.defaultView.getComputedStyle(el);
+    const signature=JSON.stringify([el.innerText,cs.width,cs.fontFamily,cs.fontSize,cs.fontWeight,cs.fontStyle,cs.letterSpacing,cs.lineHeight,cs.textAlign,cs.writingMode]);
+    if(force||inkSignatures.get(el)!==signature){optical.alignInk(el);inkSignatures.set(el,signature);}
+  }
+  async function prepareFreshAssets(){
+    if(state.titleImage&&!state.edits.title)state.titleImage=await optical.trimAlpha(state.titleImage);
+    const d=canvasSize(),occupied=state.subjectImages.flatMap((a,i)=>{
+      const id='subject-'+(i+1);if(state.removed.includes(id)||(!a.rect&&!state.edits[id]))return [];
+      const r=plan.box(state,id,a);return [{x:r.x*750/d.width,y:r.y*1000/d.height,w:r.w*750/d.width,h:r.h*1000/d.height}];
+    });
+    for(let i=0;i<state.subjectImages.length;i++){
+      const id='subject-'+(i+1),a=state.subjectImages[i];if(a.rect||state.edits[id]||state.removed.includes(id))continue;
+      // Existing protected coordinates refer to source pixels; preserve that image frame.
+      const asset=state.protectedRegions.some(r=>r.layer===id)?await fileDimensions(a):await optical.trimAlpha(a);
+      const content=Object.fromEntries(Object.entries(state.content).map(([k,v])=>[k,state.removed.includes(k)?'':v]));
+      asset.rect=optical.subjectRect(layout(),content,asset,occupied);occupied.push(asset.rect);state.subjectImages[i]=asset;
+    }
+  }
+  async function fileDimensions(asset){const img=await imgFrom(asset.data);return {...asset,width:img.naturalWidth,height:img.naturalHeight};}
   const fontPresets=[
     {id:'sans',name:'现代黑体',family:'"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif'},
     {id:'serif',name:'书刊宋体',family:'"Songti SC","SimSun","Noto Serif CJK SC",serif'},
@@ -57,7 +80,7 @@
     });
     toast('画布已适配；底图沿用原文件，请检查裁切与文字。');
   }
-  const layout=()=>layouts.find(x=>x.id===state.layoutId), style=()=>styles.find(x=>x.id===state.styleId);
+  const layout=()=>layouts.find(x=>x.id===state.layoutId), style=()=>projectStyles.find(x=>x.id===state.styleId);
   const api=()=>frame.contentWindow?.__layerEditor;
   const toast=(message)=>{$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').hidden=true,4200);};
   function cssSlot(s){return `position:absolute;left:${s.x}px;top:${s.y}px;width:${s.w}px;height:${s.h}px;font-size:${s.fontSize}px;line-height:${s.lineHeight};font-weight:${s.weight};font-family:${s.fontFamily};text-align:${s.align};letter-spacing:${s.tracking}px;${s.vertical?'writing-mode:vertical-rl;text-orientation:mixed;':''}`;}
@@ -74,8 +97,8 @@
     }
     if(artwork)state.subjectImages.forEach((asset,i)=>{
       const id='subject-'+(i+1);if(state.removed.includes(id))return;
-      const d=canvasSize(),r=asset.rect||{x:125,y:230,w:500,h:620};
-      const base={left:r.x*d.width/750+'px',top:r.y*d.height/1000+'px',width:r.w*d.width/750+'px',height:r.h*d.height/1000+'px',...state.edits[id]};
+      const r=plan.box(state,id,asset);
+      const base={left:r.x+'px',top:r.y+'px',width:r.w+'px',height:r.h+'px',...state.edits[id]};
       const css=Object.entries(base).map(([k,v])=>`${k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}:${v};`).join('');
       html+=`<img class="image-layer" data-layer-id="${id}" alt="${escape(layerLabel(id))}" src="${escape(asset.data)}" style="position:absolute;${escape(css)}object-fit:contain;z-index:5">`;
     });
@@ -83,7 +106,7 @@
       if(state.removed.includes(s.key))return;
       const ed={...(!preview?state.edits[s.key]||{}:{}),...(state.fontChoices[s.key]?{fontFamily:state.fontChoices[s.key]}:{})};
       const custom=Object.entries(ed).map(([k,v])=>`${k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}:${v};`).join('');
-      if(artwork&&s.key==='title'&&state.titleImage){html+=`<img class="image-layer" data-layer-id="title" alt="艺术标题" src="${escape(state.titleImage.data)}" style="${escape(cssSlot(s)+custom)}object-fit:contain">`;}
+      if(artwork&&s.key==='title'&&state.titleImage){const align=ed.textAlign||s.align;html+=`<img class="image-layer" ${preview?'':'data-layer-id="title"'} alt="艺术标题" src="${escape(state.titleImage.data)}" style="${escape(cssSlot(optical.titleBox(s,state.titleImage))+custom)}object-fit:contain;object-position:${align==='right'||align==='end'?'right':align==='center'?'center':'left'} top">`;}
       else html+=`<div class="text-layer" ${preview?'':`data-layer-id="${s.key}" data-hf-width-locked="1"`} style="${escape(cssSlot(s)+custom)}">${escape(content[s.key]||'')}</div>`;
     });return html+'</div>';
   }
@@ -92,6 +115,7 @@
     const a=api();
     state.removed=[...new Set([...renderedRemoved,...(a.snapshot().removed||[])])];
     for(const {id,el} of a.layers()){
+      alignText(el);
       if(el.tagName!=='IMG')state.content[id]=el.innerText;
       const cs=frame.contentWindow.getComputedStyle(el), props=['left','top','width','height','fontSize','fontFamily','lineHeight','letterSpacing','fontWeight','textAlign','color','writingMode','textOrientation'];
       if(el.tagName!=='IMG'&&renderedFonts[id]!==undefined&&renderedFonts[id]!==cs.fontFamily){state.fontChoices[id]=cs.fontFamily;renderedFonts[id]=cs.fontFamily;}
@@ -107,6 +131,8 @@
   function invalidateReview(input=false){if(state.culturalReview.output.status!=='hold')state.culturalReview.output={status:'pending',findings:[]};reviewBaseline=null;if(input&&state.culturalReview.input.status!=='hold')state.culturalReview.input={status:'pending',findings:[]};}
   function commitText(){const d=frame.contentDocument;if(d?.querySelector('[contenteditable]'))d.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));}
   async function rebuild(){
+    ready=false;
+    await prepareFreshAssets();
     await previewFonts();
     ready=false;renderedRemoved=clone(state.removed);const current=++seq;
     const scriptData='data:text/javascript;base64,'+btoa(unescape(encodeURIComponent(B.runtimeJS)))+'#layer-editor.js';
@@ -116,7 +142,7 @@
       const started=Date.now();const timer=setInterval(()=>{
         if(current!==seq){clearInterval(timer);resolve();return;}
         if(frame.contentDocument?.documentElement?.dataset.hfSourceRevision===draftPrefix&&api()){
-          clearInterval(timer);ready=true;resolve();
+          clearInterval(timer);resolve();
         }else if(Date.now()-started>15000){clearInterval(timer);reject(new Error('编辑器加载超时，请检查导入图片是否有效'));}
       },40);
     });
@@ -136,8 +162,9 @@
       let fs=parseFloat(frame.contentWindow.getComputedStyle(el).fontSize);
       const floor=Math.min(fs,16);
       while(fs>floor&&(el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)){fs=Math.max(floor,fs-1);el.style.fontSize=fs+'px';}
+      alignText(el,true);
     }
-    capture();localizeLayers();updateHeader();check();renderCards();renderRecommendations();renderWorkflow();renderPalette();syncBackgroundControls();await persist();
+    ready=true;capture();localizeLayers();updateHeader();check();renderCards();renderRecommendations();renderWorkflow();renderPalette();syncBackgroundControls();await persist();
   }
   function localizeLayers(){
     frame.contentDocument.querySelectorAll('.hf-layer .nm').forEach(el=>{el.textContent=layerLabel(el.textContent);});
@@ -189,7 +216,7 @@
     return state.layoutRecommendations.map(id=>candidates.find(l=>l.id===id)).filter(Boolean);
   }
   function refreshLayoutRecommendations(){state.layoutRecommendations=null;renderCards();renderRecommendations();if($('atlas-dialog').open)renderAtlas();persist();}
-  function fitPreview(grid){for(const el of grid.querySelectorAll('.text-layer')){let fs=parseFloat(getComputedStyle(el).fontSize),floor=Math.min(16,fs);while(fs>floor&&(el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)){fs=Math.max(floor,fs-1);el.style.fontSize=fs+'px';}}}
+  function fitPreview(grid){for(const el of grid.querySelectorAll('.text-layer')){let fs=parseFloat(getComputedStyle(el).fontSize),floor=Math.min(16,fs);while(fs>floor&&(el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)){fs=Math.max(floor,fs-1);el.style.fontSize=fs+'px';}alignText(el,true);}}
   function renderCards(){
     const grid=$('layout-grid');grid.replaceChildren();const width=(grid.clientWidth-10)/2,filter=$('zone-filter').value,safe=compatibleLayouts();
     safe.filter(l=>filter==='all'||layouts.find(x=>x.id===l.id).safeZone===filter).forEach(l=>grid.append(card(layouts.find(x=>x.id===l.id),width)));
@@ -204,7 +231,7 @@
       const b=document.createElement('button');b.className='style-card'+(s.id===state.styleId?' active':'');b.innerHTML=`<i class="swatch" style="background:linear-gradient(125deg,${s.paper} 50%,${s.ink} 50%)"></i><div><b>${escape(s.name)}</b><span>${escape(s.label)}</span></div>`;
       b.dataset.styleId=s.id;b.onclick=()=>chooseStyle(s.id);list.append(b);
     }
-    $('style-checks').innerHTML=`<b>${escape(style().name)}</b><br>${escape(style().summary)}<br>参考版式：${style().preferredLayouts.map(x=>x.slice(1)).join(' / ')}`;
+    $('style-checks').innerHTML=`<b>${escape(style().name)}</b><br>${escape(style().summary)}<br>参考版式：${style().preferredLayouts.map(x=>x.slice(1)).join(' / ')}`+(styles.some(s=>s.id===state.styleId)?'':'<br>旧工程风格记录已保留。重新生成前请选择当前 6 条路线之一。');
     $('texture-field').hidden=state.styleId!=='y2k';
     renderRecommendations();
   }
@@ -213,7 +240,7 @@
   const recommend=()=>window.PosterRecommendations.recommend({...state,subject:$('subject').value},recommendationData);
   function renderTags(){
     const list=$('tag-fields');list.replaceChildren();
-    const defs=[...B.taxonomy.dimensions,{id:'visualSubtype',label:'视觉小类',multiple:true,options:B.taxonomy.visualSubtypes.map(x=>({value:x.name}))}];
+    const defs=[...B.taxonomy.dimensions,{id:'visualSubtype',label:'视觉小类',multiple:true,options:B.taxonomy.visualSubtypes.filter(x=>styles.some(s=>s.visualSubtype===x.name)||(state.selectedTags.visualSubtype||[]).includes(x.name)).map(x=>({value:x.name}))}];
     for(const d of defs){
       const label=document.createElement('label');label.className='field';label.textContent=d.label;
       const select=document.createElement('select');select.dataset.tagDimension=d.id;select.setAttribute('aria-label',d.label);select.multiple=d.multiple;
@@ -229,7 +256,7 @@
     for(const s of r.styles){const b=document.createElement('button');b.className='recommendation-card';b.dataset.recommendStyle=s.id;b.innerHTML=`<b>${escape(s.name)}</b><small>${escape(s.reasons.slice(0,2).join('；'))}</small><span>选择此风格 →</span>`;b.onclick=()=>chooseStyle(s.id);out.append(b);}
     const layoutHeading=document.createElement('h3');layoutHeading.textContent='当前风格的排版候选';out.append(layoutHeading);
     for(const l of compatibleLayouts()){const b=document.createElement('button');b.className='recommendation-card';b.dataset.recommendLayout=l.id;const issues=templateIssues(layouts.find(x=>x.id===l.id));b.innerHTML=`<b>${escape(l.id+' '+l.name)}</b><small>${escape(l.description)}<br>${escape(l.reasons.join('；'))}${issues.length?'<br>需调整：'+escape([...new Set(issues)].join('；')):''}</small><span>使用此排版 →</span>`;b.onclick=()=>changeLayout(l.id).catch(report);out.append(b);}
-    if(r.evidence.length){const p=document.createElement('p');p.className='muted';p.textContent='相近标签案例：'+r.evidence.map(x=>(x.name||'未命名案例')+'（第 '+x.row+' 行）').join('；')+'。这是标签关联，没有自动分析这些案例图片。';out.append(p);}
+    if(r.evidence.length){const p=document.createElement('p');p.className='muted';p.append('案例库参考：');r.evidence.forEach((x,i)=>{if(i)p.append('；');const a=document.createElement('a');a.href=x.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.textContent=(x.name||'未命名案例')+'（第 '+x.row+' 行）';p.append(a);});p.append('。点击查看原表；标签检索后须查看案例图，再确定可借鉴的构图与层级。');out.append(p);}
     for(const text of r.warnings){const p=document.createElement('p');p.className='recommendation-warning';p.textContent=text;out.append(p);}
   }
   function syncControls(){for(const [id,key] of [['subject','subject'],['paper-color','promptPaper'],['ink-color','ink'],['accent-color','accent'],['texture','texture'],['subject-zone','subjectZone'],['bg-fit','bgFit']])$(id).value=state[key];$('source-photo').value=state.hasSourcePhoto===null?'unknown':state.hasSourcePhoto?'yes':'no';renderTags();}
@@ -279,11 +306,11 @@
   }
   function check(){const issues=checks();$('checks-output').textContent=issues.length?issues.slice(0,3).join('；')+(issues.length>3?`；另有 ${issues.length-3} 项`:''):'未发现越界或文本框溢出。请目视检查文字对比与主体遮挡。';$('checks-output').title=issues.join('\n');return issues;}
   async function imgFrom(data){const img=new Image();img.src=data;await img.decode();return img;}
-  async function fileAsset(file){
+  async function fileAsset(file,trim=false){
     if(!file||!['image/png','image/jpeg','image/webp'].includes(file.type))throw new Error('请使用 PNG、JPEG 或 WebP 图片');
     if(file.size>24*1024*1024)throw new Error('请使用小于 24 MB 的图片');
     const data=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file);});const img=await imgFrom(data);
-    return {name:file.name,data,width:img.naturalWidth,height:img.naturalHeight};
+    const asset={name:file.name,data,width:img.naturalWidth,height:img.naturalHeight};return trim?optical.trimAlpha(asset):asset;
   }
   const download=(blob,name)=>{const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),30000);};
   function toBlob(canvas){return new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('PNG 导出失败')),'image/png'));}
@@ -316,6 +343,7 @@
     await persist();return blob;
   }
   function makePrompt(){
+    if(!styles.some(s=>s.id===state.styleId))throw new Error('当前为旧工程风格记录。请先明确选择优化库中的风格，再生成提示词。');
     if(state.culturalReview.input.status==='hold')throw new Error('输入素材存在待处理审核问题，请先隔离或处理。');
     state.subject=$('subject').value;const l=adaptLayout(layout());
     const zonesText=l.slots.filter(s=>['title','subtitle','kicker'].includes(s.key)&&state.content[s.key]).map(s=>`${labels[s.key]}: left ${Math.round(s.x/canvasSize().width*100)}%, top ${Math.round(s.y/canvasSize().height*100)}%, width ${Math.round(s.w/canvasSize().width*100)}%, height ${Math.round(s.h/canvasSize().height*100)}%`).join('; ');
@@ -337,7 +365,7 @@
     catch{$('save-state').textContent='自动保存不可用 · 请保存工程';if(!saveFailed)toast('浏览器未能保存草稿，请点击“保存工程”保留修改。');saveFailed=true;}
   }
   function validateProject(v){
-    if(!v||v.version!==1||!layouts.some(l=>l.id===v.layoutId)||!styles.some(s=>s.id===v.styleId))throw new Error('工程格式或版本不支持');
+    if(!v||v.version!==1||!layouts.some(l=>l.id===v.layoutId)||!projectStyles.some(s=>s.id===v.styleId))throw new Error('工程格式或版本不支持');
     const clean=clone(defaultState);if(v.canvasRatio!==undefined&&!Object.hasOwn(canvasPresets,v.canvasRatio))throw new Error('不支持的画布比例');clean.canvasRatio=v.canvasRatio||'3:4';clean.layoutId=v.layoutId;clean.styleId=v.styleId;
     for(const k of Object.keys(clean.content)){if(typeof v.content?.[k]==='string'&&v.content[k].length<=10000)clean.content[k]=v.content[k];}
     for(const k of ['paper','promptPaper','ink','accent','textColor'])if(/^#[0-9a-f]{6}$/i.test(v[k]))clean[k]=v[k];
@@ -347,6 +375,7 @@
     clean.hasSourcePhoto=v.hasSourcePhoto??null;
     clean.protectedRegions=plan.normalizeRegions(v.protectedRegions);
     clean.culturalReview=plan.normalizeReview(v.culturalReview);
+    if(v.renderRevision!==2&&clean.culturalReview.output.status==='reviewed')clean.culturalReview.output={status:'pending',findings:['排版渲染已更新，请审核当前可见字形与图层位置。']};
     clean.subjectRoster=plan.normalizeRoster(v.subjectRoster);
     clean.sourcePalette=plan.normalizePalette(v.sourcePalette);
     clean.webAugmentation=plan.normalizeWeb(v.webAugmentation);
@@ -400,12 +429,26 @@
   $('atlas-open').onclick=()=>{$('atlas-dialog').showModal();renderAtlas();};$('zone-filter').onchange=renderCards;
   // Explicit restoration keeps the previous snapshot separate from the transaction helper.
   $('undo-layout').onclick=async()=>{if(!previous||busy)return;busy=true;try{state=clone(previous);previous=null;syncControls();renderStyles();await rebuild();toast('已恢复切换前的文案、位置和素材。');}finally{busy=false;}};
+  $('align-ink').onclick=()=>transaction(async()=>{
+    if(state.titleImage){state.titleImage=await optical.trimAlpha(state.titleImage);delete state.edits.title;}
+    for(const {el} of api().layers())alignText(el,true);
+    toast('文字已按可见字形对齐；艺术标题沿当前模板对齐线重新适配。');
+  });
+  $('enlarge-visual').onclick=()=>transaction(()=>{
+    const layers=api().layers(),selected=layers.find(({el})=>el.classList.contains('hf-sel'));
+    const target=selected&&/^subject-\d+$/.test(selected.id)?selected:layers.find(x=>/^subject-\d+$/.test(x.id))||layers.find(x=>x.id==='background');
+    if(!target)throw new Error('请先导入主图或底图');
+    const asset=target.id==='background'?state.background:state.subjectImages[Number(target.id.slice(8))-1],r=plan.box(state,target.id,asset);
+    const w=r.w*1.25,h=r.h*1.25;if(w>=5000||h>=5000)throw new Error('已达到图层尺寸上限');
+    state.edits[target.id]={...state.edits[target.id],left:r.x-(w-r.w)/2+'px',top:r.y-(h-r.h)/2+'px',width:w+'px',height:h+'px'};
+    toast('主图已放大 25%；请检查裁切与遮挡，可撤销。');
+  });
   $('import-subject').onclick=()=>$('file-subject').click();
   $('file-subject').onchange=e=>{const files=[...e.target.files];if(files.length)transaction(async()=>{if(state.subjectImages.length+files.length>8)throw new Error('最多支持 8 个主体图层');for(const file of files)state.subjectImages.push(await fileAsset(file));state.layoutRecommendations=null;state.subjectTreatment='cutout';state.subjectRoster.confirmed=false;invalidateReview(true);});e.target.value='';};
   $('remove-subjects').onclick=()=>transaction(()=>{state.subjectImages=[];state.subjectTreatment='background';state.removed=state.removed.filter(k=>!/^subject-\d+$/.test(k));for(const k of Object.keys(state.edits))if(/^subject-\d+$/.test(k))delete state.edits[k];});
   $('import-background').onclick=()=>$('file-background').click();$('import-title').onclick=()=>$('file-title').click();
   $('file-background').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{state.background=await fileAsset(f);state.layoutRecommendations=null;delete state.edits.background;state.removed=state.removed.filter(x=>x!=='background');state.protectedRegions=state.protectedRegions.filter(x=>x.layer!=='background');invalidateReview(true);});e.target.value='';};
-  $('file-title').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{state.titleImage=await fileAsset(f);state.titleImage.sourceText=state.content.title;state.removed=state.removed.filter(x=>x!=='title');delete state.edits.title;invalidateReview(true);});e.target.value='';};
+  $('file-title').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{state.titleImage=await fileAsset(f,true);state.titleImage.sourceText=state.content.title;state.removed=state.removed.filter(x=>x!=='title');delete state.edits.title;invalidateReview(true);});e.target.value='';};
   $('remove-background').onclick=()=>transaction(()=>{state.background=null;});$('remove-title').onclick=()=>transaction(()=>{state.titleImage=null;delete state.edits.title;});
   for(const [id,key] of [['subject','subject'],['ink-color','ink'],['accent-color','accent'],['texture','texture'],['subject-zone','subjectZone']])$(id).onchange=()=>{state[key]=$(id).value;check();renderCards();renderRecommendations();persist();};
   $('source-photo').onchange=()=>{state.hasSourcePhoto=$('source-photo').value==='unknown'?null:$('source-photo').value==='yes';renderRecommendations();persist();};
@@ -460,10 +503,10 @@
   $('load-project').onclick=()=>$('file-project').click();$('file-project').onchange=e=>{const f=e.target.files[0];if(f)transaction(async()=>{if(f.size>72*1024*1024)throw new Error('工程文件过大');state=validateProject(JSON.parse(await f.text()));syncControls();renderStyles();});e.target.value='';};
   window.addEventListener('resize',()=>{renderCards();if($('atlas-dialog').open)renderAtlas();});
   const styleNode=document.createElement('style');styleNode.textContent=canvasBase.replace(/html,body\{[^}]*\}/,'');document.head.append(styleNode);
-  window.posterStudio={getState:()=>{capture();return clone(state);},changeCanvas,canvasSize,changeLayout,exportPNG,checks,makePrompt,validateProject,recommend,compatibleLayouts,refreshLayoutRecommendations,canvasMarkup,canvasBase,setState:async v=>{state=validateProject(v);reviewBaseline=null;await previewFonts();syncControls();renderStyles();await rebuild();},ready:()=>ready};
+  window.posterStudio={getState:()=>{if(!busy)capture();return clone(state);},changeCanvas,canvasSize,changeLayout,exportPNG,checks,makePrompt,validateProject,recommend,compatibleLayouts,refreshLayoutRecommendations,canvasMarkup,canvasBase,setState:async v=>{ready=false;state=validateProject(v);reviewBaseline=null;syncControls();renderStyles();await rebuild();},ready:()=>ready&&!busy};
   (async()=>{
     state=validateProject(state);
-    await previewFonts();syncControls();const originalRecommendations=compatibleLayouts().map(l=>l.id);
+    await previewFonts();await prepareFreshAssets();syncControls();const originalRecommendations=compatibleLayouts().map(l=>l.id);
     try{db=await openDB();const saved=await new Promise((resolve,reject)=>{const r=db.transaction('projects').objectStore('projects').get('draft:'+location.pathname);r.onsuccess=()=>resolve(r.result);r.onerror=reject;});if(saved){state=validateProject(saved);if(saved.layoutRecommendations==null)state.layoutRecommendations=originalRecommendations;}}
     catch{$('save-state').textContent='自动保存不可用 · 请保存工程';}
     syncControls();renderStyles();renderCards();await rebuild();

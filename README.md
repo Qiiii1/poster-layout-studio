@@ -1,82 +1,76 @@
-# Poster Layout Studio V1.10
+# Poster Layout Studio V1.12.2
 
-海报生成与排版 Skill：依据标签和参考图推荐风格，生成无字底图，配合可移动的背景、主体、标题与文字图层，从 16 个 CSS 模板中初次筛选 3–4 个可用排版；编辑过程中保留推荐并按当前画布比例适配预览。
+根据用户的素材与文案推荐风格、配色和排版，确认选择后生成独立图层，并交付可编辑 HTML 与 PNG。
 
-## 流程
+## 本版内容
 
-读取素材与文案 → 输入文化 / 隐私审核 → 确认多图组织（适用时）→ 确认主体呈现与抠图清单（适用时）→ 确认联网补充元素 → 查看对应风格参考图并推荐 → 确认风格与素材配色 → 筛选并确认排版 → 默认生成独立透明艺术标题 → 分层生成与自检查 → HTML 编辑 → PNG 草稿 → 输出文化审核 → 交付当前已复核版本。
+- 六条优化风格：山水氛围风、拼贴图鉴风、轻插画风、超现实风、数字科技风、套色油印风。原风格记录用于打开旧工程。
+- 包内携带 20 张风格参考图、27 张构图参考图、9 类构图、16 个 CSS 文字模板及 1,313 条案例标签快照。
+- 风格和排版建议说明素材、标签、参考图与案例依据；初始排版筛选 3–4 个兼容方案。素材不适合时允许更少的候选。
+- HumanGate 提问使用真实选择按钮。适用时确认多图组织、主体呈现、抠图清单、联网补充、风格、配色和初始排版。艺术标题默认单独生成，用户明确要求普通文字时遵从。
+- 对输入素材和最终海报进行文化语境审核；素材取色形成配色建议，联网元素由用户选择后补充。
+- 底图、透明主体、艺术标题和文字独立移动、缩放。切换文字排版保留底图、主体素材和手动位置，艺术标题重新适配标题槽；拖动、字体更换和比例切换保留推荐列表，新的遮挡会显示提示。
+- 水平文字按实际可见字形边缘对齐；新艺术标题去除透明外边，按自然比例沿标题槽的左、中或右对齐线定位。
+- 主图采用更大的默认尺度，支持近景、偏心和局部出框。新主体使用兼容空区；提供「按字形对齐」和每次 25% 的「放大主图」，可撤销。
+- 六种系统字体组合及本地字体导入。竖版比例支持 2:3、3:4、4:5；海报和纯底图分别导出 1×、2×、3× PNG。
 
-- 标签：52 个基础选项、六个风格大类、18 个视觉小类；推荐可参考 1,318 条有标签的案例，并说明命中标签和原表行号。
-- 主视觉默认更大胆：在可用图像区放大一处主焦点，允许近景、偏心和适当出框，拉开主次尺度。简约风使用少量大形状；抠图主体以实际可见范围和初始图层位置检查大小。保留关键识别细节、文字区域及媒介所需的细颗粒。
-- 风格：21 条处理路线，保留 Mono-color、Y2K、Gathered Scenes，增加东方、拼贴、简约、数码、学术与复古处理，以及独立的霓虹蓝喷绘和冷白套印变体。
-- 参考图：用户指定的飞书风格表 C 列 18 张图片，按大类和小类映射到全部 21 条路线。推荐和生成提示词前必须查看；三个扩展变体标明共享小类参考，不能冒充直接示例。索引见 [参考图说明](references/style-image-references.md)。
-- 输入和最终输出分别做文化 / 隐私审核；具体待处理原件私有隔离，最终海报使用已审核素材。改动可见内容后输出审核失效，`pending` 导出属于草稿，`hold` 阻止导出。
-- 配色从本张海报的已审核素材中提取，展示来源与色彩角色，经用户确认后使用；抠图前先确认具体保留 / 排除的主体清单。
-- 标签只更新推荐。点击候选才选择风格或排版，现有素材、文案和已确认配色保持可编辑。
-- 所有适用的 Human Gate 确认后才能生成；用户已明确指定或授权代选时不重复询问。
-- 支持多个透明主体图层独立移动、缩放；主标题默认单独生成透明艺术字图层，无标题处理门禁。用户明确要求普通文字时可覆盖默认；艺术标题改字或字形需重新生成图片。
-- 背景可独立移动和缩放；切换文字模板保留底图、文案及图片位置，艺术标题框跟随模板。初次筛选移除遮挡、相交和溢出的方案；移动元素、更换文案或字体、切换画布比例后，推荐 ID 与顺序保留，新增问题显示调整提示。点击“重新筛选排版”才按当前情况重新筛选；不足三个方案会明确提示。
-- 字体：新增六个系统字体方案，可应用到单个文字图层或全部可编辑文字；支持导入并嵌入 WOFF2、WOFF、TTF、OTF。字体选择随模板和比例切换、工程保存及重新打开保留，PNG 导出包含所选字体的字形。
-- 竖版画布：2:3（800 × 1200）、4:5（800 × 1000）、3:4（750 × 1000，默认）；支持 1×、2×、3× 导出。
-- 支持撤销、工程保存；海报 PNG 包含所有图层，底图 PNG 排除主体与文字/标题图层，并保留当前背景的位置、缩放与裁切。
+## 安装与运行条件
 
-## 安装
+将完整仓库或解压后的 `poster-layout-studio` 文件夹安装到宿主的 skill 目录。保留 `SKILL.md`、`assets/`、`references/`、`scripts/` 和 `agents/`。
 
-将本仓库放入 Codex skills 目录的 `poster-layout-studio` 文件夹，入口为 [SKILL.md](SKILL.md)。
+当前 Codex 本机目录的安装示例；其他宿主按其配置选择目录：
 
 ```bash
 git clone https://github.com/Qiiii1/poster-layout-studio.git ~/.codex/skills/poster-layout-studio
 ```
 
-如果该目录已存在，先保留或备份已有版本。
+若目标目录已经存在，先备份已有版本。也可以在 [Releases](https://github.com/Qiiii1/poster-layout-studio/releases/latest) 下载完整 ZIP。
 
-## 本地构建编辑器
+| 能力 | 所需条件 |
+| --- | --- |
+| 理解文案、查看素材、生成图片与语义审核 | 能读取本地文件并提供图片查看/生成能力的 AI 宿主 |
+| HumanGate 按钮选择 | 宿主原生交互提问，或按规则提供真实的 HTML 选择面板 |
+| 构建 HTML 编辑器 | Python 3；构建脚本使用标准库 |
+| 命令行标签推荐 | Node.js；推荐引擎使用本地包内文件 |
+| HTML 编辑和 PNG 导出 | 现代浏览器；本版在 Chrome 155 验证 |
+| Python 脚本提取素材配色 | Pillow；也可直接使用 HTML 中的素材取色按钮 |
+| 读取飞书在线案例原图 | 可选：`lark-cli`、使用者自己的登录及文档/图片权限 |
 
-需要 Python 3。仅预览模板：
+本地风格参考、构图参考、标签索引和 CSS 模板不需要作者的飞书账号，也不需要另行安装来源风格 skill。飞书在线案例原图未批量打包；没有访问权限时使用本地材料继续推荐，并说明未查看的在线案例。飞书修改需要重新导入和发布版本才会进入下载包。
+
+已生成的 HTML 包含工程图片、编辑器代码和导入字体，可离线打开；HTML 本身不调用图片模型。系统字体会随电脑变化，精确共享字形需嵌入有授权的字体。详情见 [换电脑使用](references/portability.md)。
+
+## 开始使用
+
+在支持本 skill 的 AI 宿主中提供素材和文案，例如：
+
+> 使用 $poster-layout-studio，根据这张图片和活动信息生成海报。先用按钮让我选择主体处理方式、风格、素材配色和初始排版，再生成可编辑 HTML。
+
+仅构建模板示例：
 
 ```bash
 python3 scripts/build_editor.py --output output/editor.html
 ```
 
-使用已生成的底图与文案：
+用已确认的文案和已生成的底图构建工程：
 
 ```bash
-python3 scripts/prepare_project.py --brief /absolute/brief.json --background /absolute/background.png --output output/project.json
-python3 scripts/build_editor.py --project output/project.json --output output/editor.html
+python3 scripts/prepare_project.py --brief /absolute/brief.json --background /absolute/background.png --output /absolute/poster-project.json
+python3 scripts/build_editor.py --project /absolute/poster-project.json --output /absolute/editor.html
 ```
 
-使用 `--subject-image`（可重复）加入透明主体，用 `--title-image` 加入艺术标题。
+`--subject-image` 可重复加入独立主体，`--title-image` 加入艺术标题。结构和按钮行为见 [工程格式](references/project-contract.md)、[艺术标题](references/art-title-layers.md) 和 [光学对齐与尺度](references/optical-alignment.md)。直接用浏览器打开构建的 HTML 即可编辑。
 
-文案结构见 [project-contract.md](references/project-contract.md)。HTML 离线运行，图像生成与视觉检查由 Codex 完成。系统字体可能因设备不同而改变排版；导入覆盖所需文字的本地字体后，字体数据会保存在工程并嵌入 HTML。
-
-## 标签推荐
-
-命令行推荐需要 Node.js；与编辑器使用同一推荐引擎。
+标签推荐：
 
 ```bash
-node scripts/recommend.mjs --brief /absolute/brief.json --output output/recommendations.json
+node scripts/recommend.mjs --brief /absolute/brief.json --output /absolute/recommendations.json
 ```
 
-输入维度、别名、案例依据和数据更新方法见 [标签推荐说明](references/tag-recommendations.md)。推荐结果含对应参考图路径和来源单元格。原始照片状态会影响可用候选；所有适用的 HumanGate 仍需明确选择或委托。
+## 来源与验证
 
-## 来源与限制
+参考图、源单元格、哈希与观察分别记录在风格和构图参考清单中；图片保留来源标记。它们不继承软件运行时的授权。见 [来源说明](references/provenance.md)、[风格参考](references/style-image-references.md) 和 [构图参考](references/composition-references.md)。编辑运行时的 Apache-2.0 授权保留在 `assets/editor/vendor/LICENSE`。
 
-- [来源说明](references/provenance.md)
-- [风格处理说明](references/style-adapters.md)
-- [扩展视觉配方](references/visual-recipes.md)
-- [来源与下载状态](assets/catalogs/source-registry.json)
-- [C 列风格参考图索引](assets/catalogs/style-references.json)
-- bundled editable-design runtime 的 Apache-2.0 授权文件保留于 `assets/editor/vendor/LICENSE`，此授权仅适用于对应第三方代码。
-- 排版模板为参考图片的视觉重建，不是原始 CSS。
-- 案例索引仅用于标签关联；没有自动分析案例图片，也不把推荐分数当作审美评分。S 形、四角、完整包围构图需要在相近模板上手动调整。
-- 本次只加入用户明确指定的 C 列风格参考图片；不包含其他案例原图、海报任务的私人素材或第三方风格 skill 原文。来源归属按各自原始信息保留，参考图不会自动继承仓库代码许可。
+V1.12.2 已检查六种风格、47 张本地图及其哈希、相对引用和 16 个模板加载。浏览器验证涵盖文字原生编辑、字体导入与导出、图层拖动、撤销、工程恢复、推荐保持及三个竖版比例。实际 PNG 像素检查覆盖中英文字形边缘、透明艺术标题对齐和主体放大；文化审核 hold 继续阻止导出。每次新生成的素材与组合仍需检查实际画面。
 
-## 验证
-
-`scripts/verify_editor.mjs` 用于浏览器验证，依赖 editable-design 的 `_browser.mjs`；可通过第三个命令行参数指定该运行器路径。构建编辑器本身不依赖此测试运行器。
-
-V1.7 已验证背景移动、三种竖版比例的导出一致性、排版碰撞筛选、状态失效与已记录 hold 的阻断。V1.8 检查参考图逐行映射、真实图像格式与字节校验、缺图 / 错配拒绝和推荐输出中的参考路径。新增风格配方每次实际生图仍需视觉自检查。
-
-V1.9 在 Chrome 154 验证了拖动与自动保存后保留推荐、新碰撞提示、三种竖版比例、单图层与原生字体选择、WOFF2 导入和 PNG 字形、旧草稿迁移、主动重新筛选及文化审核 hold 阻断。回归脚本为 `scripts/verify_adaptation.mjs`，使用与上面相同的浏览器运行器；第四个参数可指定本地 WOFF2 测试字体。
-
-V1.10 在 Chrome 155 完成 48 组提示词检查：21 条风格路线分别使用完整底图与空底图的尺度指令，三种画布比例保留文字预留区和配色；准备提示词保持素材、位置、字体、文案及推荐 ID。输入审核 hold 仍阻断提示词。实际生成后另按完整尺寸及约 200 px 宽缩略图检查主视觉尺度。
+维护者浏览器验证脚本使用独立的 `_browser.mjs` 运行器，可传入自有路径。普通构建和使用已生成的 HTML 不依赖该验证运行器。

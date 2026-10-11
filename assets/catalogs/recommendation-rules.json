@@ -1,29 +1,426 @@
 {
   "schemaVersion": 1,
-  "caseWeights": {"eventType": 1.2, "audience": 1.2, "contentTypes": 0.7, "visualFocus": 1.0, "subjectType": 1.3, "composition": 1.3, "styleFamily": 1.5},
+  "caseWeights": {
+    "eventType": 1.2,
+    "audience": 1.2,
+    "contentTypes": 0.7,
+    "visualFocus": 1.0,
+    "subjectType": 1.3,
+    "composition": 1.3,
+    "styleFamily": 1.5
+  },
   "compositionLayouts": {
-    "上下构图": {"layouts": ["L01", "L08", "L11", "L14", "L15", "L16"], "note": "上下信息轨道；需检查图像重心与标题的位置。"},
-    "居中构图": {"layouts": ["L01", "L02", "L08", "L11"], "note": "文字围绕中轴；底图主体仍需目视确认。"},
-    "左右构图": {"layouts": ["L03", "L07", "L10", "L12"], "note": "左右栏或侧边标题；竖排与窄栏适合较短文字。"},
-    "对角构图": {"layouts": ["L04", "L06", "L09", "L13"], "note": "标题与说明形成对角呼应，图像不会自动旋转。"},
-    "四角构图": {"layouts": ["L05", "L13"], "approximate": true, "note": "现有模板仅提供周边或分散信息轨道；四角位置需要手动微调。"},
-    "对称构图": {"layouts": ["L01", "L02", "L08"], "note": "可使用中轴文字结构；主体和装饰的对称性需要另行检查。"},
-    "S形构图": {"layouts": ["L09", "L13"], "approximate": true, "note": "现有模板没有完整 S 形文字路径；这两种提供转折节奏，需要微调位置。"},
-    "散点构图": {"layouts": ["L04", "L06", "L09", "L12", "L13"], "note": "使用分散文字锚点，并保持清楚的阅读顺序。"},
-    "包围式构图": {"layouts": ["L05", "L10", "L12"], "approximate": true, "note": "侧边与周边文字最接近包围关系；完整环绕需要微调。"}
+    "上下构图": {
+      "layouts": [
+        "L01",
+        "L08",
+        "L11",
+        "L14",
+        "L15",
+        "L16"
+      ],
+      "note": "上下信息轨道；需检查图像重心与标题的位置。",
+      "defaultRecommended": true,
+      "curatorNote": "",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B2",
+          "path": "references/layout-images/feishu-gdiHLe-B2.png",
+          "sourceCell": "B2",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B2"
+        },
+        {
+          "id": "feishu-gdiHLe-C2",
+          "path": "references/layout-images/feishu-gdiHLe-C2.png",
+          "sourceCell": "C2",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C2"
+        },
+        {
+          "id": "feishu-gdiHLe-D2",
+          "path": "references/layout-images/feishu-gdiHLe-D2.png",
+          "sourceCell": "D2",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D2"
+        }
+      ]
+    },
+    "居中构图": {
+      "layouts": [
+        "L01",
+        "L02",
+        "L08",
+        "L11"
+      ],
+      "note": "文字围绕中轴；底图主体仍需目视确认。",
+      "defaultRecommended": true,
+      "curatorNote": "",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B3",
+          "path": "references/layout-images/feishu-gdiHLe-B3.jpg",
+          "sourceCell": "B3",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B3"
+        },
+        {
+          "id": "feishu-gdiHLe-C3",
+          "path": "references/layout-images/feishu-gdiHLe-C3.png",
+          "sourceCell": "C3",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C3"
+        },
+        {
+          "id": "feishu-gdiHLe-D3",
+          "path": "references/layout-images/feishu-gdiHLe-D3.png",
+          "sourceCell": "D3",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D3"
+        }
+      ]
+    },
+    "左右构图": {
+      "layouts": [
+        "L03",
+        "L07",
+        "L10",
+        "L12"
+      ],
+      "note": "左右栏或侧边标题；竖排与窄栏适合较短文字。",
+      "defaultRecommended": true,
+      "curatorNote": "",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B4",
+          "path": "references/layout-images/feishu-gdiHLe-B4.jpg",
+          "sourceCell": "B4",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B4"
+        },
+        {
+          "id": "feishu-gdiHLe-C4",
+          "path": "references/layout-images/feishu-gdiHLe-C4.png",
+          "sourceCell": "C4",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C4"
+        },
+        {
+          "id": "feishu-gdiHLe-D4",
+          "path": "references/layout-images/feishu-gdiHLe-D4.png",
+          "sourceCell": "D4",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D4"
+        }
+      ]
+    },
+    "对角构图": {
+      "layouts": [
+        "L04",
+        "L06",
+        "L09",
+        "L13"
+      ],
+      "note": "标题与说明形成对角呼应，图像不会自动旋转。",
+      "defaultRecommended": true,
+      "curatorNote": "",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B5",
+          "path": "references/layout-images/feishu-gdiHLe-B5.jpg",
+          "sourceCell": "B5",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B5"
+        },
+        {
+          "id": "feishu-gdiHLe-C5",
+          "path": "references/layout-images/feishu-gdiHLe-C5.jpg",
+          "sourceCell": "C5",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C5"
+        },
+        {
+          "id": "feishu-gdiHLe-D5",
+          "path": "references/layout-images/feishu-gdiHLe-D5.png",
+          "sourceCell": "D5",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D5"
+        }
+      ]
+    },
+    "四角构图": {
+      "layouts": [
+        "L05",
+        "L13"
+      ],
+      "approximate": true,
+      "note": "现有模板仅提供周边或分散信息轨道；四角位置需要手动微调。",
+      "defaultRecommended": true,
+      "curatorNote": "",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B6",
+          "path": "references/layout-images/feishu-gdiHLe-B6.jpg",
+          "sourceCell": "B6",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B6"
+        },
+        {
+          "id": "feishu-gdiHLe-C6",
+          "path": "references/layout-images/feishu-gdiHLe-C6.png",
+          "sourceCell": "C6",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C6"
+        },
+        {
+          "id": "feishu-gdiHLe-D6",
+          "path": "references/layout-images/feishu-gdiHLe-D6.png",
+          "sourceCell": "D6",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D6"
+        }
+      ]
+    },
+    "对称构图": {
+      "layouts": [
+        "L01",
+        "L02",
+        "L08"
+      ],
+      "note": "可使用中轴文字结构；主体和装饰的对称性需要另行检查。",
+      "defaultRecommended": false,
+      "curatorNote": "不推荐",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B7",
+          "path": "references/layout-images/feishu-gdiHLe-B7.jpg",
+          "sourceCell": "B7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B7"
+        },
+        {
+          "id": "feishu-gdiHLe-C7",
+          "path": "references/layout-images/feishu-gdiHLe-C7.png",
+          "sourceCell": "C7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C7"
+        },
+        {
+          "id": "feishu-gdiHLe-D7",
+          "path": "references/layout-images/feishu-gdiHLe-D7.png",
+          "sourceCell": "D7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D7"
+        }
+      ]
+    },
+    "S形构图": {
+      "layouts": [
+        "L09",
+        "L13"
+      ],
+      "approximate": true,
+      "note": "现有模板没有完整 S 形文字路径；这两种提供转折节奏，需要微调位置。",
+      "defaultRecommended": true,
+      "curatorNote": "",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B8",
+          "path": "references/layout-images/feishu-gdiHLe-B8.jpg",
+          "sourceCell": "B8",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B8"
+        },
+        {
+          "id": "feishu-gdiHLe-C8",
+          "path": "references/layout-images/feishu-gdiHLe-C8.png",
+          "sourceCell": "C8",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C8"
+        },
+        {
+          "id": "feishu-gdiHLe-D8",
+          "path": "references/layout-images/feishu-gdiHLe-D8.png",
+          "sourceCell": "D8",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D8"
+        }
+      ]
+    },
+    "散点构图": {
+      "layouts": [
+        "L04",
+        "L06",
+        "L09",
+        "L12",
+        "L13"
+      ],
+      "note": "使用分散文字锚点，并保持清楚的阅读顺序。",
+      "defaultRecommended": false,
+      "curatorNote": "不推荐",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B9",
+          "path": "references/layout-images/feishu-gdiHLe-B9.png",
+          "sourceCell": "B9",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B9"
+        },
+        {
+          "id": "feishu-gdiHLe-C9",
+          "path": "references/layout-images/feishu-gdiHLe-C9.png",
+          "sourceCell": "C9",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C9"
+        },
+        {
+          "id": "feishu-gdiHLe-D9",
+          "path": "references/layout-images/feishu-gdiHLe-D9.jpg",
+          "sourceCell": "D9",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D9"
+        }
+      ]
+    },
+    "包围式构图": {
+      "layouts": [
+        "L05",
+        "L10",
+        "L12"
+      ],
+      "approximate": true,
+      "note": "侧边与周边文字最接近包围关系；完整环绕需要微调。",
+      "defaultRecommended": false,
+      "curatorNote": "不推荐",
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B10",
+          "path": "references/layout-images/feishu-gdiHLe-B10.jpg",
+          "sourceCell": "B10",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B10"
+        },
+        {
+          "id": "feishu-gdiHLe-C10",
+          "path": "references/layout-images/feishu-gdiHLe-C10.png",
+          "sourceCell": "C10",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C10"
+        },
+        {
+          "id": "feishu-gdiHLe-D10",
+          "path": "references/layout-images/feishu-gdiHLe-D10.png",
+          "sourceCell": "D10",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D10"
+        }
+      ]
+    }
   },
   "tagStyleRules": [
-    {"dimension": "audience", "value": "专业学术型", "styles": ["academic-board", "ascii-tech", "editorial-order", "mono-color"], "weight": 14, "reason": "学术受众可优先比较清楚的信息层级和结构化图像"},
-    {"dimension": "audience", "value": "年轻潮流型", "styles": ["y2k", "surreal-pop", "experimental-culture"], "weight": 14, "reason": "潮流受众可比较撞色、尺度反转或实验图像"},
-    {"dimension": "audience", "value": "亲子家庭型", "styles": ["minimal-illustration", "narrative-illustration", "specimen-collage"], "weight": 14, "reason": "亲子内容可使用清楚的插画关系和易辨认的素材"},
-    {"dimension": "audience", "value": "文化审美型", "styles": ["oriental-editorial", "still-life-ink", "paper-print", "mono-color"], "weight": 10, "reason": "文化内容可从材料、印刷和意象关系建立视觉"},
-    {"dimension": "subjectType", "value": "多主体", "styles": ["specimen-collage", "narrative-illustration", "gathered-scenes", "y2k"], "weight": 15, "reason": "这条路线可组织多个已确认主体的层级"},
-    {"dimension": "subjectType", "value": "单主体", "styles": ["single-object", "still-life-ink", "mono-color", "y2k"], "weight": 12, "reason": "单主体适合用轮廓、材料或强烈焦点集中注意力"},
-    {"dimension": "subjectType", "value": "无主体（不能抠图）", "styles": ["academic-board", "editorial-order", "minimal-illustration", "landscape-ink"], "weight": 14, "reason": "可从文字层级、背景结构或抽象意象组织画面"},
-    {"dimension": "visualFocus", "value": "宫格式拼接", "styles": ["specimen-collage", "editorial-order", "digital-interface"], "weight": 14, "reason": "分组素材可使用图鉴、窗口或共享网格组织"},
-    {"dimension": "visualFocus", "value": "multiple平铺", "styles": ["specimen-collage", "narrative-illustration"], "weight": 12, "reason": "平铺多个素材时需保留数量和大小关系"},
-    {"dimension": "visualFocus", "value": "与活动主题相关的背景", "styles": ["landscape-ink", "gathered-scenes", "paper-print", "surreal-pop"], "weight": 10, "reason": "背景中的空间与节奏可以成为主视觉依据"},
-    {"dimension": "visualFocus", "value": "有明显分区", "styles": ["editorial-order", "digital-interface", "academic-board"], "weight": 12, "reason": "信息与图像分区需要明确的阅读轨道"},
-    {"dimension": "visualFocus", "value": "重复文字/文字云", "styles": ["academic-board", "experimental-culture", "editorial-order"], "weight": 10, "reason": "文字主导的关系应由独立文字图层实现"}
-  ]
+    {
+      "dimension": "audience",
+      "value": "专业学术型",
+      "styles": [
+        "ascii-tech",
+        "mono-color",
+        "minimal-illustration"
+      ],
+      "weight": 14,
+      "reason": "可比较数字形面表达、克制油印与清楚的信息轨道"
+    },
+    {
+      "dimension": "audience",
+      "value": "年轻潮流型",
+      "styles": [
+        "surreal-pop",
+        "specimen-collage",
+        "ascii-tech"
+      ],
+      "weight": 14,
+      "reason": "可比较超现实尺度、拼贴层叠与数字重构"
+    },
+    {
+      "dimension": "audience",
+      "value": "亲子家庭型",
+      "styles": [
+        "minimal-illustration",
+        "specimen-collage"
+      ],
+      "weight": 14,
+      "reason": "亲子内容可使用清楚的插画关系和易辨认的素材"
+    },
+    {
+      "dimension": "audience",
+      "value": "文化审美型",
+      "styles": [
+        "landscape-ink",
+        "mono-color",
+        "minimal-illustration"
+      ],
+      "weight": 10,
+      "reason": "可从来源材料、空间结构和印刷关系建立视觉"
+    },
+    {
+      "dimension": "subjectType",
+      "value": "多主体",
+      "styles": [
+        "specimen-collage",
+        "minimal-illustration"
+      ],
+      "weight": 15,
+      "reason": "这条路线可组织多个已确认主体的层级"
+    },
+    {
+      "dimension": "subjectType",
+      "value": "单主体",
+      "styles": [
+        "mono-color",
+        "minimal-illustration",
+        "surreal-pop"
+      ],
+      "weight": 12,
+      "reason": "用清楚的主体形面、材料或单一尺度事件集中注意力"
+    },
+    {
+      "dimension": "subjectType",
+      "value": "无主体（不能抠图）",
+      "styles": [
+        "landscape-ink",
+        "mono-color"
+      ],
+      "weight": 14,
+      "reason": "可从主题结构或油印意象组织底图；照片必需路线需另补素材"
+    },
+    {
+      "dimension": "visualFocus",
+      "value": "宫格式拼接",
+      "styles": [
+        "specimen-collage",
+        "ascii-tech"
+      ],
+      "weight": 14,
+      "reason": "按实际素材分组，但不能照搬均匀小格子"
+    },
+    {
+      "dimension": "visualFocus",
+      "value": "multiple平铺",
+      "styles": [
+        "specimen-collage"
+      ],
+      "weight": 12,
+      "reason": "保留已确认的素材数量，并拉开主次尺度"
+    },
+    {
+      "dimension": "visualFocus",
+      "value": "与活动主题相关的背景",
+      "styles": [
+        "landscape-ink",
+        "minimal-illustration",
+        "surreal-pop"
+      ],
+      "weight": 10,
+      "reason": "来源空间、轮廓与节奏可以成为大形状依据"
+    },
+    {
+      "dimension": "visualFocus",
+      "value": "有明显分区",
+      "styles": [
+        "mono-color",
+        "minimal-illustration",
+        "ascii-tech"
+      ],
+      "weight": 12,
+      "reason": "文字区与图像区需形成清楚阅读轨道"
+    },
+    {
+      "dimension": "visualFocus",
+      "value": "重复文字/文字云",
+      "styles": [
+        "ascii-tech",
+        "mono-color"
+      ],
+      "weight": 10,
+      "reason": "重复文字由独立文字图层实现，图像只提供支持"
+    }
+  ],
+  "compositionSource": {
+    "sheetId": "gdiHLe",
+    "range": "gdiHLe!A1:T10",
+    "revision": 6475,
+    "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe"
+  }
 }

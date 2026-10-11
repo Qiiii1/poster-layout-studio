@@ -1,81 +1,52 @@
-# 扩展视觉配方
+# 优化后的六条视觉路线
+
+V1.12 使用「优化后的skill」sheet `TkKYtP` 的六条路线替换原推荐库。`assets/catalogs/styles.json` 是当前菜单、推荐与提示词的风格目录。旧路线仅在 `legacy-styles.json` 中保留为已保存工程的兼容记录，不进入新推荐；重新生成旧工程时先让用户明确选择当前路线。
 
 ## 使用边界
 
-只提取来源中的媒介、形状、材料、色彩和层级方法。来源完整工作流中的字号、比例、固定主体数量、模型选择、安装命令、推广文案、额外门禁和输出方式不进入本 skill。底图仍无标题与正文；主体按用户选择分层，艺术标题默认单独生成可移动图层。提示词脚手架、照片要求和逐项检查在 `assets/catalogs/styles.json`。
+原图决定主体与事实，参考图帮助判断图形、媒介和层次。来源的完整海报工作流、固定尺寸、固定主体数、固定配色、自动联网及安装脚本不进入本 skill。配色从已审核素材推荐并确认；文字与默认艺术标题独立分层。来源名称表明视觉方法的出处，不表示已经调用那个独立 skill。
 
-这些配方是按用户标签整理的独立视觉描述。原始下载材料保存在任务工作区，不混入可安装包。来源 URL、提交版本及下载状态见 `assets/catalogs/source-registry.json`。某些来源有独立的使用限制；复用其原文、代码或示例时应读取原始许可。
+| 路线 / styleId | 主来源 | 核心处理 |
+| --- | --- | --- |
+| 山水氛围 / `landscape-ink` | chinese-poster-skill，F2/N2 | 来源结构与材料转译为大面、线势、空间间隔与东方意境 |
+| 拼贴图鉴 / `specimen-collage` | collage-design，F3/N3 | 确认的真实素材、实体切纸边缘、尺度差与层叠 |
+| 轻插画 / `minimal-illustration` | soft-geometric-image，L4 附件 | 轻度几何重绘、每块独立渐变消隐、细颗粒 |
+| 超现实 / `surreal-pop` | surreal-pop-collage，N5 | 黑白现实锚点、大平涂色形、一个源于素材的不可能关系 |
+| 数字科技 / `ascii-tech` | digital-tech-stylizer，N6 附件 | 默认可辨 ASCII 字符与圆点重构形面，不是照片叠滤镜 |
+| 套色油印 / `mono-color` | mono-color-skill，F7/N7 | 一至两块油墨、筛网、露纸与明确的版色角色 |
 
-## 路线表
+来源单元格都在[优化库](https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP)。四个 GitHub 来源使用已读取的 2026-10-04 快照；两个新附件于 2026-10-11 下载并读取。版本与哈希见 `source-registry.json`，不声称自动使用远端最新代码。
 
-使用每条路线前，查看 `styles.json.referenceImages` 中对应的 C 列本地参考图，并按 [风格参考图的使用](style-image-references.md) 记录观察结果。图片帮助解释视觉处理；主体、配色和布局仍按本次用户确认执行，标题沿用默认艺术字或用户明确指定的普通文字。
+## 山水氛围
 
-所有路线叠加目录中的共享 `artDirection`：在可用图像区放大一处主视觉，允许近景、偏心和局部出框，拉开主次尺度。简约、水墨和留白路线也可以使用少量大形状。颗粒、网点与技术标记保持媒介所需的细度，学术板报优先保证信息阅读。比例夸张发生在构图中，保留素材身份、身体结构和确认的主体关系。
+从实际素材找轴线、曲面、开口、重复、材料或前后层次，转成少量大形状与空间节奏。山水是意境与结构处理，不要求每张图出现山。可用墨色扩散、选择性干笔或矿物色面，但不要习惯性加塔、印章、祥云或泛黄纸。文化物件与故事必须有来源依据。文本主题可生成具体意象；照片输入保留关键识别结构。
 
-| 大类 | 视觉小类 | styleId | 图像处理重点 |
-| --- | --- | --- | --- |
-| 中国风（东方水墨） | 书卷编排风 | oriental-editorial | 一处材料证据、明确轴线、局部中断和克制留白 |
-| 中国风（东方水墨） | 山水氛围风 | landscape-ink | 将来源结构转成墨色层次、轮廓与空间间隔 |
-| 中国风（东方水墨） | 静物留白风 | still-life-ink | 一件器物或意象、纸面、湿墨与局部干笔 |
-| 趣味风（拼贴） | 拼贴图鉴风 | specimen-collage | 保留实际素材名单，以尺度差、重叠与切纸边缘组织 |
-| 趣味风（拼贴） | 纸感印刷风 | paper-print | 提炼照片的主动作和重复节奏，选择一种主要印刷工艺 |
-| 趣味风（拼贴） | 纸感印刷风的实景变体 | gathered-scenes | 保留摄影锚点，再连接稀疏图形与窄撕纸边缘 |
-| 趣味风（拼贴） | 插画叙事风 | narrative-illustration | 一个叙事关系，一种主媒介和一种有限辅助工艺 |
-| 简约风 | 轻插画风 | minimal-illustration | 一处清晰的大形状、有效留白、结构性强调色 |
-| 简约风 | 单器物风 | single-object | 用一件器物的轮廓、材料或裁切集中注意力 |
-| 简约风 | 图文秩序风 | editorial-order | 图像窗口、线块和材料分区支持真实信息层级 |
-| 简约风 | 图文秩序风的冷白套印变体 | cool-riso | 冷白纸面、清晰平涂、克制错位与活动信息预留区 |
-| 赛博风 | 霓虹动感风 | y2k | 来源主体、连续硬描边、与姿态关联的撞色爆破形 |
-| 赛博风 | 数码界面风 | digital-interface | 位图切面、共享网格、局部扫描线和信号位移 |
-| 赛博风 | 数码界面风的喷绘变体 | neon-blue | 近黑留白、分层电光喷绘、选择性柔边和微小随机颗粒 |
-| 赛博风 | 超现实风 | surreal-pop | 原场景中一次可解释的尺度或语义反转 |
-| 学术风（ascii风格） | 数字科技风 | ascii-tech | 在 ASCII、抖动、网点中选择一种主要明暗编码 |
-| 学术风（ascii风格） | 学术板报风 | academic-board | 信息主导，背景仅有少量线块；依据用户表格备注补充 |
-| 学术风（ascii风格） | 实验文化风 | experimental-culture | 局部故障、色阶断裂或位移，保留识别锚点 |
-| 复古风（油印） | 套色油印风 | mono-color | 一至两种油墨、纸面透出、网点与局部套印 |
-| 复古风（油印） | 旧报刊编排风 | newspaper-print | 新闻纸、局部粗网点和渗墨，文字仍使用 HTML 网格 |
-| 复古风（油印） | 复古装饰插画风 | retro-illustration | 手绘不规则、平涂、干笔、装饰图案与丝印肌理 |
+## 拼贴图鉴
 
-## 具体处理与来源
+必须有用户素材或经联网补充门禁接受的真实素材。先确定主体名单、边缘语言和统一媒介，再形成一个大锚点与明显较小的支持片段；允许重叠、轮廓越界与局部出框。切纸、纤维、裁切与少量阴影服务于同一材料逻辑。不要排列成等大的整齐图库格子；不能为了密度擅自增加物件。抠图模式保持主体各自独立可移动；背景模式可形成整体拼贴底图。这是视觉适配，不承诺复现原来源的 SVG 制作流水线。
 
-### 东方与简约
+## 轻插画
 
-书卷路线从材料特性建立视觉关系，不自动加古建筑、印章或古纸。山水路线优先提取主题的线势、面、开口和层次；文化元素需有输入依据。静物路线保留可辨认的器物结构，留白比例服从文字容量，不把源配方里的超小主体尺寸硬套到本模板。
+需要待处理原图。保留主体轮廓、姿态、视角与主要空间关系，用大块完整轮廓、圆弧、半圆和少量梯形概括。合并重复细带而不抹掉必要层次。**每个主要大块独立从局部浓色经过中间色消隐到本次底色**，相邻块有各自的浓色锚点与方向。软化部分结构交接和外边缘，同时保留清晰识别轮廓；只让块内部变淡而留下连续硬线不合格。细点喷绘形成明显局部过渡，细颗粒低对比。避免全图白雾、统一变浅、碎三角面、粗颗粒、厚描边与塑料 3D。底色可浅可深，色相不绑定案例；主体规模遵循本 skill 的大胆构图。
 
-来源：[东方文化编辑](https://github.com/dacnay816y62-hub/fantasy-dongfang-jianyuehaibao)、[中国风结构转译](https://github.com/dacnay816y62-hub/chinese-poster-skill)、[水墨配方](https://github.com/TwentyfiveBTea/ink-wash-poster)、[地域文化结构](https://github.com/dacnay816y62-hub/regional-culture-poster)。地域字符或材料字体用于默认独立艺术标题，先核对准确文案及对应文化语境。
+L4 单文件提到的 `approved-style.png` 没有随附件提供；本包使用该行 C/D/E 的实际图作为可用参考，不声称拿到了缺失图片。
 
-轻插画只用一个主题关系，不填充成完整场景。单器物通过来源材料改变裁切和重心。图文秩序使用少量图像字段，避免模型生成伪标签和长段假字。标题需要保持独立，不能照搬来源中图字共生的整张位图输出。
+## 超现实
 
-来源：[Sparse Zine](https://github.com/langrenlibai/poster-forge-deluxe)、[Minimal Zine](https://github.com/LiamGvchi/gc-minimal-zine-poster)、[Photo Riso](https://github.com/luckdvr/photo-riso-poster)、[文化碎片](https://github.com/wendenchina-beep/culture-fragment-poster-engine)、[Poster Generator](https://github.com/howardz27/poster-generator-skill)、[营造](https://github.com/op7418/guizang-yingzao-skill)。
+需要待处理原图。保留可识别的黑白照片锚点，按来源区域边界设置两至三个巨大平涂色形。只设置一个可解释的不可能尺度或语义关系，优先从已确认素材推导；新增外部物件与文化典故仍经过联网、素材与文化审核。色形无渐变、无立体阴影，整体清楚明亮。小元素只有延续同一事件且已获接受时加入。有些参考只展示现实锚点与色区，不据此宣称其必然具有不可能巨物。不要默认鲸鱼、红日或照搬案例雕像。
 
-`cool-riso` 来自表内 [N11 自定义附件](https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=N11)，已下载并读取。把实际图像的轴线、重复、开口、遮挡或反射概括成清晰印刷形状，在用户确认的冷白或淡蓝灰纸面上使用少量平涂油墨、受控网点和轻微错位。第三种油墨只有配色已明确确认时才加入；编辑器默认配色只指定主色与强调色。为主标题和活动信息保留可用空间，减少整张场景的逐边描摹，避免发黄做旧和蜡笔粉彩。源文件的完整图片输出、默认 4:5 与固定标题占比不覆盖本 skill 的分层输出、画布选择和模板主标题槽。
+## 数字科技
 
-### 拼贴与叙事
+需要待重绘图片，先记录三至五个识别锚点。默认把**主体本身**重构为受控网格上的等宽单字符（例如 `.:+x#`）、有序圆点、少量实色形面与负形。明确字符与圆点各负责哪些区域；密度须塑造轮廓、明暗和空间。局部能辨认真实单字符，缩略图能辨认主体，不能把纯圆点或伪字形称为 ASCII。
 
-图鉴保留确认的主体数量，建立大小差和局部遮挡；透明素材各自独立，不固定为五件、九件或某个来源模板。纸感印刷先提炼轮廓与节奏，再选网点、复印或套印中的一种主工艺。实景变体保留摄影部分。叙事插画从源场景提取一个清楚的关系，调整至少一处尺度、位置或图底关系；必要时明确哪一个材质过程只用于辅助区域。
+纯圆点和线描网屏是该路线内的变体；用户明确选择或观察到字符损害识别后再采用并说明，不能静默改称已完成默认 ASCII。已确认的主色家族覆盖多数形面，辅助色少量，高亮更少；亮度与面积可参考附件，具体蓝粉黄或荧黄不固定。避免原照片纹理上覆盖网点、通用 HUD、二进制口号或随机代码。
 
-来源：[Collage Design](https://github.com/polgarp/collage-design)、[文物拼贴](https://github.com/Starryear/S.013-Starryear-Artifact-collage)、[HeiGe Poster Lab](https://github.com/HeiGeAi/HeiGe-poster-lab)、[Zine Poster](https://github.com/jas0nh/zine-poster-skill)、[Halftone Riso Pop](https://github.com/Zhang-ym92/halftone-riso-pop)、[Scene to Art Lab](https://github.com/N1kO724/scene-to-art-lab)。Gathered Scenes 的原有处理说明仍在 `style-adapters.md`。
+源 skill 默认透明主体输出；本系统按主体 HumanGate 决定模式。抠图时 alpha 在外部、孔洞及分离标记间真实透明；背景模式保留用户选择的完整场景，并将其重构为数字图形底图。艺术标题与活动信息另行生成。最多一次针对观察到的缺陷修复，不能把未达到的字符效果描述为成功。
 
-### 赛博与数字实验
+## 套色油印
 
-Y2K 按原有配方检查身份、轮廓、质感和装饰数量。数码界面使用硬切面和共享网格，允许局部 CRT 扫描语言；表格中的靛蓝网点来源是邻近材料参考，它本身不属于霓虹路线，因此不能把其禁止霓虹的限色规则混入 CRT 或 Y2K。只在用户选择靛蓝版画变体时使用细网点表达消散、交叉网纹表达深度，并确认限色色卡。
-
-超现实只设置一次源场景相关的变化，不按示例习惯添加鲸鱼、红日等物件。ASCII 字符可作为图像明暗纹理，所有真实标题、时间和说明仍是独立文字。抖动、半色调和故障仓库是图像工具，不能描述成已经接入的可调用 skill；当前只吸收其静态视觉方法，编辑器不会自行运行它们。
-
-来源：[Y2K](https://github.com/koinu32/y2k-pop-poster)、[CRT](https://github.com/TaiT-tt/tait-crt-interface-skill)、[靛蓝网点](https://github.com/NeekChaw/indigo-riso-poster-skill)、[超现实波普](https://github.com/2998980-hue/surreal-pop-collage)、[Ditherlab](https://github.com/jjanousek/dither_app)、[Halftone](https://github.com/Trolzie/halftone)、[Halftone Dots](https://github.com/haaarshsingh/halftone-dots)、[Glitch Generator](https://github.com/JMMonte/glitch-generator)、[DitherMe](https://github.com/joshuavanderpoll/DitherMe)。
-
-表格把 [霓虹蓝插画](https://redskill.xiaohongshu.net/install.md) 放在数码界面风下，但实际素材是一种数字喷绘处理。保留为独立 `neon-blue` 路线，不与 CRT 网格、Y2K 硬描边或写实镀铬混合。保留来源主体的结构、数量和视角；用近黑核心、深蓝过渡、向形体内部扩散的宽阔青蓝底光、少量冰白高光塑造体积。细颗粒集中在过渡区，保持随机、微小且独立；边缘有明暗变化，避免整圈发亮。倒影低亮度且结构模糊。蓝黑配色需要颜色 HumanGate；其他色相应说明是改编变体，不能承诺符合原蓝色规范。抠图模式的主体光晕属于透明主体层；倒影如随主体移动则与主体成组，不能烘焙在空底图形成第二个主体。
-
-从商店公开接口下载的 v1.0.0 压缩包已校验 SHA-256，并读取实际 `SKILL.md` 和 `references/style-spec.md`。只提取视觉方法，原文件不进入安装包；没有执行商店安装脚本。来源固定中央占比和两阶段脚本不适用于所有文字模板，此处构图服从用户确认的模板并检查完整主体、光晕和倒影的边界。
-
-学术板报只有表格中的背景与排版备注，配方明确标为 `catalog-note`，不冒充完整来源实现。
-
-### 油印、报刊与装饰插画
-
-油印沿用 Mono-color 的一至两块油墨，强调色不能暗中成为第三种油墨。报刊采用局部新闻纸和网点，正文依然可读、可编辑；原来源主要处理文字，不据此声称自动保留原照片。装饰插画提取确认的物件，用不规则手绘色块和图案概括，并保持每件对象可辨认；不继承素材合集的固定九宫格或尺寸。艺术标题的字形处理需要独立生成和逐字检查。
-
-来源：[Mono-color](https://github.com/yanliudesign/mono-color-skill)、[The Lamplighter](https://github.com/starinzlob/the-lamplighter)、[Mondo Poster](https://github.com/joeseesun/qiaomu-mondo-poster-design)、[手帐物件转绘](https://github.com/emmaCCdesign/make-journal-material-skill)。不把来源中的具名艺术家模仿指令默认带入提示词。
+中性白、灰或浅色纸面，至多两块打印油墨，纸不计为油墨。指定每块墨承担的结构和强调角色；一墨请求让两角色使用同一墨色。露纸、筛网与版色分离构成主体，允许选择性错位或渗墨，不做统一数字色罩。一个大焦点与安静释放区形成关系。没有做旧要求时不加黄纸、褪色或旧报污渍。参考里的黑色若成为第三种独立墨色，需简化成已确认油墨的浓度或调整配方。
 
 ## 自检查
 
-每条路线按 `styles.json.checks` 及共享 `artDirection.checks` 在完整尺寸和约 200 px 宽的缩略图检查。共同检查文字预留区域、素材身份与数量、主次关系、没有烘焙标题正文。主视觉应首先被识别；若所有元素都像细小贴纸，在已确认的构图内放大或裁切主焦点。cutout 模式分别检查透明主体及无主体底图，并在合成图中检查主体实际可见范围；素材身份应由对应的来源图保持，不能因为抽象方法默认把真人变成匿名剪影。需要这种变化时先与用户确认。按现有修复上限，只自动纠正一次具体缺陷。
+在完整尺寸与约 200 px 宽缩略图检查。共同核验素材身份、数量、关系、主次尺度、文字区与无烘焙文案，再按路线 `checks` 逐项检查。主体占可用图像区主轴约 85–110% 是起点，随源图和文字调整；颗粒仍保持适当细度。cutout 模式分别检查空背景、透明主体及实际合成范围。记录图 ID、实际观察、用到的方法和修复，不把路径或下载成功当成视觉检查。

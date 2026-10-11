@@ -1,46 +1,26 @@
 {
   "schemaVersion": 1,
-  "importDate": "2026-10-07",
+  "importDate": "2026-10-11",
   "source": {
-    "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx",
-    "sheetId": "Plpjbx",
-    "column": "C",
-    "range": "Plpjbx!A1:C100",
-    "revision": 5745
+    "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP",
+    "sheetId": "TkKYtP",
+    "columns": [
+      "C",
+      "D",
+      "E"
+    ],
+    "range": "TkKYtP!A1:Y7",
+    "revision": 6475
   },
   "usageGuide": "references/style-image-references.md",
   "referenceImages": [
     {
-      "id": "feishu-c03",
-      "path": "references/style-images/feishu-c03.png",
-      "family": "中国风（东方水墨）",
-      "visualSubtype": "书卷编排风",
-      "sourceCell": "C3",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C3",
-      "mediaType": "image/png",
-      "width": 905,
-      "height": 1280,
-      "bytes": 1103348,
-      "sha256": "14ded360c7f05d3c74d343d577aec6e66a8e819c09695afb98e553a98a073a49",
-      "styleIds": [
-        "oriental-editorial"
-      ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "白色开放背景，大幅器物局部裁切与小器物形成尺度对比",
-          "青瓷材质与竖向大字建立阅读轴，信息集中在边缘"
-        ],
-        "applicationLimits": "借鉴材料证据、裁切和留白；图内展览品牌、日文及日期不进入本次海报。"
-      }
-    },
-    {
-      "id": "feishu-c04",
-      "path": "references/style-images/feishu-c04.jpg",
+      "id": "feishu-TkKYtP-C2",
+      "path": "references/style-images/feishu-TkKYtP-C2.jpg",
       "family": "中国风（东方水墨）",
       "visualSubtype": "山水氛围风",
-      "sourceCell": "C4",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C4",
+      "sourceCell": "C2",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C2",
       "mediaType": "image/jpeg",
       "width": 736,
       "height": 1089,
@@ -49,46 +29,58 @@
       "styleIds": [
         "landscape-ink"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "低饱和山体与建筑、人物碎片组成前后层次",
-          "竖向文字与横向水面形状、圆形开口相互平衡"
-        ],
-        "applicationLimits": "保留来源结构与空间节奏；不默认添加图内人物、建筑或展览信息。"
-      }
-    },
-    {
-      "id": "feishu-c05",
-      "path": "references/style-images/feishu-c05.png",
-      "family": "中国风（东方水墨）",
-      "visualSubtype": "静物留白风",
-      "sourceCell": "C5",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C5",
-      "mediaType": "image/png",
-      "width": 736,
-      "height": 981,
-      "bytes": 1019624,
-      "sha256": "aadc09e2341173bd7a6a8190b2d4b7eb4a1f2769df5bf5b7a1dbf84cba3711cb",
-      "styleIds": [
-        "still-life-ink"
+      "visualNotes": [
+        "蓝灰与浅金的层叠山形、桥与月洞组织纵向空间，右上题字、分散小信息；借鉴面与间隔，不复制建筑或月洞。"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "下方壶形静物作为单一图像焦点，上方书法式标题偏右",
-          "绿色到蓝色的渐变场与黑色主体产生对比"
-        ],
-        "applicationLimits": "这张图不直接展示水墨笔触；可借鉴单物、重心和留白，水墨材质仍服从所选配方。"
-      }
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c06",
-      "path": "references/style-images/feishu-c06.png",
+      "id": "feishu-TkKYtP-D2",
+      "path": "references/style-images/feishu-TkKYtP-D2.png",
+      "family": "中国风（东方水墨）",
+      "visualSubtype": "山水氛围风",
+      "sourceCell": "D2",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D2",
+      "mediaType": "image/png",
+      "width": 658,
+      "height": 987,
+      "bytes": 1180253,
+      "sha256": "e414e48e1aeb8eff8346f54ee15927b315e9c40c6ad83418dcfba428d8c39c61",
+      "styleIds": [
+        "landscape-ink"
+      ],
+      "visualNotes": [
+        "粉底、红色双列标题和绿色大英文形成层级，花卉与建筑碎片穿插；可借鉴素材节奏，不将粉红或字体当作固定规则。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-TkKYtP-E2",
+      "path": "references/style-images/feishu-TkKYtP-E2.jpg",
+      "family": "中国风（东方水墨）",
+      "visualSubtype": "山水氛围风",
+      "sourceCell": "E2",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E2",
+      "mediaType": "image/jpeg",
+      "width": 1280,
+      "height": 2651,
+      "bytes": 586236,
+      "sha256": "5ab3dd315143ce9efccd28db5f6c61f803563cf552baf4538ec245fc994c495e",
+      "styleIds": [
+        "landscape-ink"
+      ],
+      "visualNotes": [
+        "褐色历史画面整体铺陈，右上竖向标题与局部说明沿边布置；重在材料和阅读轨道，不复制历史人物。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-TkKYtP-C3",
+      "path": "references/style-images/feishu-TkKYtP-C3.png",
       "family": "趣味风（拼贴）",
       "visualSubtype": "拼贴图鉴风",
-      "sourceCell": "C6",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C6",
+      "sourceCell": "C3",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C3",
       "mediaType": "image/png",
       "width": 689,
       "height": 912,
@@ -97,71 +89,58 @@
       "styleIds": [
         "specimen-collage"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "大小不同的扇形片段与树状黑色结构组织出层级",
-          "蓝粉层次与大幅英文标题分区，轮廓重复形成节奏"
-        ],
-        "applicationLimits": "借鉴分片、尺度差和重复形状；不要把它描述为已确认多件用户素材的实拍拼贴。"
-      }
-    },
-    {
-      "id": "feishu-c07",
-      "path": "references/style-images/feishu-c07.png",
-      "family": "趣味风（拼贴）",
-      "visualSubtype": "纸感印刷风",
-      "sourceCell": "C7",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C7",
-      "mediaType": "image/png",
-      "width": 500,
-      "height": 707,
-      "bytes": 487345,
-      "sha256": "d33126f25d98f30070d0cb3e6a4cc18ddb7f434b8fe4d8d3d079dd343a8286b8",
-      "styleIds": [
-        "gathered-scenes",
-        "paper-print"
+      "visualNotes": [
+        "扇形物件以大小差叠置在渐变圆形与山形前，顶部巨字；参考层叠与轮廓，不默认添加扇子或山。"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "米色纸面上的彩色平涂插画，书籍、人物与字母形成节奏",
-          "大标题与小信息块之间有明显主次尺度"
-        ],
-        "applicationLimits": "实际是图书节插画；不是摄影锚点或纤维撕纸的直接示例，Gathered Scenes 保留其独立媒介规则。"
-      }
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c08",
-      "path": "references/style-images/feishu-c08.png",
+      "id": "feishu-TkKYtP-D3",
+      "path": "references/style-images/feishu-TkKYtP-D3.png",
       "family": "趣味风（拼贴）",
-      "visualSubtype": "插画叙事风",
-      "sourceCell": "C8",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C8",
+      "visualSubtype": "拼贴图鉴风",
+      "sourceCell": "D3",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D3",
       "mediaType": "image/png",
-      "width": 1080,
-      "height": 1440,
-      "bytes": 2426195,
-      "sha256": "04dca14cdc52d1e4262d9749ca490ae655c5adb6fbff3c5b15ad3d9e31ff1b35",
+      "width": 303,
+      "height": 424,
+      "bytes": 277203,
+      "sha256": "32605a5149d605d9921d6dd1ae612e629e9d5c1acb750415f6d74cb59bf86574",
       "styleIds": [
-        "narrative-illustration"
+        "specimen-collage"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "山水、人物、建筑和动物围绕中央文字块形成叙事场景",
-          "暖纸底、手绘轮廓与青绿山体建立媒介统一性"
-        ],
-        "applicationLimits": "参考叙事关系和手绘层次，不继承图内文化物件、地域归属或机构。"
-      }
+      "visualNotes": [
+        "黑白建筑锚点占下部，上部高饱和彩色流线交叠；只借鉴主次尺度与媒介对比，完整源技能仍采用真实素材切纸层叠。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c09",
-      "path": "references/style-images/feishu-c09.png",
+      "id": "feishu-TkKYtP-E3",
+      "path": "references/style-images/feishu-TkKYtP-E3.png",
+      "family": "趣味风（拼贴）",
+      "visualSubtype": "拼贴图鉴风",
+      "sourceCell": "E3",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E3",
+      "mediaType": "image/png",
+      "width": 302,
+      "height": 403,
+      "bytes": 324789,
+      "sha256": "a111b02ac20b34a5b96e6e88cb1d992e859094ac2321dfbc4f613439e1d4de30",
+      "styleIds": [
+        "specimen-collage"
+      ],
+      "visualNotes": [
+        "建筑硬轮廓与高反差蓝黄块面形成图底，右侧大主体、左侧小人物；色形分割可支持拼贴，不固定为蓝黄。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-TkKYtP-C4",
+      "path": "references/style-images/feishu-TkKYtP-C4.png",
       "family": "简约风",
       "visualSubtype": "轻插画风",
-      "sourceCell": "C9",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C9",
+      "sourceCell": "C4",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C4",
       "mediaType": "image/png",
       "width": 735,
       "height": 979,
@@ -170,120 +149,58 @@
       "styleIds": [
         "minimal-illustration"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "一处小船剪影横跨竖向海面窗口，形成集中图像事件",
-          "蓝白渐变上大幅白字与小信息块留有清楚间隔"
-        ],
-        "applicationLimits": "实际含摄影和剪影；可借鉴小焦点、窗口与留白，不能声称它全部是轻插画。"
-      }
+      "visualNotes": [
+        "浅蓝渐变空间中船影穿过竖向图像条，水面纹理被集中于条内，上下信息轨道清楚。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c10",
-      "path": "references/style-images/feishu-c10.jpg",
+      "id": "feishu-TkKYtP-D4",
+      "path": "references/style-images/feishu-TkKYtP-D4.jpg",
       "family": "简约风",
-      "visualSubtype": "单器物风",
-      "sourceCell": "C10",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C10",
+      "visualSubtype": "轻插画风",
+      "sourceCell": "D4",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D4",
       "mediaType": "image/jpeg",
       "width": 658,
-      "height": 1170,
-      "bytes": 75819,
-      "sha256": "fe9573834d5ce06382ff77ea4b14cb7a4a96e4ec22d4183f28ed925cc892988a",
+      "height": 941,
+      "bytes": 76339,
+      "sha256": "3112d05ea2a4101bcf3ad47894c50829c4170de7a0986eeaaabc83c59787034f",
       "styleIds": [
-        "single-object"
+        "minimal-illustration"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "黑金器物轮廓与擦刷纹理集中在画面上半部",
-          "细竖向文字、少量小装饰与大面积白底保持秩序"
-        ],
-        "applicationLimits": "借鉴器物轮廓、材料与留白；不复用营销电话、二维码、楼盘标识或图内标题。"
-      }
+      "visualNotes": [
+        "多层建筑被简化为宽阔柔和色块，浅金细点渐变与背景融合，边部文字细窄；参考逐块层次，不复制建筑。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c11",
-      "path": "references/style-images/feishu-c11.jpg",
+      "id": "feishu-TkKYtP-E4",
+      "path": "references/style-images/feishu-TkKYtP-E4.jpg",
       "family": "简约风",
-      "visualSubtype": "图文秩序风",
-      "sourceCell": "C11",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C11",
+      "visualSubtype": "轻插画风",
+      "sourceCell": "E4",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E4",
       "mediaType": "image/jpeg",
-      "width": 876,
-      "height": 1240,
-      "bytes": 61309,
-      "sha256": "6da775e2a944d40a55f243b1acbe968a00f1981093913cbf6f6710443c88b069",
+      "width": 658,
+      "height": 1037,
+      "bytes": 121680,
+      "sha256": "3c4c6ef72bd37123e60036513b4aa2743e62bba6b77776f5672664abeadf3db1",
       "styleIds": [
-        "editorial-order",
-        "cool-riso"
+        "minimal-illustration"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "白色上半部信息分区与下半部书页式色带形成明晰层级",
-          "弧形线带由窄到宽展开，标题和日期使用不同尺度"
-        ],
-        "applicationLimits": "这张图不证明采用了 riso 工艺；cool-riso 只借鉴分区和轮廓，并沿用变体的印刷规则。"
-      }
+      "visualNotes": [
+        "塔、弧面、帆形与波浪被概括为少量大几何形，橙蓝冷暖对比，局部细颗粒渐变。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c12",
-      "path": "references/style-images/feishu-c12.png",
-      "family": "赛博风",
-      "visualSubtype": "霓虹动感风",
-      "sourceCell": "C12",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C12",
-      "mediaType": "image/png",
-      "width": 303,
-      "height": 403,
-      "bytes": 204508,
-      "sha256": "94d356af8c5e85bcf88ee5a00b729b49769c4ffc9ce9867afc021a4edc609457",
-      "styleIds": [
-        "y2k"
-      ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "黑底上高饱和放射形聚焦中央，小型物件沿放射轴排列",
-          "发光边缘、彩色星形和渐变平面强化数码动感"
-        ],
-        "applicationLimits": "是霓虹动感小类参考，不等同粗硬描边剪贴示例；Y2K 保留用户主体、选定材质及装饰限制。"
-      }
-    },
-    {
-      "id": "feishu-c13",
-      "path": "references/style-images/feishu-c13.png",
-      "family": "赛博风",
-      "visualSubtype": "数码界面风",
-      "sourceCell": "C13",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C13",
-      "mediaType": "image/png",
-      "width": 525,
-      "height": 753,
-      "bytes": 865422,
-      "sha256": "0355f5937fdebbe67000a06b793fe19cef9e1e40871b31e44400b374dc02f0f1",
-      "styleIds": [
-        "digital-interface",
-        "neon-blue"
-      ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "灰色网点图像与蓝色小方块形成数码视觉节奏",
-          "上方疏朗标题、下方信息与中间模糊图像分区"
-        ],
-        "applicationLimits": "不是霓虹蓝柔光喷绘的直接示例；neon-blue 借鉴留白和颗粒范围，不照搬界面、文字或整片网点。"
-      }
-    },
-    {
-      "id": "feishu-c14",
-      "path": "references/style-images/feishu-c14.jpg",
+      "id": "feishu-TkKYtP-C5",
+      "path": "references/style-images/feishu-TkKYtP-C5.jpg",
       "family": "赛博风",
       "visualSubtype": "超现实风",
-      "sourceCell": "C14",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C14",
+      "sourceCell": "C5",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C5",
       "mediaType": "image/jpeg",
       "width": 537,
       "height": 776,
@@ -292,22 +209,58 @@
       "styleIds": [
         "surreal-pop"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "黑白建筑碎片被高饱和黄色和红色平面包围",
-          "不规则文字块和撕纸式色带产生街区拼贴感"
-        ],
-        "applicationLimits": "可借鉴色面和图像拼贴；原图没有清楚证明不可能尺度关系，不能把参考分类当成已发生的超现实变形。"
-      }
+      "visualNotes": [
+        "黑白城门锚点夹在黄、红大平涂区之间，硬分区支持强层级；此案例本身不证明出现不可能巨物。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c17",
-      "path": "references/style-images/feishu-c17.png",
+      "id": "feishu-TkKYtP-D5",
+      "path": "references/style-images/feishu-TkKYtP-D5.jpg",
+      "family": "赛博风",
+      "visualSubtype": "超现实风",
+      "sourceCell": "D5",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D5",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1058,
+      "bytes": 179379,
+      "sha256": "52a3df3c2a0e4972b5d1c98015fd12010aa31261302e40cadda58c58a6de39e4",
+      "styleIds": [
+        "surreal-pop"
+      ],
+      "visualNotes": [
+        "上部橙色高密度文字，下部展厅照片保留透视；借鉴现实锚点与色区关系，不能直接照搬文案密度。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-TkKYtP-E5",
+      "path": "references/style-images/feishu-TkKYtP-E5.jpg",
+      "family": "赛博风",
+      "visualSubtype": "超现实风",
+      "sourceCell": "E5",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E5",
+      "mediaType": "image/jpeg",
+      "width": 593,
+      "height": 841,
+      "bytes": 122521,
+      "sha256": "f0803937a6a68b63b86f2700e8d3036e1045f498966106641f68003a9fbbfdd2",
+      "styleIds": [
+        "surreal-pop"
+      ],
+      "visualNotes": [
+        "黑白石窟像置于粉绿底，粉色有机轮廓切入照片，文字沿外侧；文化主体须有用户材料与语境依据。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-TkKYtP-C6",
+      "path": "references/style-images/feishu-TkKYtP-C6.png",
       "family": "学术风（ascii风格）",
       "visualSubtype": "数字科技风",
-      "sourceCell": "C17",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C17",
+      "sourceCell": "C6",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C6",
       "mediaType": "image/png",
       "width": 186,
       "height": 283,
@@ -316,70 +269,58 @@
       "styleIds": [
         "ascii-tech"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "大小与颜色变化的网点在绿蓝色场中构成图像明暗",
-          "标题居上，信息和点阵图像共同划分阅读区域"
-        ],
-        "applicationLimits": "实际可见半色调网点，不是可读 ASCII 代码。原图仅 186×283，不核实细字内容。"
-      }
-    },
-    {
-      "id": "feishu-c18",
-      "path": "references/style-images/feishu-c18.png",
-      "family": "学术风（ascii风格）",
-      "visualSubtype": "学术板报风",
-      "sourceCell": "C18",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C18",
-      "mediaType": "image/png",
-      "width": 581,
-      "height": 855,
-      "bytes": 552001,
-      "sha256": "2b516346a1efe32c4cd035c61af665b44a2c49af5643b4de52d996fd35e934fd",
-      "styleIds": [
-        "academic-board"
+      "visualNotes": [
+        "网点密度重建建筑轮廓，浅绿与蓝色过渡，上部留有清楚的信息空区；不能将纯圆点称为 ASCII。"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "大标题、摘要、人物介绍、时间和报名区形成多组信息层级",
-          "圆形讲者照片较小，背景用少量技术线形支撑"
-        ],
-        "applicationLimits": "参考信息组织；人物、机构、讲座事实、链接和报名二维码都不能继承到新海报。"
-      }
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c19",
-      "path": "references/style-images/feishu-c19.png",
+      "id": "feishu-TkKYtP-D6",
+      "path": "references/style-images/feishu-TkKYtP-D6.png",
       "family": "学术风（ascii风格）",
-      "visualSubtype": "实验文化风",
-      "sourceCell": "C19",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C19",
+      "visualSubtype": "数字科技风",
+      "sourceCell": "D6",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D6",
       "mediaType": "image/png",
-      "width": 317,
-      "height": 423,
-      "bytes": 338863,
-      "sha256": "5a1f014d686101f1b2d3ecbb678299bda61d7e80db5d47d5fbf602b35c49451d",
+      "width": 1080,
+      "height": 1512,
+      "bytes": 2594796,
+      "sha256": "a0c90f60359f510607a198f5281c25a5e9459e472c897237ac52bafd6ff388c3",
       "styleIds": [
-        "experimental-culture"
+        "ascii-tech"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "时钟轮廓和数字被局部波形位移扭曲，识别锚点仍存在",
-          "蓝色颗粒与少量散布字形形成实验视觉场"
-        ],
-        "applicationLimits": "借鉴局部形变和颗粒层次，不生成可误认为真实时间或活动信息的文字。"
-      }
+      "visualNotes": [
+        "荧黄单字符网格与大圆点分别塑造花形，疏密转场明确；局部需辨认字符，色相及花朵不随风格自动复制。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c20",
-      "path": "references/style-images/feishu-c20.png",
+      "id": "feishu-TkKYtP-E6",
+      "path": "references/style-images/feishu-TkKYtP-E6.jpg",
+      "family": "学术风（ascii风格）",
+      "visualSubtype": "数字科技风",
+      "sourceCell": "E6",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E6",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1034,
+      "bytes": 185977,
+      "sha256": "769e10cd088efd1852e76acfd52ec4cce41ba5b5e303c2bb36dfd9a637f4be34",
+      "styleIds": [
+        "ascii-tech"
+      ],
+      "visualNotes": [
+        "黑白花朵的条纹/网屏轮廓与渐变点阵背景并置，标题分散在四边；属于数字线网屏参考，非默认 ASCII 成品证明。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-TkKYtP-C7",
+      "path": "references/style-images/feishu-TkKYtP-C7.png",
       "family": "复古风（油印）",
       "visualSubtype": "套色油印风",
-      "sourceCell": "C20",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C20",
+      "sourceCell": "C7",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C7",
       "mediaType": "image/png",
       "width": 365,
       "height": 509,
@@ -388,62 +329,90 @@
       "styleIds": [
         "mono-color"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "荧光绿纸面与蓝色网点照片形成强烈色面差",
-          "黑色粗字、竖向日期与模块切口控制信息层级"
-        ],
-        "applicationLimits": "原图含多种强对比色；Mono-color 仍按用户确认的一至两种油墨控制，不照抄全色卡。"
-      }
-    },
-    {
-      "id": "feishu-c21",
-      "path": "references/style-images/feishu-c21.png",
-      "family": "复古风（油印）",
-      "visualSubtype": "旧报刊编排风",
-      "sourceCell": "C21",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C21",
-      "mediaType": "image/png",
-      "width": 736,
-      "height": 1051,
-      "bytes": 821226,
-      "sha256": "314e148eea23d6b4406292048dbec5f067c52ea9bb85c07717bb63ed355464e3",
-      "styleIds": [
-        "newspaper-print"
+      "visualNotes": [
+        "绿黑文字与蓝色粗网点杯形形成印刷对比，大图像窗与边部信息；油墨数量需依选定配方核验。"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "大幅器物局部裁切被粗网点转译，黑白反差明显",
-          "无衬线标题、局部横向白带与侧边信息形成编辑节奏"
-        ],
-        "applicationLimits": "原图是灰白网点材料参考，不直接展示发黄旧报纸；不自动加做旧或继承日期、城市和机构。"
-      }
+      "inspection": "contact-sheet-viewed-2026-10-11"
     },
     {
-      "id": "feishu-c22",
-      "path": "references/style-images/feishu-c22.png",
+      "id": "feishu-TkKYtP-D7",
+      "path": "references/style-images/feishu-TkKYtP-D7.jpg",
       "family": "复古风（油印）",
-      "visualSubtype": "复古装饰插画风",
-      "sourceCell": "C22",
-      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=Plpjbx&range=C22",
+      "visualSubtype": "套色油印风",
+      "sourceCell": "D7",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D7",
+      "mediaType": "image/jpeg",
+      "width": 537,
+      "height": 776,
+      "bytes": 91488,
+      "sha256": "0bceb964319721db5614de0b0b72bafa9e356cd8b15e6b85beecb32977b51af1",
+      "styleIds": [
+        "mono-color"
+      ],
+      "visualNotes": [
+        "黑白城门对接黄红色区，硬分区及露纸对比集中；参考两块彩墨角色，黑色若额外印刷须避免成为第三墨。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-TkKYtP-E7",
+      "path": "references/style-images/feishu-TkKYtP-E7.jpg",
+      "family": "复古风（油印）",
+      "visualSubtype": "套色油印风",
+      "sourceCell": "E7",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E7",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1040,
+      "bytes": 178672,
+      "sha256": "b7fc2daa242f45392f70dce839f3278dc5d37ea8a9f9982727aab3f98469259a",
+      "styleIds": [
+        "mono-color"
+      ],
+      "visualNotes": [
+        "红底与深蓝大扇形重复结构，大字沿形体边缘分布，细颗粒与平涂对撞；不用参考的文字、扇子或固定颜色。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "digital-tech-ascii-dot-hybrid-reference",
+      "path": "references/style-images/digital-tech-ascii-dot-hybrid-reference.png",
+      "family": "学术风（ascii风格）",
+      "visualSubtype": "数字科技风",
+      "sourceCell": "N6 / references/ascii-dot-hybrid-reference.png",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=N6",
       "mediaType": "image/png",
       "width": 1080,
-      "height": 1440,
-      "bytes": 2730477,
-      "sha256": "1339c69605ed0e5b2027362a6874331b7d7f664fbe690c13607bb3bbe5099507",
+      "height": 1512,
+      "bytes": 2594796,
+      "sha256": "a0c90f60359f510607a198f5281c25a5e9459e472c897237ac52bafd6ff388c3",
       "styleIds": [
-        "retro-illustration"
+        "ascii-tech"
       ],
-      "visualNotes": {
-        "viewedDate": "2026-10-07",
-        "observedFeatures": [
-          "米色花纹纸底与边缘翻折感形成装饰材料背景",
-          "植物边饰、手绘不规整字形与小角色形成焦点和辅助层"
-        ],
-        "applicationLimits": "借鉴装饰、手绘与材料关系；本次仍是平坦无字底图，标题按 HumanGate 独立生成。"
-      }
+      "visualNotes": [
+        "可辨 ASCII 单字符与圆点各自构成花形，疏密交界与负形建立主体。"
+      ],
+      "inspection": "full-image-viewed-2026-10-11"
+    },
+    {
+      "id": "digital-tech-luminous-palette-reference",
+      "path": "references/style-images/digital-tech-luminous-palette-reference.png",
+      "family": "学术风（ascii风格）",
+      "visualSubtype": "数字科技风",
+      "sourceCell": "N6 / references/luminous-palette-reference.png",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=N6",
+      "mediaType": "image/png",
+      "width": 1080,
+      "height": 2337,
+      "bytes": 3054068,
+      "sha256": "3340d792d8830a4932a46ee2337d26bbe57b502f4baf3d6b79086f330742f899",
+      "styleIds": [
+        "ascii-tech"
+      ],
+      "visualNotes": [
+        "蓝色主色系承担大面积形面，粉色为辅助、浅黄少量高亮；只参考明度和面积，不复制器物、人物或固定色值。"
+      ],
+      "inspection": "full-image-viewed-2026-10-11"
     }
   ]
 }

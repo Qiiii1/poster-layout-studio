@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "importDate": "2026-10-11",
+  "source": {
+    "sheetId": "gdiHLe",
+    "range": "gdiHLe!A1:T10",
+    "revision": 6475,
+    "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe"
+  },
+  "usageGuide": "references/composition-references.md",
+  "compositions": [
+    {
+      "name": "上下构图",
+      "sourceRow": 2,
+      "curatorNote": "",
+      "defaultRecommended": true,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B2",
+          "path": "references/layout-images/feishu-gdiHLe-B2.png",
+          "sourceCell": "B2",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B2"
+        },
+        {
+          "id": "feishu-gdiHLe-C2",
+          "path": "references/layout-images/feishu-gdiHLe-C2.png",
+          "sourceCell": "C2",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C2"
+        },
+        {
+          "id": "feishu-gdiHLe-D2",
+          "path": "references/layout-images/feishu-gdiHLe-D2.png",
+          "sourceCell": "D2",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D2"
+        }
+      ]
+    },
+    {
+      "name": "居中构图",
+      "sourceRow": 3,
+      "curatorNote": "",
+      "defaultRecommended": true,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B3",
+          "path": "references/layout-images/feishu-gdiHLe-B3.jpg",
+          "sourceCell": "B3",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B3"
+        },
+        {
+          "id": "feishu-gdiHLe-C3",
+          "path": "references/layout-images/feishu-gdiHLe-C3.png",
+          "sourceCell": "C3",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C3"
+        },
+        {
+          "id": "feishu-gdiHLe-D3",
+          "path": "references/layout-images/feishu-gdiHLe-D3.png",
+          "sourceCell": "D3",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D3"
+        }
+      ]
+    },
+    {
+      "name": "左右构图",
+      "sourceRow": 4,
+      "curatorNote": "",
+      "defaultRecommended": true,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B4",
+          "path": "references/layout-images/feishu-gdiHLe-B4.jpg",
+          "sourceCell": "B4",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B4"
+        },
+        {
+          "id": "feishu-gdiHLe-C4",
+          "path": "references/layout-images/feishu-gdiHLe-C4.png",
+          "sourceCell": "C4",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C4"
+        },
+        {
+          "id": "feishu-gdiHLe-D4",
+          "path": "references/layout-images/feishu-gdiHLe-D4.png",
+          "sourceCell": "D4",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D4"
+        }
+      ]
+    },
+    {
+      "name": "对角构图",
+      "sourceRow": 5,
+      "curatorNote": "",
+      "defaultRecommended": true,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B5",
+          "path": "references/layout-images/feishu-gdiHLe-B5.jpg",
+          "sourceCell": "B5",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B5"
+        },
+        {
+          "id": "feishu-gdiHLe-C5",
+          "path": "references/layout-images/feishu-gdiHLe-C5.jpg",
+          "sourceCell": "C5",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C5"
+        },
+        {
+          "id": "feishu-gdiHLe-D5",
+          "path": "references/layout-images/feishu-gdiHLe-D5.png",
+          "sourceCell": "D5",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D5"
+        }
+      ]
+    },
+    {
+      "name": "四角构图",
+      "sourceRow": 6,
+      "curatorNote": "",
+      "defaultRecommended": true,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B6",
+          "path": "references/layout-images/feishu-gdiHLe-B6.jpg",
+          "sourceCell": "B6",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B6"
+        },
+        {
+          "id": "feishu-gdiHLe-C6",
+          "path": "references/layout-images/feishu-gdiHLe-C6.png",
+          "sourceCell": "C6",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C6"
+        },
+        {
+          "id": "feishu-gdiHLe-D6",
+          "path": "references/layout-images/feishu-gdiHLe-D6.png",
+          "sourceCell": "D6",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D6"
+        }
+      ]
+    },
+    {
+      "name": "对称构图",
+      "sourceRow": 7,
+      "curatorNote": "不推荐",
+      "defaultRecommended": false,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B7",
+          "path": "references/layout-images/feishu-gdiHLe-B7.jpg",
+          "sourceCell": "B7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B7"
+        },
+        {
+          "id": "feishu-gdiHLe-C7",
+          "path": "references/layout-images/feishu-gdiHLe-C7.png",
+          "sourceCell": "C7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C7"
+        },
+        {
+          "id": "feishu-gdiHLe-D7",
+          "path": "references/layout-images/feishu-gdiHLe-D7.png",
+          "sourceCell": "D7",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D7"
+        }
+      ]
+    },
+    {
+      "name": "S形构图",
+      "sourceRow": 8,
+      "curatorNote": "",
+      "defaultRecommended": true,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B8",
+          "path": "references/layout-images/feishu-gdiHLe-B8.jpg",
+          "sourceCell": "B8",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B8"
+        },
+        {
+          "id": "feishu-gdiHLe-C8",
+          "path": "references/layout-images/feishu-gdiHLe-C8.png",
+          "sourceCell": "C8",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C8"
+        },
+        {
+          "id": "feishu-gdiHLe-D8",
+          "path": "references/layout-images/feishu-gdiHLe-D8.png",
+          "sourceCell": "D8",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D8"
+        }
+      ]
+    },
+    {
+      "name": "散点构图",
+      "sourceRow": 9,
+      "curatorNote": "不推荐",
+      "defaultRecommended": false,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B9",
+          "path": "references/layout-images/feishu-gdiHLe-B9.png",
+          "sourceCell": "B9",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B9"
+        },
+        {
+          "id": "feishu-gdiHLe-C9",
+          "path": "references/layout-images/feishu-gdiHLe-C9.png",
+          "sourceCell": "C9",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C9"
+        },
+        {
+          "id": "feishu-gdiHLe-D9",
+          "path": "references/layout-images/feishu-gdiHLe-D9.jpg",
+          "sourceCell": "D9",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D9"
+        }
+      ]
+    },
+    {
+      "name": "包围式构图",
+      "sourceRow": 10,
+      "curatorNote": "不推荐",
+      "defaultRecommended": false,
+      "referenceImages": [
+        {
+          "id": "feishu-gdiHLe-B10",
+          "path": "references/layout-images/feishu-gdiHLe-B10.jpg",
+          "sourceCell": "B10",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B10"
+        },
+        {
+          "id": "feishu-gdiHLe-C10",
+          "path": "references/layout-images/feishu-gdiHLe-C10.png",
+          "sourceCell": "C10",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C10"
+        },
+        {
+          "id": "feishu-gdiHLe-D10",
+          "path": "references/layout-images/feishu-gdiHLe-D10.png",
+          "sourceCell": "D10",
+          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D10"
+        }
+      ]
+    }
+  ],
+  "referenceImages": [
+    {
+      "id": "feishu-gdiHLe-B2",
+      "path": "references/layout-images/feishu-gdiHLe-B2.png",
+      "composition": "上下构图",
+      "sourceCell": "B2",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B2",
+      "mediaType": "image/png",
+      "width": 736,
+      "height": 1099,
+      "bytes": 1264310,
+      "sha256": "a64a2a0d315d6812ea1998a92db4723b2bce99a4ccc76e0c276167edc1579a7c",
+      "visualNotes": [
+        "标题和简短信息在上部，下部图像承担主体，阅读由上至下。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C2",
+      "path": "references/layout-images/feishu-gdiHLe-C2.png",
+      "composition": "上下构图",
+      "sourceCell": "C2",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C2",
+      "mediaType": "image/png",
+      "width": 726,
+      "height": 1030,
+      "bytes": 618666,
+      "sha256": "4c3560925e3a986e58c9d1d07c78337ec9c0c21d5311b9fa57c2c74682f53be3",
+      "visualNotes": [
+        "上半标题配留白，下半集中图像与底部信息。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D2",
+      "path": "references/layout-images/feishu-gdiHLe-D2.png",
+      "composition": "上下构图",
+      "sourceCell": "D2",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D2",
+      "mediaType": "image/png",
+      "width": 735,
+      "height": 1040,
+      "bytes": 1477316,
+      "sha256": "6a7be6c77c623d69d2de780af388a727d431d3e637bfa082b0eab9b90512c34a",
+      "visualNotes": [
+        "大几何图像占上中部，下部标题与活动信息；同属上下分区但顺序可不同。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B3",
+      "path": "references/layout-images/feishu-gdiHLe-B3.jpg",
+      "composition": "居中构图",
+      "sourceCell": "B3",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B3",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1042,
+      "bytes": 76772,
+      "sha256": "00dbeff6aa73008861e384954d8ab5da7f754148e607bf89e427a339c1f2bab3",
+      "visualNotes": [
+        "居中主体与外侧疏朗文字，垂直标题贴近主体一侧。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C3",
+      "path": "references/layout-images/feishu-gdiHLe-C3.png",
+      "composition": "居中构图",
+      "sourceCell": "C3",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C3",
+      "mediaType": "image/png",
+      "width": 736,
+      "height": 1040,
+      "bytes": 490902,
+      "sha256": "b304fd5c65d842ac971664c39f8db91446e987289cb182bb2719694da56f4dae",
+      "visualNotes": [
+        "多个器物沿中轴叠置，大字穿插中央，需检查识别部位遮挡。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D3",
+      "path": "references/layout-images/feishu-gdiHLe-D3.png",
+      "composition": "居中构图",
+      "sourceCell": "D3",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D3",
+      "mediaType": "image/png",
+      "width": 736,
+      "height": 1047,
+      "bytes": 820241,
+      "sha256": "ee5e09d6e0797fa1f642aa0331cc60623852b8947cf88b76d0688585ccae38e9",
+      "visualNotes": [
+        "器物围绕中间竖列文字分布，主体大幅围合留白。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B4",
+      "path": "references/layout-images/feishu-gdiHLe-B4.jpg",
+      "composition": "左右构图",
+      "sourceCell": "B4",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B4",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 981,
+      "bytes": 120874,
+      "sha256": "257da21447de848dd26b2f5c0d85ce65b38d6c3fb8e394fa0f11f057c8367c5e",
+      "visualNotes": [
+        "左侧标题和说明，右侧大剪影，形成两条阅读轨道。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C4",
+      "path": "references/layout-images/feishu-gdiHLe-C4.png",
+      "composition": "左右构图",
+      "sourceCell": "C4",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C4",
+      "mediaType": "image/png",
+      "width": 913,
+      "height": 1305,
+      "bytes": 1807302,
+      "sha256": "ef0a19821f37a7d1b5fb046a27e15114c08f35eba04e6868e7fe4d0096bf43b7",
+      "visualNotes": [
+        "左侧宽图像窗，右侧窄标题和信息。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D4",
+      "path": "references/layout-images/feishu-gdiHLe-D4.png",
+      "composition": "左右构图",
+      "sourceCell": "D4",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D4",
+      "mediaType": "image/png",
+      "width": 960,
+      "height": 1200,
+      "bytes": 915003,
+      "sha256": "280ab37889a23192f441571186d34b1008f8da5e735bbb128305ec7306992786",
+      "visualNotes": [
+        "左侧多行标题，右側大器物局部出框，底部保留信息。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B5",
+      "path": "references/layout-images/feishu-gdiHLe-B5.jpg",
+      "composition": "对角构图",
+      "sourceCell": "B5",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B5",
+      "mediaType": "image/jpeg",
+      "width": 593,
+      "height": 838,
+      "bytes": 138421,
+      "sha256": "c00363982d3a605ba936e2d27d12030264214c107ce8931ec2b1c717450a106c",
+      "visualNotes": [
+        "大字与弧线沿左上到右下穿过图像，信息置于下边。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C5",
+      "path": "references/layout-images/feishu-gdiHLe-C5.jpg",
+      "composition": "对角构图",
+      "sourceCell": "C5",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C5",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1131,
+      "bytes": 148930,
+      "sha256": "b6874d056fba5cc74add46b4d1227147320826202cf5dce800622ccf477360fa",
+      "visualNotes": [
+        "上下标题对角呼应，窄长字形和日期形成交错锚点。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D5",
+      "path": "references/layout-images/feishu-gdiHLe-D5.png",
+      "composition": "对角构图",
+      "sourceCell": "D5",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D5",
+      "mediaType": "image/png",
+      "width": 736,
+      "height": 1052,
+      "bytes": 1022221,
+      "sha256": "4e4a7fe150c5ef51fbb2b4556935d2f4aae18f4b9cfbb523734e9d26e25b5544",
+      "visualNotes": [
+        "主体和金色色面沿对角推进，人物虽小但比例服务于空间，不能默认缩小所有主体。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B6",
+      "path": "references/layout-images/feishu-gdiHLe-B6.jpg",
+      "composition": "四角构图",
+      "sourceCell": "B6",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B6",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1093,
+      "bytes": 104463,
+      "sha256": "649309b3a8e8f46e93930f58e0e886658731a661406809911ba5f00116ba044f",
+      "visualNotes": [
+        "四角大字围绕中间小型行进主体，底部日期沿横轴。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C6",
+      "path": "references/layout-images/feishu-gdiHLe-C6.png",
+      "composition": "四角构图",
+      "sourceCell": "C6",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C6",
+      "mediaType": "image/png",
+      "width": 1080,
+      "height": 1440,
+      "bytes": 2229248,
+      "sha256": "2675ab5190b969a2070cd68886add422d98dcb4d30021ee0f60927b5c0a2d488",
+      "visualNotes": [
+        "四角字形围绕中部蓝色图像窗，辅助信息贴边。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D6",
+      "path": "references/layout-images/feishu-gdiHLe-D6.png",
+      "composition": "四角构图",
+      "sourceCell": "D6",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D6",
+      "mediaType": "image/png",
+      "width": 1080,
+      "height": 1440,
+      "bytes": 1806085,
+      "sha256": "378fd7a589e1243a613e7cc61ac34d492819ede40a1710cd3d4f4898cc96aeb0",
+      "visualNotes": [
+        "四角标题与中央大文物互相呼应，少量说明沿下边。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B7",
+      "path": "references/layout-images/feishu-gdiHLe-B7.jpg",
+      "composition": "对称构图",
+      "sourceCell": "B7",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B7",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1040,
+      "bytes": 149142,
+      "sha256": "31d2d3648e68f322be5add51f2844f4b1072ad825c99e46e2dd560b2b19f98e5",
+      "visualNotes": [
+        "中央纵向书法与左右信息近似轴对称。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C7",
+      "path": "references/layout-images/feishu-gdiHLe-C7.png",
+      "composition": "对称构图",
+      "sourceCell": "C7",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C7",
+      "mediaType": "image/png",
+      "width": 888,
+      "height": 1244,
+      "bytes": 1561888,
+      "sha256": "7a5a9299e89ad4ef43854ee1f2f5ec4138e31240e8a74adf2427ecd65662a98a",
+      "visualNotes": [
+        "菱形器物居中，四周大字与说明构成成对关系。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D7",
+      "path": "references/layout-images/feishu-gdiHLe-D7.png",
+      "composition": "对称构图",
+      "sourceCell": "D7",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D7",
+      "mediaType": "image/png",
+      "width": 735,
+      "height": 1045,
+      "bytes": 1211154,
+      "sha256": "6f25b3b0010fd995f8f559db4ce943daa576c66d0e4c8608db5424da95ee2004",
+      "visualNotes": [
+        "中央竖向标题，上下器物与左右明暗色面形成平衡。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B8",
+      "path": "references/layout-images/feishu-gdiHLe-B8.jpg",
+      "composition": "S形构图",
+      "sourceCell": "B8",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B8",
+      "mediaType": "image/jpeg",
+      "width": 735,
+      "height": 1040,
+      "bytes": 143582,
+      "sha256": "4e959870825bc859f2ad344109f8e1f47e04497a285636d5d3ec556ab795dcf0",
+      "visualNotes": [
+        "上下人物沿曲线串联，中部色块和信息接续阅读。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C8",
+      "path": "references/layout-images/feishu-gdiHLe-C8.png",
+      "composition": "S形构图",
+      "sourceCell": "C8",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C8",
+      "mediaType": "image/png",
+      "width": 786,
+      "height": 1214,
+      "bytes": 651156,
+      "sha256": "dac7bfbb6c41b0fb211c072ae047eda7c77a240fcc65d8933dedc1347066b5f1",
+      "visualNotes": [
+        "标题、器物与块面依转折纵向排列，需要手动设计路径。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D8",
+      "path": "references/layout-images/feishu-gdiHLe-D8.png",
+      "composition": "S形构图",
+      "sourceCell": "D8",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D8",
+      "mediaType": "image/png",
+      "width": 800,
+      "height": 1143,
+      "bytes": 537780,
+      "sha256": "78ee548072e9a44958f14855382252d42d16d67f6d50e40b928e4e6c66c74786",
+      "visualNotes": [
+        "四个大字沿起伏方向与细曲线连成阅读节奏。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B9",
+      "path": "references/layout-images/feishu-gdiHLe-B9.png",
+      "composition": "散点构图",
+      "sourceCell": "B9",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B9",
+      "mediaType": "image/png",
+      "width": 678,
+      "height": 1014,
+      "bytes": 1126116,
+      "sha256": "86838e2c6d0fd57288802bd7cb176622eb546219831666113ba065f8064c1257",
+      "visualNotes": [
+        "器物分散布置在主标题上方，底部有集中日期轨道。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C9",
+      "path": "references/layout-images/feishu-gdiHLe-C9.png",
+      "composition": "散点构图",
+      "sourceCell": "C9",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C9",
+      "mediaType": "image/png",
+      "width": 826,
+      "height": 1162,
+      "bytes": 658017,
+      "sha256": "a77b9e6e777662538b451fbd0514006662e2b06fed301ab4b9fefe72264a2199",
+      "visualNotes": [
+        "文字与小图散布灰底，需要明确第一阅读入口。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D9",
+      "path": "references/layout-images/feishu-gdiHLe-D9.jpg",
+      "composition": "散点构图",
+      "sourceCell": "D9",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D9",
+      "mediaType": "image/jpeg",
+      "width": 564,
+      "height": 846,
+      "bytes": 178261,
+      "sha256": "4cb3d48a44cc927652e399b3ccfe25715e08f1b2fde153e6681dbe1d7d9d7089",
+      "visualNotes": [
+        "密集彩色图案与器物混排，容易导致尺度与信息竞争。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-B10",
+      "path": "references/layout-images/feishu-gdiHLe-B10.jpg",
+      "composition": "包围式构图",
+      "sourceCell": "B10",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=B10",
+      "mediaType": "image/jpeg",
+      "width": 736,
+      "height": 1049,
+      "bytes": 114098,
+      "sha256": "e5b7cd0aea1e993a002d0fcdced6c210c5410cc570481fa5bbcea4406480cfbe",
+      "visualNotes": [
+        "大字占中部，多组文字沿周边围绕，中央图形受字形影响。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-C10",
+      "path": "references/layout-images/feishu-gdiHLe-C10.png",
+      "composition": "包围式构图",
+      "sourceCell": "C10",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=C10",
+      "mediaType": "image/png",
+      "width": 736,
+      "height": 1104,
+      "bytes": 1124477,
+      "sha256": "1222e2b3275290471026bf907ffaddfc5d52e137f2fdf629b4d745cbe7df2437",
+      "visualNotes": [
+        "人物与大字互相穿插，说明沿边缘围合。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    },
+    {
+      "id": "feishu-gdiHLe-D10",
+      "path": "references/layout-images/feishu-gdiHLe-D10.png",
+      "composition": "包围式构图",
+      "sourceCell": "D10",
+      "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=gdiHLe&range=D10",
+      "mediaType": "image/png",
+      "width": 303,
+      "height": 424,
+      "bytes": 268372,
+      "sha256": "197027da8ec488206e0ceee90ad10aa3878c185f904da6a7c8a0e0f928f85e94",
+      "visualNotes": [
+        "上部彩色流线包围黑白建筑，边部微字密集；仅为围合关系参考。"
+      ],
+      "inspection": "contact-sheet-viewed-2026-10-11"
+    }
+  ]
+}

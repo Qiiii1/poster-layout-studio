@@ -41,6 +41,27 @@ def read_rows(path):
         raise ValueError(f'Failed sheet response: {path}')
     return data['data']['valueRange']['values']
 
+def column_letter(index):
+    result = ''
+    number = index + 1
+    while number:
+        number, remainder = divmod(number - 1, 26)
+        result = chr(65 + remainder) + result
+    return result
+
+def case_columns(rows):
+    if not rows:
+        raise ValueError('Case sheet has no header row')
+    headers = [cell_text(value) for value in rows[0]]
+    required = ['活动名称', '主视觉图片'] + [label for _, label, _, _ in DIMENSIONS]
+    columns = {}
+    for label in required:
+        matches = [i for i, value in enumerate(headers) if value == label]
+        if len(matches) != 1:
+            raise ValueError(f'Case column must occur exactly once: {label}')
+        columns[label] = matches[0]
+    return columns
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--cases', required=True, type=Path)
@@ -49,16 +70,22 @@ def main():
     p.add_argument('--minimal', type=Path)
     p.add_argument('--cyber', type=Path)
     p.add_argument('--output-dir', required=True, type=Path)
+    p.add_argument('--import-date', type=date.fromisoformat, default=date.today())
     a = p.parse_args()
     rows = read_rows(a.cases)
+    columns = case_columns(rows)
+    case_response = json.loads(a.cases.read_text())['data']
+    case_range = case_response['valueRange'].get('range', '')
+    if not re.fullmatch(r'76438f!A1:[A-Z]+\d+', case_range):
+        raise ValueError('Cases must start at A1 in sheet 76438f')
     validations = json.loads(a.dropdowns.read_text())
     if not validations.get('ok'):
         raise ValueError('Dropdown response failed')
     counts = {key: Counter() for key, _, _, _ in DIMENSIONS}
     options = {key: [] for key, _, _, _ in DIMENSIONS}
     for v in validations['data'].get('dataValidations', []):
-        for key, _, col, _ in DIMENSIONS:
-            letter = chr(ord('A') + col)
+        for key, label, _, _ in DIMENSIONS:
+            letter = column_letter(columns[label])
             if any(re.search('!' + letter + r'\d+:', r) for r in v.get('ranges', [])):
                 for tag in v.get('conditionValues', []):
                     if tag not in options[key]:
@@ -66,7 +93,8 @@ def main():
     known_subjects = set(options['subjectType'])
     records, excluded = [], []
     for number, row in enumerate(rows[1:], 2):
-        fields = {key: split_tags(row[col] if len(row) > col else '') for key, _, col, _ in DIMENSIONS}
+        fields = {key: split_tags(row[columns[label]] if len(row) > columns[label] else '')
+                  for key, label, _, _ in DIMENSIONS}
         if fields['subjectType'] and not set(fields['subjectType']).issubset(known_subjects):
             excluded.append({'row': number, 'reason': 'subject-type annotation outside the dropdown vocabulary', 'value': fields['subjectType']})
             continue
@@ -77,7 +105,10 @@ def main():
             for tag in tags:
                 if tag not in options[key]:
                     options[key].append(tag)
-        records.append({'row': number, 'name': cell_text(row[0]), 'tags': fields})
+        image = row[columns['主视觉图片']] if len(row) > columns['主视觉图片'] else None
+        records.append({'row': number, 'name': cell_text(row[columns['活动名称']]), 'tags': fields,
+                        'imageCell': column_letter(columns['主视觉图片']) + str(number),
+                        'hasImage': bool(isinstance(image, dict) and image.get('type') == 'embed-image')})
     skill_rows = read_rows(a.skills)
     subtypes = []
     for number, row in enumerate(skill_rows[1:], 2):
@@ -101,8 +132,11 @@ def main():
                     original = cell_text(row[1])
                     subtype_counts[ALIASES.get(original, original)] += 1
     source = {'url': 'https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb',
-              'title': '文化海报案例库', 'importDate': date.today().isoformat(),
+              'title': '文化海报案例库', 'importDate': a.import_date.isoformat(),
               'sheets': {'cases': '76438f', 'skills': 'Plpjbx', 'minimal': 'saUFCt', 'cyber': 'wYdbUd'},
+              'caseSheetUrl': 'https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=76438f',
+              'caseColumns': {label: column_letter(index) for label, index in columns.items()},
+              'caseRange': case_range, 'caseSheetRevision': case_response.get('revision'),
               'caseRowsRead': len(rows) - 1, 'taggedCases': len(records), 'excluded': excluded}
     taxonomy = {'schemaVersion': 1, 'source': source,
                 'dimensions': [{'id': key, 'label': label, 'multiple': multiple,

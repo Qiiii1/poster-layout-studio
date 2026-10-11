@@ -1,53 +1,5 @@
-# Artwork style adapters
+# 风格适配入口
 
-These adapters use the visual treatment requested by the user. They do not invoke the source skills' complete poster workflows: generated lettering, original output ratios, promotional response lines, or original full-poster layout defaults are not inherited. This workflow intentionally produces a text-free background at the selected portrait ratio (2:3, 4:5 or 3:4), then applies independent live typography. When the user chooses subject cutouts, split these treatments into a subject-free background and transparent foreground assets as described in [subject layers](subject-layers.md); do not flatten the subject into the background.
+当前六条视觉处理方法、输入要求与限制见 [六条视觉路线](visual-recipes.md)。提示词与检查项在 `assets/catalogs/styles.json`，本地参考映射在 `style-references.json`。
 
-## Visual reference use
-
-For each adapter, inspect its `referenceImages` in `assets/catalogs/styles.json` before recommendation and prompt construction. The user's column-C images are packaged locally; follow [style-image guidance](style-image-references.md) and preserve the confirmed subject, palette and layout. Gathered Scenes shares its paper-print subtype reference rather than an exact adapter example.
-
-## Mono-color
-
-Source: local skill `mono-color` (`mono-color-skill/SKILL.md`).
-
-Neutral white, gray or pale paper; at most two distinct ink plates, assigned to dominant structure and limited accent. Use screening, paper knockouts and plate separation; avoid a uniform digital color tint. Keep one strong visual event and a concentrated quiet area. Age or distress only when requested. Without a source photo, interpret one concrete theme; with a source, preserve its recognizable subject.
-
-Proposed colors (require palette-gate approval): paper `#FAFAF7`, cobalt `#2148B8`, terracotta `#C65F38`. Explicit one-ink requests use the same ink for both roles. Default accent should occupy a smaller share than the dominant ink. Reserve the selected text zones before generation; the original skill's title/image collision is expressed later through HTML when it remains legible.
-
-Checks: ink count, material reproduction, subject identity, calm text zones, no baked lettering. Template compatibility is based on image geometry, not the style name alone.
-
-## Y2K
-
-Source: local skill `y2k-pop-poster`, author koinu. Its source declares CC-BY-ND-4.0; the original skill text and example images are not redistributed here. This adapter is a separate description of the requested visual treatment.
-
-Use the actual supplied subject. Preserve identity, number, pose, expression, recognizable color and critical structures. A high-contrast cutout sits on a saturated background, separated by a continuous hard outline. Anchor a main burst to the pose, behind the subject, rather than scattering equal decorations around the frame. Keep at most two smaller bursts; protect faces and key details.
-
-Resolve background/outline colors and texture in the generation settings. The HTML defaults are editable proposals, not evidence that the user approved a particular palette. When invoking the original Y2K skill itself, honor its explicit color/texture selection workflow. When executing this adapter, the user's chosen or accepted style settings carry those choices.
-
-Texture options:
-
-- Clean: very fine grain, no obvious scratches/folds.
-- Standard: fine paper grain, restrained screen-print noise, up to a few subtle scratches; no folds.
-- Heavy vintage: controlled copier texture and edge folds that fade before the center; texture remains behind the subject.
-
-Checks: identity, complete key structures, clear contour, consistent selected texture, restrained decoration, quiet text zones, no lettering. Do not shrink the subject until its identity disappears to accommodate an unsuitable template.
-
-## Gathered Scenes
-
-Source: local skill `scenes-gathered-zine-v1-3`, author Zeejay0.
-
-Retain a truthful photographic anchor. Extract one or two source-derived contours or rhythms to organize a larger sparse illustration field. Merge repeated foliage, branches, crowds and textures into a few large forms. A narrow fibrous torn edge separates photo from paper. One added print hue must continue, replace, connect or balance an actual source form; natural photo colors do not count as extra added ink hues.
-
-Use warm paper, flat scanning texture and substantial internal negative space. Avoid generic bright corner patches, a literal tracing of every leaf, uniformly deckled borders, heavy shadows or raised-paper mockups.
-
-The source skill normally uses restrained micro-text. Here, only its artwork treatment is adopted; the 16-title library is a separate user-requested typography layer. Prefer the quieter compatible templates, and explain that applying a very large display title changes the original style's typographic character. Do not label all 16 choices equally suitable.
-
-Checks: photographic fidelity, retained spatial relationships, substantial simplification, useful source-derived color, visible narrow fibrous boundary, quiet text zones, no generated words.
-
-## Prompt record and inspection
-
-The catalog provides compact text-free prompt scaffolds. Fill subject, chosen colors, texture and numerical text regions, then append the mode-specific shared `artDirection` clause. The agent must enrich the subject-preservation and abstraction clauses after inspecting the actual photo. Do not send a placeholder subject to generation.
-
-Make the main image event large within the useful image area. Mono-color uses a broad ink mass or close crop; Y2K uses an oversized source subject with one strong pose-related burst; Gathered Scenes uses an expansive photographic anchor or source-derived contour while retaining useful quiet paper. Scale contrast comes from composition, not enlarged print grain or extra subjects. Cutout mode applies foreground scale to the separately generated assets and their planned rectangles; its empty background remains free of those subjects.
-
-Record actual image findings and targeted corrections alongside the prompt. The editor's “检查排版” checks geometry only; it cannot certify these style/fidelity requirements.
+旧工程的风格 ID 和原素材可继续打开；`legacy-styles.json` 只供读取工程记录，不进入当前菜单或推荐。重新生成时须明确选择当前路线。原始独立 skill 不作为运行依赖，也不自动执行其安装、联网或完整海报工作流。
