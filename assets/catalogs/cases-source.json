@@ -1,0 +1,24 @@
+{
+  "url": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb",
+  "sheetId": "76438f",
+  "sheetName": "案例库",
+  "columns": "C,E:I",
+  "importDate": "2026-10-09",
+  "revision": 5978,
+  "taggedCases": 1313,
+  "excludedRows": [
+    54
+  ],
+  "sha256": "9db1b97a29748c6c39e4988d15b4ce96c172ff76a9532c347c8e3396b611219e",
+  "fields": {
+    "C": "eventType",
+    "E": "audience",
+    "F": "contentTypes",
+    "G": "subjectType",
+    "H": "composition",
+    "I": "styleFamily"
+  },
+  "transformations": [
+    "Removed original column D from runtime records on 2026-10-13."
+  ]
+}

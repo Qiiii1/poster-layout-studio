@@ -1,10 +1,7 @@
-# Source notes
+# 来源说明
 
-- `assets/editor/vendor/layer-editor.js` and `.css` are unchanged copies of the installed `editable-design` runtime, under its included Apache-2.0 license. The shell and adapter are separate files.
-- Layout geometry is a visual reconstruction of the user's attached `9aaac0055ccef2706c9d5484aeab23d1.jpg`, numbered by row. It does not contain original source CSS or embed the source image.
-- Artwork recipe provenance is documented in `style-adapters.md`. Original source-skill files and their bundled example libraries are not included in this package.
-- The 2026-10-04 Feishu import added seven base tag dimensions and eighteen visual subtypes. The case sheet `76438f` and dropdowns were refreshed on 2026-10-10, yielding 1,313 tagged records; header-based import follows the newly inserted ordinal column. Source sheet IDs, revisions, row numbers, aliases, image cells and excluded annotation rows are retained in `tags.json` and `cases.json`. Matched case artwork is fetched privately on demand for visual inspection; it, signed media download links, scores and personal identifiers are omitted from the installed package.
-- Expanded recipes are independent visual adapters described in `visual-recipes.md`. `source-registry.json` records source URLs, pinned Git commits and download status. Raw third-party instructions, scripts and examples remain in the workspace download folder; they are not executed or bundled. Recommendations distinguish case associations from authored design rules.
-- On 2026-10-11, the user explicitly chose the optimized six routes in sheet `TkKYtP` to replace the previous recommendation library. Twenty style reference images (18 C/D/E images and two digital-tech attachment images) and 27 composition-reference images from `gdiHLe` are bundled with original bytes and visible marks. Dimensions, hashes, source cells, revision and observations are recorded in the two reference manifests. These artworks retain their source attribution and do not inherit the runtime software license.
-- The new `soft-geometric-image` Markdown attachment and `digital-tech-stylizer.zip` were downloaded and read as reference material. No attachment scripts or original workflow commands were executed. The lightweight illustration attachment's linked `approved-style.png` was absent; it is not claimed as bundled. New recipe descriptions adapt the visual methods to this studio's existing human gates, ratios and separate layers.
-- Retired style descriptions are retained only for reading saved projects, outside the six-route menu and recommendation input. Original old image copies are removed from the active package. Raw sheet exports, media tokens, signed URLs, credentials, original third-party instructions and private case previews stay out of the installation archive.
+- 当前案例来源、导入日期与排除行见 `../assets/catalogs/cases-source.json`。检索唯一数据源为 `cases-text.jsonl`；标签数量由该文件重新统计。案例记录不包含案例图片。
+- `tags.json` 只维护六个案例标签维度；标签值保留原表写法，显示名称可用 label。风格生成依据六大风格映射，不读取历史子风格或调研笔记。
+- 构图依据九张用户提供的排版参考图，见 `layout-images/`；`../assets/layout-previews/` 为内置灰度示意图。参考只指导相对关系，不复制内容、颜色或固定坐标。
+- 当前配方来源及文件哈希见 `../assets/catalogs/style-skill-mappings.json`。包内保留所需许可与 NOTICE；中国风保留 original.md 供本地路由调用。
+- 旧标签、旧来源登记与调研笔记不作为当前生成依据，历史备份保存在发布包之外。

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "L01",
+    "name": "上下构图",
+    "image": "layout-01.png"
+  },
+  {
+    "id": "L02",
+    "name": "居中构图",
+    "image": "layout-02.png"
+  },
+  {
+    "id": "L03",
+    "name": "左右构图",
+    "image": "layout-03.png"
+  },
+  {
+    "id": "L04",
+    "name": "对角构图",
+    "image": "layout-04.png"
+  },
+  {
+    "id": "L05",
+    "name": "四角构图",
+    "image": "layout-05.png"
+  },
+  {
+    "id": "L06",
+    "name": "对称构图",
+    "image": "layout-06.png"
+  },
+  {
+    "id": "L07",
+    "name": "S形构图",
+    "image": "layout-07.png"
+  },
+  {
+    "id": "L08",
+    "name": "散点式构图",
+    "image": "layout-08.png"
+  },
+  {
+    "id": "L09",
+    "name": "包围式构图",
+    "image": "layout-09.png"
+  }
+]

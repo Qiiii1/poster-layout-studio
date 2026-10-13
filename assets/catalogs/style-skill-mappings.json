@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "familyMappings": [
+    {
+      "family": "简约风",
+      "styleId": "simple",
+      "skillPath": "assets/style-skills/simple/SKILL.md",
+      "sourceOriginalName": "soft-geometric-image",
+      "sourceKind": "distilled-local-recipe",
+      "recipeSha256": "f476f51b76bb1a4811ed877f331a07a71fc166381ad314df64c5be8cba0a669e"
+    },
+    {
+      "family": "赛博风",
+      "styleId": "cyber",
+      "skillPath": "assets/style-skills/cyber/SKILL.md",
+      "sourceOriginalName": "surreal-pop-collage",
+      "sourceKind": "distilled-local-recipe",
+      "recipeSha256": "bbbf78dcd4eb9918502ffab95e9bf0ccb457878bd37860b06d1dd90bec677ca4"
+    },
+    {
+      "family": "趣味风（拼贴）",
+      "styleId": "playful",
+      "skillPath": "assets/style-skills/playful/SKILL.md",
+      "sourceOriginalName": "collage-design",
+      "sourceKind": "distilled-local-recipe",
+      "recipeSha256": "8312e1a73cd7cc665715f3c2fce1bcada5cb95de67e5de53cd5082258fc8475a"
+    },
+    {
+      "family": "复古风（油印）",
+      "styleId": "retro",
+      "skillPath": "assets/style-skills/retro/SKILL.md",
+      "sourceOriginalName": "mono-color-skill",
+      "sourceKind": "distilled-local-recipe",
+      "recipeSha256": "4fa0d4fb54adeea67c0f8333c86fdaefd7c26a5d2037a33b3a085fe92ae16653"
+    },
+    {
+      "family": "中国风（东方水墨）",
+      "styleId": "chinese",
+      "skillPath": "assets/style-skills/chinese/SKILL.md",
+      "sourceOriginalName": "chinese-style-poster-skill",
+      "sourceKind": "original-visual-rules-local-adapter",
+      "recipeSha256": "ebf75a3dd22825c7a45be1bc6137b22bc448f8108750157ecfbb7f1b4b9c6402",
+      "originalTextPath": "assets/style-skills/chinese/original.md"
+    },
+    {
+      "family": "学术风（ascii风格）",
+      "styleId": "academic",
+      "status": "active",
+      "available": true,
+      "skillPath": "assets/style-skills/academic/SKILL.md",
+      "sourceOriginalName": "digital-tech-stylizer",
+      "sourceKind": "distilled-local-recipe",
+      "recipeSha256": "81ed6311a096fdb8d26dc11be65729bb906ed0ceee6018b05ba6a50bbe430998"
+    }
+  ],
+  "scope": "仅保留当前六大风格及其本地生成入口；案例原始大类标签不变。"
+}
