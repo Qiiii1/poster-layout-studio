@@ -130,7 +130,7 @@
         "L05",
         "L06"
       ],
-      "prompt": "Create a complete print-style poster with all approved text integrated. Use a flat neutral approved paper substrate and at most two printing inks with clear dominant and subordinate roles. Mechanical halftone screening, clipped highlights, localized ink gaps and exposed paper describe the recognisable approved subject, not a global digital color wash. Keep one strong image event and a quiet readable interval. Follow separately approved palette and flexible composition. No unrequested aging, invented historical props, newspaper articles, logos or watermark. Render every approved title and practical detail accurately in the final image.",
+      "prompt": "Create a complete print-style poster with all approved text integrated. Use a flat neutral approved paper substrate and at most two printing inks with clear dominant and subordinate roles. Mechanical halftone screening, clipped highlights, localized ink gaps and exposed paper describe the recognisable approved subject, not a global digital color wash. Keep one strong image event and a quiet readable interval. Follow separately approved palette and flexible composition. No unrequested aging, invented historical props, newspaper articles, unprovided logos or watermark. Do not generate or redraw any logo. Reserve its placement area; the original user-supplied logo will be inserted unchanged after generation. Render every approved title and practical detail accurately in the final image.",
       "checks": [
         "油墨不超过两种",
         "主体可识别",
