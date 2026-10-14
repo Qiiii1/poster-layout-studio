@@ -15,7 +15,7 @@ description: 中性纸面、最多两种油墨、网点与露纸；以一个明�
 
 ## 整图提示词
 
-Create a complete print-style poster with all approved text integrated. Use a flat neutral approved paper substrate and at most two printing inks with clear dominant and subordinate roles. Mechanical halftone screening, clipped highlights, localized ink gaps and exposed paper describe the recognisable approved subject, not a global digital color wash. Keep one strong image event and a quiet readable interval. Follow separately approved palette and flexible composition. No unrequested aging, invented historical props, newspaper articles, unprovided logos or watermark. Preserve any user-supplied logo as provided. Render every approved title and practical detail accurately in the final image.
+Create a complete print-style poster with all approved text integrated. Use a flat neutral approved paper substrate and at most two printing inks with clear dominant and subordinate roles. Mechanical halftone screening, clipped highlights, localized ink gaps and exposed paper describe the recognisable approved subject, not a global digital color wash. Keep one strong image event and a quiet readable interval. Follow separately approved palette and flexible composition. No unrequested aging, invented historical props, newspaper articles, unprovided logos or watermark. Do not generate or redraw any logo. Reserve its placement area; the original user-supplied logo will be inserted unchanged after generation. Render every approved title and practical detail accurately in the final image.
 
 ## 检查项
 
