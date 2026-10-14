@@ -1,5 +1,5 @@
 {
-  "workflowVersion": "2026-10-14.4",
+  "workflowVersion": "2026-10-14.5",
   "files": {
     ".gitignore": "e28a76b21422827a1b1329a993969c7396a43c82a716e7697b29a52457328d01",
     "agents/openai.yaml": "bdcf00dce862fe7c7848af1f2a80ae5fb4502d0bf4bffaa8f2addb2c7d379a5b",
@@ -32,13 +32,13 @@
     "assets/style-skills/playful/SKILL.md": "8312e1a73cd7cc665715f3c2fce1bcada5cb95de67e5de53cd5082258fc8475a",
     "assets/style-skills/retro/SKILL.md": "37e9af673d975b03f9f383bc41bc40aa5f4214623622e4e4247da0dc09737328",
     "assets/style-skills/simple/SKILL.md": "f476f51b76bb1a4811ed877f331a07a71fc166381ad314df64c5be8cba0a669e",
-    "README.md": "2eacec525590b662f0e160d1c131b0d457e2989e60bf926968e2cb6e993b9406",
+    "README.md": "5188a96fb58ac8c733cd95a44ec4e0fc31afbbd312ccf87d3b0a6c72559e0a0f",
     "references/canvas-ratio.md": "92e03a527e44bc38432b2446ee0d05fac99f482271db1fb5836f1a16cd2f1626",
     "references/case-retrieval.md": "48fa23a69206b1294a984c8481e2405e96af0af6efcd89fda022168f9a8b043b",
-    "references/complete-poster.md": "88bff8adb8c580e032a1eea732f990999468ccd8f246692c532eb9a24df2e226",
+    "references/complete-poster.md": "130e8d4f116ce904ea6a63f1de1a7e1d96ef5caa514ef8d97f5d608771567c49",
     "references/cross-ai.md": "ffcd3f098dcfb6a3a75314f8ecb9d21576a575916fd3822484bf59db1ac69539",
-    "references/cultural-review.md": "d4809288479995f231c6168febe1e163d319188e5d7983186daf6f03942b48b0",
-    "references/final-review.md": "81104995267525f59bc65b7a42cefc114a99fff68ed155eab07edf52c81a1b3f",
+    "references/cultural-review.md": "9c225509ac577b522e4b9a2e4583ccdc1a684c179c69aecde9aee3e2ac3d2e74",
+    "references/final-review.md": "e6b653285d8b42732cde4a10346d38f8deac1a789255dfb0d3f4bb7261240cc0",
     "references/layout-catalog.md": "79d769f2f68a16bde93ca8753633da77190a6265a4ec854b781ee2d531eb2a83",
     "references/layout-images/layout-01.png": "a64a2a0d315d6812ea1998a92db4723b2bce99a4ccc76e0c276167edc1579a7c",
     "references/layout-images/layout-02.png": "c60ef5cd5b560c05b066a5ca5b82baeef08ec6bba2a50df1604feb3f66ceb4be",
@@ -53,13 +53,13 @@
     "references/material-planning.md": "fddb2e3c88942cd7acd06429af8fb7b5f716aa0b0cb6ef51ef4f47e7b0a7c770",
     "references/portability.md": "5c685ff43cf6980628731159bd8be7f32b6c3635b80601d9dfbdbfe022dd573b",
     "references/provenance.md": "1bc38106a6466d130db8e2ccb0cc68959ad11a85d6ff174e09c86e9c38d95319",
-    "references/question-format.md": "22a94e3b544a4f5dc6347c2d4fd5c7f189a1c9739790df4a1e54a7cfa113bd00",
+    "references/question-format.md": "9a2a5ddc0ae6c86c127dbd3335488493033b753f7662a6bfd23f727ecae6cf26",
     "references/recommendation-order.md": "9847bd58226e4ae014011cf64873cdbee0e74cdfafc4150ae31a684d06918990",
     "references/style-translation.md": "3ac21062db2eeb3811d59fb4ea4d866a9431a8089a88e611f9b485b1b68a6720",
     "references/tag-recommendations.md": "00e5a5afac770e6f517f51de0cb921146e5f9112a34ab98865af6d482c28219b",
     "references/timing.md": "251db0d84e04a78b0f34b3873f2a1cbfc1a40653f010071d16bd3427a503bac5",
     "references/visual-recipes.md": "f75a2ca805efa5a2822cde07ceaa46e341ddfeb6badbcaa16a2fa5351c091624",
-    "references/workflow.md": "80b3427fbe609d6d0b3b9d5e53e7e392155e43ce2a926919c15590b029ae9dcc",
+    "references/workflow.md": "8488156b0f9c58d36c5cac17d84b11fd2d50132704d1aca090c43b8f7f64bb3b",
     "scripts/check_aspect.py": "47225227e85eecba078724a12b2ade79ea0a42d9e24d26a9807fc3885b2856c4",
     "scripts/make_catalog.py": "c87e1051577b431011dd592c8f84b9eea9b57cd2dc3cc1e3b9b6f8e26c1fd815",
     "scripts/quarantine_asset.py": "0ac4cc04d918f7c46dca021eec88ecc13d9f164853e17f51e76a5d62df406ca6",
@@ -67,6 +67,6 @@
     "scripts/retrieve_cases.py": "abe5ffc94263ebb5c695b940e671af44c3e5a63842dae8700fc32aa1e5c44cec",
     "scripts/sample_palette.py": "4140be0ce6cadd5a3ef511286da523e1ed4cacb9372b1fcd74588047e9c2d6c2",
     "scripts/timing.py": "73a137bded74d2f5144a5dfab197d3ad91d05b01547fcffd963eaab27fb261a1",
-    "SKILL.md": "426ebd1273b3a2f001a69db36b99f6c51939063514a126f44a89c2f11cb2a631"
+    "SKILL.md": "44d340cb61db797a1d7f8d1823a5697f757559eaa24369a68d3ed9daf465a559"
   }
 }
