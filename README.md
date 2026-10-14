@@ -4,9 +4,26 @@
 
 **当前版本：2026-10-14.5**
 
-👉 **[下载 Ouyang-skill 分支完整包](https://github.com/Qiiii1/poster-layout-studio/archive/refs/heads/Ouyang-skill.zip)**
+👉 **[下载完整 Skill ZIP](poster-layout-studio-2026-10-14.5.zip)**
 
-本分支已同步解压后的完整 Skill，根目录 `SKILL.md` 是使用入口，`assets/`、`references/`、`scripts/` 等目录可直接查看。下载完整分支后保留全部相对目录，按需将根目录重命名为 `poster-layout-studio` 后安装。本页对应 2026-10-14.5，执行细则以本分支文件为准。
+仓库根目录与下载 ZIP 均为 2026-10-14.5。根目录 [SKILL.md](SKILL.md) 是使用入口，`assets/`、`references/`、`scripts/` 等资源完整保留。可以克隆仓库，或下载并解压 ZIP；保留完整相对目录。执行顺序以 [workflow.md](references/workflow.md) 为准，比例验收以 [canvas-ratio.md](references/canvas-ratio.md) 为准。
+
+## 快速开始
+
+1. [下载完整 ZIP](poster-layout-studio-2026-10-14.5.zip) 并解压，或克隆本仓库：
+
+   ```bash
+   git clone https://github.com/Qiiii1/poster-layout-studio.git
+   ```
+
+2. 将整个目录放入目标 AI 平台支持的技能目录，或上传完整包并明确要求读取 [SKILL.md](SKILL.md)。保留 `assets/`、`references/` 和 `scripts/`，仅复制入口文件无法使用全部资源。
+3. 提供活动文案和图片，注明输出语言、宽高比以及已经决定的风格、配色和构图。
+4. 确认素材理解及是否联网；系统完成案例检索后，在同一轮分别让你选择风格、配色和构图。已明确的项目不重复询问。
+5. 收齐选择后生成含完整文字的海报，检查实际尺寸与画面，通过后交付 PNG。
+
+可直接使用下面这段话开始：
+
+> 请使用 poster-layout-studio，根据我提供的文案和图片设计海报。先确认素材理解与输出要求，再同轮分别让我选择风格、配色和构图。已有明确选择请直接沿用。
 
 ## 项目定位
 
@@ -78,6 +95,12 @@ Poster Layout Studio 面向展览、演出、节庆、讲座、工作坊等文�
 
 当前包**没有风格参考图片库，没有 16 个 CSS 文字模板，不提供 HTML 海报编辑器或可移动图层工程**。风格由文字规则组织，活动文字和画面直接在同一张图片中生成；用户logo原件在预留区置入。
 
+### 内置灰度构图预览
+
+![九种构图灰度预览](assets/layout-previews/all-layouts.png)
+
+深灰表示标题，中灰表示主体，浅灰表示信息区；位置、比例与留白仅供理解关系。最终图会按本次素材、文案和目标画幅调整，不照搬示意图坐标。
+
 ## 案例库与标签
 
 当前案例库包含 **1,313 条文字记录**，为本地数据快照，不包含对应的 1,313 张海报图片。检索不依赖飞书登录，也不会自动实时更新原表。来源、日期与排除记录见本目录内 `assets/catalogs/cases-source.json`。
@@ -102,7 +125,7 @@ Poster Layout Studio 面向展览、演出、节庆、讲座、工作坊等文�
 ```text
 poster-layout-studio/
 ├── SKILL.md                   # 使用入口
-├── README.md                  # 本目录内简要说明
+├── README.md                  # 项目说明与使用指南
 ├── package-manifest.json      # 文件 SHA-256 校验清单
 ├── agents/                    # 平台界面元数据
 ├── assets/
@@ -124,7 +147,7 @@ poster-layout-studio/
 
 ### 1. 下载完整包
 
-下载 [Ouyang-skill 分支完整包](https://github.com/Qiiii1/poster-layout-studio/archive/refs/heads/Ouyang-skill.zip)，解压并保留全部相对目录，可将解压后的根文件夹重命名为 `poster-layout-studio`。只复制入口文件会导致案例库、参考图或脚本无法访问。
+可以克隆本仓库，或下载 [poster-layout-studio-2026-10-14.5.zip](poster-layout-studio-2026-10-14.5.zip) 并解压。仓库根目录与 ZIP 内的 Skill 文件保持一致，需保留全部相对目录。只复制入口文件会导致案例库、参考图或脚本无法访问。
 
 ### 2. 在 AI 环境加载
 
@@ -194,6 +217,29 @@ poster-layout-studio/
 保留六个当前风格入口、1,313 条案例及必要来源许可。已检查 ZIP 完整性、本目录内文件哈希、本地 Markdown 链接与代表性检索排序；清理前后代表性查询的排序保持一致。
 
 这些检查针对文件结构和数据一致性，不代表在所有 AI 平台完成了端到端生图测试，也不保证每次生成自动达到可发布质量。
+
+## 阅读入口与辅助工具
+
+| 文件 | 作用 |
+| --- | --- |
+| [SKILL.md](SKILL.md) | AI 加载入口与当前核心边界 |
+| [统一流程](references/workflow.md) | 六阶段顺序、缓存与按需读取范围 |
+| [提问规范](references/question-format.md) | 素材确认、同轮独立选择和构图图示 |
+| [案例检索](references/case-retrieval.md) | 查询标签、排序公式与证据使用 |
+| [整图生成](references/complete-poster.md) | 文案、源图角色、风格落实与图文层级 |
+| [比例规则](references/canvas-ratio.md) | 宽高比、方向、像素检查和有限重试 |
+| [集中验收](references/final-review.md) | 尺寸批量检查、实际看图与交付条件 |
+| [文化检查](references/cultural-review.md) | 素材输入隔离与最终文化语境检查 |
+
+本地文字案例检索使用 Python 3 标准库；实际图片尺寸检查需要 Pillow。检索输入必须来自已确认的需求标签，不能为了得到特定设计建议而倒推标签。下面是工具用法示例，不会生成海报：
+
+```bash
+python3 scripts/retrieve_cases.py --brief brief.json --observed-subject multiple --output matches.json
+python3 scripts/check_aspect.py poster.png --ratio 16:9
+python3 scripts/check_aspect.py poster.png --ratio 16:9 --tolerance-percent 0
+```
+
+第一条的 `multiple` 仅表示已查看图片并确认存在多个主体；应按实际输入选择 `single`、`multiple`、`none` 或 `unknown`。第二条按默认 5% 容差检查；第三条用于用户明确要求精确比例的情况，容差为 0。两条尺寸检查命令均只读取并报告，不会裁切或修改图片；指定像素尺寸仍需独立满足。
 
 ## 来源与使用说明
 
