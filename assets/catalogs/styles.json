@@ -1,361 +1,118 @@
 {
-  "schemaVersion": 2,
-  "generationOwner": "Codex image-generation tool; the offline HTML editor does not call a model",
-  "artDirection": {
-    "default": "bold",
-    "backgroundPrompt": "Build a bold visual hierarchy around one large source-derived anchor, or two main anchors when the confirmed multi-subject plan allows it. Aim for roughly 85–110% of the available image region along the anchor's dominant axis, adjusting to actual source proportions and reserved text zones; this is a starting range along one axis, not a whole-canvas area quota. Establish a large visible focal rectangle before reserving copy. If copy competes with the hero, adjust the composition or choose another compatible layout rather than shrinking the anchor into a small centered sticker. Use a close crop, off-center placement or a form extending past one canvas edge when identifying details remain intact. Give secondary forms clear scale contrast instead of making every element a small equal sticker. Minimal and ink styles use few substantial shapes with useful quiet space. Keep grain, halftone dots and technical marks at their appropriate scale. For information-led academic boards, retain copy priority and use a broad, quiet structural field without inventing a hero or data. Preserve subject identity, anatomy, confirmed count and relationships, the selected medium and approved palette. Keep essential identifying features and required text zones clear.",
-    "cutoutBackgroundPrompt": "Support an oversized, separately movable foreground composition. Generate only the empty substrate and any approved material or graphic decorations. Use a few broad, purposeful fields or one strong supporting graphic gesture where the selected style permits it; preserve quiet space for the planned foreground and text. Keep print grain and technical marks at their appropriate scale, and keep information-led academic backgrounds subordinate to copy. Do not depict extracted subjects, their silhouettes, duplicate fragments or detached body parts. Preserve the selected medium, approved palette and numerical text reservations. The separately generated transparent foreground and its initial rectangles carry the main visual scale.",
-    "subjectPrompt": "Create the confirmed subject as a large, clearly resolved transparent asset with tight, even alpha padding. Preserve its identity, anatomy, pose, functional structures, confirmed count and approved style treatment. Keep confirmed relative scale and relationships inside a grouped subject asset. Do not add a scene, solid background, baked checkerboard, text or extra subjects. Its visible shape will become the dominant anchor in the available image region, with a deliberate initial rectangle chosen after inspection; avoid a tiny subject floating inside a large transparent file.",
-    "checks": [
-      "合成图约 200 px 宽时主视觉首先可辨认，主次尺度清楚",
-      "主视觉实际可见范围足够大，透明留边没有造成假放大",
-      "主图优先占据可用图像区主轴约 85–110%；若仍偏小，调整布局或近景构图并记录原因",
-      "放大或出框后关键识别细节及必要文字区域仍完整可用",
-      "颗粒与技术标记保留媒介所需细度，信息主导路线仍便于阅读"
-    ]
-  },
+  "schemaVersion": 3,
+  "generationOwner": "Available image-generation tool; generate complete poster PNGs.",
   "styles": [
     {
-      "id": "landscape-ink",
-      "name": "山水氛围风",
-      "label": "中国风 · 结构转译",
-      "category": "中国风（东方水墨）",
-      "visualSubtype": "山水氛围风",
-      "sourceKind": "visual-adapter",
-      "sourceUrls": [
-        "https://github.com/dacnay816y62-hub/chinese-poster-skill"
-      ],
-      "tags": [
-        "山水",
-        "自然",
-        "园林",
-        "水墨",
-        "敦煌",
-        "东方"
-      ],
-      "summary": "从素材的轴线、曲面、材料与空间提炼大形状和层次，形成东方山水意境；不自动添加山、塔或印章。",
-      "needsPhoto": false,
-      "paper": "#E8EBE7",
-      "ink": "#253A39",
-      "accent": "#5E8074",
-      "preferredLayouts": [
-        "L01",
-        "L04",
-        "L08",
-        "L11"
-      ],
-      "prompt": "Text-free portrait artwork for {subject}. Translate the subject into a few landscape-like planes, contour rhythms and open intervals. Use controlled ink diffusion, mineral-like muted fields and selective dry brush on a clean tactile substrate. Preserve meaningful source structures; cultural features must be evidenced by the input, not invented. Do not add pagodas, seals or auspicious motifs by habit. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
-      "checks": [
-        "空间关系有来源依据",
-        "墨迹有浓淡层次",
-        "没有泛化文化符号",
-        "文字预留区安静",
-        "没有烘焙标题或正文"
-      ],
-      "referenceImages": [
-        {
-          "id": "feishu-TkKYtP-C2",
-          "path": "references/style-images/feishu-TkKYtP-C2.jpg",
-          "sourceCell": "C2",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C2",
-          "visualSubtype": "山水氛围风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-D2",
-          "path": "references/style-images/feishu-TkKYtP-D2.png",
-          "sourceCell": "D2",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D2",
-          "visualSubtype": "山水氛围风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-E2",
-          "path": "references/style-images/feishu-TkKYtP-E2.jpg",
-          "sourceCell": "E2",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E2",
-          "visualSubtype": "山水氛围风",
-          "scope": "visual-treatment-reference"
-        }
-      ]
-    },
-    {
-      "id": "specimen-collage",
-      "name": "拼贴图鉴风",
-      "label": "拼贴 · 切纸与层叠",
-      "category": "趣味风（拼贴）",
-      "visualSubtype": "拼贴图鉴风",
-      "sourceKind": "visual-adapter",
-      "sourceUrls": [
-        "https://github.com/polgarp/collage-design"
-      ],
-      "tags": [
-        "拼贴",
-        "多主体",
-        "文物",
-        "图鉴",
-        "收藏",
-        "档案"
-      ],
-      "summary": "用已确认的真实素材建立主次尺度、遮挡和实体切纸边缘，避免均匀小贴纸或整齐图库格子。",
-      "needsPhoto": true,
-      "paper": "#F2EEE5",
-      "ink": "#274DA0",
-      "accent": "#D64E32",
-      "preferredLayouts": [
-        "L03",
-        "L05",
-        "L13",
-        "L14"
-      ],
-      "prompt": "Text-free portrait artwork for {subject}. Compose only the confirmed source roster as tactile cut-paper fragments. Establish one large dominant anchor and clearly smaller supporting fragments; when source relationships permit, use roughly two- to three-fold scale contrast between the main anchor and secondary fragments, with purposeful overlap and visible cut or torn edges. Use approved flat-color structures to connect the objects. Keep independent subjects as separate transparent layers in cutout mode; never invent extra collection members or force a fixed five-image count. Use the approved base {paper}, dominant ink {ink}, and subordinate accent {accent}; keep natural photo colors only when explicitly approved. {geometry} No titles, captions, readable lettering, invented logos or watermarks.",
-      "checks": [
-        "素材无遗漏或重复",
-        "大小和重叠有层级",
-        "切纸边缘可信",
-        "文字预留区安静",
-        "没有烘焙标题或正文"
-      ],
-      "referenceImages": [
-        {
-          "id": "feishu-TkKYtP-C3",
-          "path": "references/style-images/feishu-TkKYtP-C3.png",
-          "sourceCell": "C3",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C3",
-          "visualSubtype": "拼贴图鉴风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-D3",
-          "path": "references/style-images/feishu-TkKYtP-D3.png",
-          "sourceCell": "D3",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D3",
-          "visualSubtype": "拼贴图鉴风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-E3",
-          "path": "references/style-images/feishu-TkKYtP-E3.png",
-          "sourceCell": "E3",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E3",
-          "visualSubtype": "拼贴图鉴风",
-          "scope": "visual-treatment-reference"
-        }
-      ]
-    },
-    {
-      "id": "minimal-illustration",
-      "name": "轻插画风",
-      "label": "轻几何 · 独立渐变消隐",
+      "id": "simple",
+      "name": "简约风",
+      "label": "简约风",
       "category": "简约风",
-      "visualSubtype": "轻插画风",
-      "sourceKind": "visual-adapter",
-      "sourceUrls": [
-        "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=L4"
-      ],
-      "tags": [
-        "极简",
-        "轻插画",
-        "安静",
-        "诗性",
-        "短句",
-        "自然"
-      ],
-      "summary": "将源图轻度重绘为柔和几何大色块，每块独立浓淡消隐，结合细颗粒、识别轮廓与有效留白。",
+      "visualSubtype": "简约几何平面插画",
       "needsPhoto": true,
-      "paper": "#F5F2EA",
-      "ink": "#3B403A",
-      "accent": "#245AF5",
       "preferredLayouts": [
         "L01",
         "L02",
-        "L08",
-        "L13"
-      ],
-      "prompt": "Text-free portrait artwork for {subject}. Redraw the supplied source into a lightly geometric flat illustration, preserving identifying contours, pose, viewpoint and essential spatial relationships. Merge repetitive small bands into broad complete shapes, soft arcs, semicircles and a few trapezoids. Each major color field independently fades from its own concentrated color anchor through midtones into the approved base {paper}; fade some structural junctions and outer edges while retaining crisp recognition anchors. Use fine low-contrast screen-print grain and continuous stippled local gradients, never a uniform white fog, global brightness fade or grain on solid blocks alone. Use approved dominant {ink}, secondary/accent {accent} and their tonal ranges; other hues require palette approval. Keep depth through overlap rather than photographic gloss. No polygon shards, heavy outlines, coarse dirt, yellowed paper, unrelated added ribbons or 3D mockups. {geometry} No readable copy, logos or watermarks.",
-      "checks": [
-        "主要主体、视角与空间关系保留",
-        "每个大色块独立浓—淡—融入底色",
-        "清晰轮廓与消失边缘并存，交界不留连续硬线",
-        "颗粒细密，未整体蒙雾或模糊",
-        "文字区安静，没有烘焙标题或正文"
-      ],
-      "referenceImages": [
-        {
-          "id": "feishu-TkKYtP-C4",
-          "path": "references/style-images/feishu-TkKYtP-C4.png",
-          "sourceCell": "C4",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C4",
-          "visualSubtype": "轻插画风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-D4",
-          "path": "references/style-images/feishu-TkKYtP-D4.jpg",
-          "sourceCell": "D4",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D4",
-          "visualSubtype": "轻插画风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-E4",
-          "path": "references/style-images/feishu-TkKYtP-E4.jpg",
-          "sourceCell": "E4",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E4",
-          "visualSubtype": "轻插画风",
-          "scope": "visual-treatment-reference"
-        }
-      ],
-      "sourceName": "soft-geometric-image"
-    },
-    {
-      "id": "surreal-pop",
-      "name": "超现实风",
-      "label": "超现实 · 黑白现实与平涂",
-      "category": "赛博风",
-      "visualSubtype": "超现实风",
-      "sourceKind": "visual-adapter",
-      "sourceUrls": [
-        "https://github.com/2998980-hue/surreal-pop-collage"
-      ],
-      "tags": [
-        "超现实",
-        "尺度",
-        "反转",
-        "荒诞",
-        "波普",
-        "拼贴"
-      ],
-      "summary": "围绕原场景设置一个可理解的尺度或语义反转，用平涂色形加强关系。",
-      "needsPhoto": true,
-      "paper": "#F3EFDF",
-      "ink": "#2344B4",
-      "accent": "#EF6847",
-      "preferredLayouts": [
-        "L04",
-        "L09",
-        "L13"
-      ],
-      "prompt": "Text-free portrait surreal pop collage for {subject}. Preserve the recognizable supplied photographic reality anchor in black and white with its texture and key features. Replace approved background regions with two or three broad flat matte color shapes, derived from source boundaries, using approved {paper}, {ink} and subordinate {accent}. Introduce exactly one impossible scale or semantic transformation related to an approved source element; state its visible source relationship. Do not invent a generic whale, red sun or unrelated cultural object. Keep the image bright, with one dominant visual event and quiet reserved text zones. Optional smaller marks must extend that same event and use only accepted material. Flat color shapes have no gradients or 3D shadows. {geometry} No readable copy, logos, frames or watermarks.",
-      "checks": [
-        "原照片锚点黑白且可识别",
-        "只有一处主导的不可能关系，有素材依据",
-        "大色形平涂，无渐变或立体阴影",
-        "关键面部与识别细节未被遮挡",
-        "文字区安静，没有烘焙标题或正文"
-      ],
-      "referenceImages": [
-        {
-          "id": "feishu-TkKYtP-C5",
-          "path": "references/style-images/feishu-TkKYtP-C5.jpg",
-          "sourceCell": "C5",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C5",
-          "visualSubtype": "超现实风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-D5",
-          "path": "references/style-images/feishu-TkKYtP-D5.jpg",
-          "sourceCell": "D5",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D5",
-          "visualSubtype": "超现实风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-E5",
-          "path": "references/style-images/feishu-TkKYtP-E5.jpg",
-          "sourceCell": "E5",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E5",
-          "visualSubtype": "超现实风",
-          "scope": "visual-treatment-reference"
-        }
-      ]
-    },
-    {
-      "id": "ascii-tech",
-      "name": "数字科技风",
-      "label": "数字科技 · ASCII 与圆点重构",
-      "category": "学术风（ascii风格）",
-      "visualSubtype": "数字科技风",
-      "sourceKind": "visual-adapter",
-      "sourceUrls": [
-        "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=N6"
-      ],
-      "tags": [
-        "ASCII",
-        "ascii",
-        "数字",
-        "科技",
-        "像素",
-        "网点",
-        "数据"
-      ],
-      "summary": "默认用清楚的等宽 ASCII 单字符网屏与有序圆点重构主体形面；可辨识主体和数字编码须同时成立。",
-      "needsPhoto": true,
-      "paper": "#EBEDE8",
-      "ink": "#1F3029",
-      "accent": "#416B58",
-      "preferredLayouts": [
         "L03",
-        "L07",
-        "L11",
-        "L16"
+        "L04"
       ],
-      "prompt": "Text-free portrait digital graphic for {subject}. Rebuild the supplied subject at high graphic intensity from legible monospaced single ASCII glyphs such as . : + x # on a controlled grid, variable-density filled halftone circles, selective flat silhouettes and negative space. Assign glyph fields and circular screens to specific source forms so their density constructs contour, depth and internal relationships. Preserve three to five identifying anchors and essential perspective; reduce intact photographic material and continuous 3D shading. Distinct glyphs must be recognizable close up and the subject recognizable at thumbnail scale. Default to ASCII plus circles; use pure circles or line-screen reconstruction only when explicitly selected or justified by a documented identity failure. Use approved base {paper}, luminous dominant {ink} and restrained secondary/accent {accent}; do not copy the reference palette or scatter equal contrasting colors. Dark tones clarify cavities and key edges. No generic HUD, circuit boards, binary captions, fake code, random word fragments or unrelated objects. {geometry} No readable poster copy, logos or watermarks.",
+      "sourceKind": "distilled-local-recipe",
+      "sourceSkillPath": "assets/style-skills/simple/SKILL.md",
+      "tags": [
+        "简约",
+        "轻几何",
+        "颗粒",
+        "插画",
+        "渐变消隐"
+      ],
+      "summary": "以明确基础几何形重设计主体，编辑性删减并连接辅助元素，局部渐隐与极细颗粒辅助，避免写实3D。",
+      "prompt": "Create a complete geometric flat illustration poster. Redesign recognisable source subjects with clear circles, ellipses, arcs and trapezoids; merge similar planes and remove repetitive nonessential detail. Preserve focal identity and useful scene connections through scale, overlap, cropping and flowing negative space, not isolated icon inventory. Flatten reflections and lighting. Use the separately approved palette and flexible composition. Major planes may visibly fade toward the background with some crisp edges and restrained local fine grain; no global fog, 3D bevel, photorealistic texture or fragmented low-poly. Render every approved text string accurately in the final image.",
       "checks": [
-        "主体形面被重构，未只在原照片上覆盖纹理",
-        "默认路线局部能辨认真实等宽单字符与圆点分工",
-        "缩略图保留至少三个识别锚点和空间关系",
-        "配色主次明确，非固定荧黄或蓝粉黄",
-        "抠图模式外部、孔洞和标记间空隙真实透明",
-        "文字区安静，没有乱码单词或烘焙文案"
+        "几何形明确而非沿照片描摹",
+        "删减后仍有连接与场景氛围",
+        "压平写实材质，不是柔和3D",
+        "局部消隐可见，细颗粒克制",
+        "主体与完整文字可辨"
       ],
-      "referenceImages": [
-        {
-          "id": "feishu-TkKYtP-C6",
-          "path": "references/style-images/feishu-TkKYtP-C6.png",
-          "sourceCell": "C6",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C6",
-          "visualSubtype": "数字科技风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-D6",
-          "path": "references/style-images/feishu-TkKYtP-D6.png",
-          "sourceCell": "D6",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D6",
-          "visualSubtype": "数字科技风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-E6",
-          "path": "references/style-images/feishu-TkKYtP-E6.jpg",
-          "sourceCell": "E6",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E6",
-          "visualSubtype": "数字科技风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "digital-tech-ascii-dot-hybrid-reference",
-          "path": "references/style-images/digital-tech-ascii-dot-hybrid-reference.png",
-          "sourceCell": "N6 / references/ascii-dot-hybrid-reference.png",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=N6",
-          "visualSubtype": "数字科技风"
-        },
-        {
-          "id": "digital-tech-luminous-palette-reference",
-          "path": "references/style-images/digital-tech-luminous-palette-reference.png",
-          "sourceCell": "N6 / references/luminous-palette-reference.png",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=N6",
-          "visualSubtype": "数字科技风"
-        }
-      ],
-      "sourceName": "digital-tech-stylizer"
+      "recipePath": "assets/style-skills/simple/SKILL.md"
     },
     {
-      "id": "mono-color",
-      "name": "套色油印风",
-      "label": "Mono-color · 一至两种油墨",
+      "id": "cyber",
+      "name": "赛博风",
+      "label": "赛博风",
+      "category": "赛博风",
+      "visualSubtype": "超现实波普拼贴",
+      "needsPhoto": true,
+      "preferredLayouts": [
+        "L01",
+        "L03",
+        "L04",
+        "L08"
+      ],
+      "sourceKind": "distilled-local-recipe",
+      "sourceSkillPath": "assets/style-skills/cyber/SKILL.md",
+      "tags": [
+        "赛博",
+        "超现实",
+        "波普",
+        "拼贴",
+        "平涂",
+        "黑白"
+      ],
+      "summary": "黑白照片现实锚与两三块巨大平涂色形对撞，全图仅一个源于场景的不可能巨物；明亮、无渐变。",
+      "prompt": "Create a complete surreal pop collage poster. Keep the source anchor clearly recognisable in black and white with photographic texture. Replace suitable background regions with two or three huge flat matte color shapes derived from actual scene boundaries and the separately approved source-related palette. Include exactly one impossible giant derived from the source scene, with a clear explainable relationship; do not default to whales, dolphins or a red sun. No gradients or 3D shading on flat shapes. A restrained source-derived small group may follow an arc in graduated sizes, with a few white hand-drawn strokes if useful. Keep bright, clear negative space and protect identifying details. Follow the separately approved flexible composition; generate all approved Chinese typography directly in this finished poster. No dark horror, second impossible giant, unrelated imported motifs, watermark or decorative full-frame border.",
+      "checks": [
+        "黑白现实锚仍可识别",
+        "仅一个不可能巨物且能说明场景来源",
+        "色形平涂，无渐变与立体阴影",
+        "颜色与原图或已确认配色有关",
+        "整体明亮，关键细节及文字可读"
+      ],
+      "recipePath": "assets/style-skills/cyber/SKILL.md"
+    },
+    {
+      "id": "playful",
+      "name": "趣味风",
+      "label": "趣味风",
+      "category": "趣味风（拼贴）",
+      "visualSubtype": "材料拼贴",
+      "needsPhoto": true,
+      "preferredLayouts": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L07",
+        "L08",
+        "L09"
+      ],
+      "sourceKind": "distilled-local-recipe",
+      "sourceSkillPath": "assets/style-skills/playful/SKILL.md",
+      "tags": [
+        "趣味",
+        "拼贴",
+        "剪贴",
+        "材料",
+        "切边",
+        "叠压"
+      ],
+      "summary": "由已批准的真实素材推导切纸碎片，结合大小差、物理切边、叠压遮挡和统一材料处理形成一个整体，避免均匀图格。",
+      "prompt": "Create one complete poster using the approved real source imagery as subject evidence. Translate the source material into a crafted cut-and-layer collage: visible knife or torn-fiber edges, purposeful overlap and occlusion, varied scale, selected silhouettes breaking implied frames. Decide a coherent material voice and one unifying reproduction treatment, or an explicit controlled tonal clash; do not default to sepia, generic Western archival imagery or a tidy slideshow grid. Preserve actual subjects and identity, do not invent collection members or false provenance. Derive a theme-specific visual connection from the actual brief. Use the separately approved palette and flexible composition; include every approved title and practical text string directly in the finished raster. Fragment density is adapted to the actual sources and readable copy, never a fixed dozen-item requirement. No manual SVG or code typography, watermark, fabricated archival text or unsupported extra objects.",
+      "checks": [
+        "素材主体有批准来源且保持辨识度",
+        "切边与叠压具有明确物理感",
+        "大小和遮挡关系有层级，不是等距图格",
+        "统一处理或明确受控反差使画面成为整体",
+        "批准文字完整可读，无伪造展品来源"
+      ],
+      "recipePath": "assets/style-skills/playful/SKILL.md"
+    },
+    {
+      "id": "retro",
+      "name": "复古风",
+      "label": "复古风",
+      "sourceSkill": "retro",
       "tags": [
         "文化",
         "印刷",
@@ -367,64 +124,85 @@
       ],
       "summary": "中性纸面、最多两种油墨、网点与露纸；以一个明确的视觉主体组织画面。",
       "needsPhoto": false,
-      "paper": "#FAFAF7",
-      "ink": "#2148B8",
-      "accent": "#C65F38",
       "preferredLayouts": [
         "L01",
-        "L06",
-        "L07",
-        "L09",
-        "L11",
-        "L15"
+        "L03",
+        "L05",
+        "L06"
       ],
-      "prompt": "Create a text-free print artwork on a flat neutral paper substrate, color {paper}. Subject: {subject}. Use at most two printing inks, {ink} dominant and {accent} as a limited accent; give each ink a clear visual role. Mechanical screening, clipped highlights and exposed paper should describe the subject rather than a digital color wash. Keep one dominant image event and a quieter release zone. Do not add aging unless requested. {geometry} No letters, numbers, headlines, captions, logos, QR codes or watermarks. Typography will be added separately in HTML.",
+      "prompt": "Create a complete print-style poster with all approved text integrated. Use a flat neutral approved paper substrate and at most two printing inks with clear dominant and subordinate roles. Mechanical halftone screening, clipped highlights, localized ink gaps and exposed paper describe the recognisable approved subject, not a global digital color wash. Keep one strong image event and a quiet readable interval. Follow separately approved palette and flexible composition. No unrequested aging, invented historical props, newspaper articles, logos or watermark. Render every approved title and practical detail accurately in the final image.",
       "checks": [
         "油墨不超过两种",
         "主体可识别",
-        "通过网点与露纸形成印刷感",
-        "指定文字区安静",
-        "底图无生成文字"
+        "网点与露纸有印刷感",
+        "文字清晰完整",
+        "无未经要求的老化或历史道具"
       ],
       "category": "复古风（油印）",
-      "visualSubtype": "套色油印风",
-      "sourceKind": "visual-adapter",
+      "visualSubtype": "限色印刷",
+      "sourceKind": "distilled-local-recipe",
       "sourceUrls": [
-        "https://github.com/yanliudesign/mono-color-skill"
+        "https://github.com/yanliudesign/mono-color-skill",
+        "https://github.com/howardz27/poster-generator-skill"
       ],
-      "referenceImages": [
-        {
-          "id": "feishu-TkKYtP-C7",
-          "path": "references/style-images/feishu-TkKYtP-C7.png",
-          "sourceCell": "C7",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=C7",
-          "visualSubtype": "套色油印风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-D7",
-          "path": "references/style-images/feishu-TkKYtP-D7.jpg",
-          "sourceCell": "D7",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=D7",
-          "visualSubtype": "套色油印风",
-          "scope": "visual-treatment-reference"
-        },
-        {
-          "id": "feishu-TkKYtP-E7",
-          "path": "references/style-images/feishu-TkKYtP-E7.jpg",
-          "sourceCell": "E7",
-          "sourceUrl": "https://lcnuqxs2a155.feishu.cn/sheets/SmmesZIJchcZbrt1meMcMLUjnFb?sheet=TkKYtP&range=E7",
-          "visualSubtype": "套色油印风",
-          "scope": "visual-treatment-reference"
-        }
+      "sourceSkillPath": "assets/style-skills/retro/SKILL.md",
+      "recipePath": "assets/style-skills/retro/SKILL.md"
+    },
+    {
+      "id": "chinese",
+      "name": "中国风",
+      "label": "中国风",
+      "category": "中国风（东方水墨）",
+      "visualSubtype": "当代东方视觉",
+      "sourceKind": "original-visual-rules-local-adapter",
+      "sourceSkillPath": "assets/style-skills/chinese/SKILL.md",
+      "recipePath": "assets/style-skills/chinese/SKILL.md",
+      "needsPhoto": false,
+      "tags": [
+        "中国风",
+        "东方",
+        "结构转译",
+        "材料",
+        "文化",
+        "当代"
+      ],
+      "summary": "直接使用中国风原版提示词与视觉规则，按主题选择方向。",
+      "prompt": "Use assets/style-skills/chinese/original.md original Prompt Template and relevant visual rules; substitute approved theme, exact copy, language, ratio, palette and composition. Do not add main-workflow style restrictions.",
+      "checks": [
+        "按原版当前方向检查视觉表现",
+        "批准文案与用户选择完整准确"
+      ],
+      "recipeSha256": "ebf75a3dd22825c7a45be1bc6137b22bc448f8108750157ecfbb7f1b4b9c6402",
+      "originalTextPath": "assets/style-skills/chinese/original.md"
+    },
+    {
+      "id": "academic",
+      "name": "学术风",
+      "label": "学术风",
+      "category": "学术风（ascii风格）",
+      "status": "active",
+      "available": true,
+      "summary": "以实际可辨的 ASCII 字符与变密度圆点高强度重构主体；可按需要采用纯网点或线描，不是照片滤镜。",
+      "prompt": "Create one complete digital graphic poster from the supplied source. Preserve recognisable anchors and essential subject relationships, but reconstruct specified subject planes from legible monospaced single ASCII glyphs . : + x # on a controlled grid, variable-density filled halftone circles, selective flat silhouettes and negative space. Assign glyphs and dots to concrete source regions; their density must construct form, not overlay an intact photo. Glyphs are distinguishable up close and the subject recognisable at thumbnail size. Follow the separately approved palette and flexible composition, render every approved title and practical text accurately. No fake words, code paragraphs, generic HUD, circuits, watermark or unrelated motifs. Deliver the complete poster, not a transparent text-free cutout.",
+      "checks": [
+        "识别锚点与必要空间关系保留",
+        "字符真实可辨且与圆点构造形面",
+        "高强度重绘，不是照片纹理覆盖",
+        "配色层级明确，无随机等量撞色",
+        "完整标题与活动信息准确可读"
+      ],
+      "sourceKind": "distilled-local-recipe",
+      "sourceSkillPath": "assets/style-skills/academic/SKILL.md",
+      "recipePath": "assets/style-skills/academic/SKILL.md",
+      "needsPhoto": true,
+      "tags": [
+        "学术",
+        "数字科技",
+        "ASCII",
+        "字符网屏",
+        "半色调",
+        "线描"
       ]
     }
-  ],
-  "library": {
-    "version": "V1.12",
-    "importDate": "2026-10-11",
-    "sheetId": "TkKYtP",
-    "revision": 6475,
-    "policy": "optimized-six-replace-recommendations"
-  }
+  ]
 }
