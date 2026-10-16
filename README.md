@@ -1,5 +1,7 @@
 # Poster Layout Studio｜文化活动海报生成 Skill
 
+**简体中文** | [English](README.en.md)
+
 从活动文案、参考图片与设计需求出发，通过案例检索和用户选择，生成包含文字与画面的完整文化活动海报。
 
 **当前版本：2026-10-16.3**
@@ -13,7 +15,7 @@
 1. [下载完整 ZIP](poster-layout-studio-2026-10-16.3.zip) 并解压，或克隆本仓库：
 
    ```bash
-   git clone --branch Ouyang-skill --single-branch https://github.com/Qiiii1/poster-layout-studio.git
+   git clone https://github.com/Qiiii1/poster-layout-studio.git
    ```
 
 2. 将整个目录放入目标 AI 平台支持的技能目录，或上传完整包并明确要求读取 [SKILL.md](SKILL.md)。保留 `assets/`、`references/` 和 `scripts/`，仅复制入口文件无法使用全部资源。
@@ -125,7 +127,8 @@ Poster Layout Studio 面向展览、演出、节庆、讲座、工作坊等文�
 ```text
 poster-layout-studio/
 ├── SKILL.md                   # 使用入口
-├── README.md                  # 项目说明与使用指南
+├── README.md                  # 中文项目说明与使用指南
+├── README.en.md               # 英文项目说明与使用指南
 ├── package-manifest.json      # 文件 SHA-256 校验清单
 ├── agents/                    # 平台界面元数据
 ├── assets/
@@ -208,6 +211,8 @@ poster-layout-studio/
 - 没有图像生成能力时应说明停在哪一步，不能用提示词冒充成品。
 
 ## 版本整理内容与验证
+
+**2026-10-16.3：**通过 `scripts/apply_original_logos.cjs` 自动置入原版logo，再检查最终图片；每个语言版本只生图一次，仅交付带原logo的成品。
 
 **2026-10-16.2：**仅补充logo直接融入海报原有背景，不额外添加logo框、底板、描边、白色贴片或可见占位区。logo原件不加工，其他原版流程保持不变。
 
