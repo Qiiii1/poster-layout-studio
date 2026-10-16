@@ -2,15 +2,15 @@
 
 从活动文案、参考图片与设计需求出发，通过案例检索和用户选择，生成包含文字与画面的完整文化活动海报。
 
-**当前版本：2026-10-16.2**
+**当前版本：2026-10-16.3**
 
-👉 **[下载完整 Skill ZIP](poster-layout-studio-2026-10-16.2.zip)**
+👉 **[下载完整 Skill ZIP](poster-layout-studio-2026-10-16.3.zip)**
 
-仓库根目录与下载 ZIP 均为 2026-10-16.2。根目录 [SKILL.md](SKILL.md) 是使用入口，`assets/`、`references/`、`scripts/` 等资源完整保留。可以克隆仓库，或下载并解压 ZIP；保留完整相对目录。执行顺序以 [workflow.md](references/workflow.md) 为准，比例验收以 [canvas-ratio.md](references/canvas-ratio.md) 为准。
+仓库根目录与下载 ZIP 均为 2026-10-16.3。根目录 [SKILL.md](SKILL.md) 是使用入口，`assets/`、`references/`、`scripts/` 等资源完整保留。可以克隆仓库，或下载并解压 ZIP；保留完整相对目录。执行顺序以 [workflow.md](references/workflow.md) 为准，比例验收以 [canvas-ratio.md](references/canvas-ratio.md) 为准。
 
 ## 快速开始
 
-1. [下载完整 ZIP](poster-layout-studio-2026-10-16.2.zip) 并解压，或克隆本仓库：
+1. [下载完整 ZIP](poster-layout-studio-2026-10-16.3.zip) 并解压，或克隆本仓库：
 
    ```bash
    git clone --branch Ouyang-skill --single-branch https://github.com/Qiiii1/poster-layout-studio.git
@@ -147,7 +147,7 @@ poster-layout-studio/
 
 ### 1. 下载完整包
 
-可以克隆本仓库，或下载 [poster-layout-studio-2026-10-16.2.zip](poster-layout-studio-2026-10-16.2.zip) 并解压。仓库根目录与 ZIP 内的 Skill 文件保持一致，需保留全部相对目录。只复制入口文件会导致案例库、参考图或脚本无法访问。
+可以克隆本仓库，或下载 [poster-layout-studio-2026-10-16.3.zip](poster-layout-studio-2026-10-16.3.zip) 并解压。仓库根目录与 ZIP 内的 Skill 文件保持一致，需保留全部相对目录。只复制入口文件会导致案例库、参考图或脚本无法访问。
 
 ### 2. 在 AI 环境加载
 
@@ -258,3 +258,5 @@ python3 scripts/check_aspect.py poster.png --ratio 16:9 --tolerance-percent 0
 用户明确要求使用的logo是必需交付元素：每个适用语言/尺寸版本都必须原件原样、完整且清晰可见。未置入、被遮挡、出界或被模型替换时，不得判为交付完成。 缺失或不可见时先完成原件放置并复验，不通过就保持待处理，不能仅在说明中提及logo当作已使用。
 
 logo直接置于海报原有背景，融入正常排版；不额外添加logo框、方形底板、描边、白色贴片或可见占位区，不生成固定空白方框。只保留自然保护间距；logo原件自带的背景仍按原样保留，不自行加工。
+
+logo仅通过内置 scripts/apply_original_logos.cjs 自动原件置入；每版只生图一次，不为补标、修标或清除假标再次生图/图像编辑。只交付带原logo的成品。详见 references/complete-poster.md。
