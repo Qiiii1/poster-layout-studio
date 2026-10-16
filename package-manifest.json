@@ -1,5 +1,5 @@
 {
-  "workflowVersion": "2026-10-16.2",
+  "workflowVersion": "2026-10-16.3",
   "files": {
     ".gitignore": "e28a76b21422827a1b1329a993969c7396a43c82a716e7697b29a52457328d01",
     "agents/openai.yaml": "bdcf00dce862fe7c7848af1f2a80ae5fb4502d0bf4bffaa8f2addb2c7d379a5b",
@@ -32,13 +32,13 @@
     "assets/style-skills/playful/SKILL.md": "8312e1a73cd7cc665715f3c2fce1bcada5cb95de67e5de53cd5082258fc8475a",
     "assets/style-skills/retro/SKILL.md": "37e9af673d975b03f9f383bc41bc40aa5f4214623622e4e4247da0dc09737328",
     "assets/style-skills/simple/SKILL.md": "f476f51b76bb1a4811ed877f331a07a71fc166381ad314df64c5be8cba0a669e",
-    "README.md": "30342456339b53435f4da75d8da54926ac2c895f2601845299c1bd426c833243",
+    "README.md": "cb03a814672120666cd253e361afe3aa8bddf2328ba69aec71a3749be7470968",
     "references/canvas-ratio.md": "92e03a527e44bc38432b2446ee0d05fac99f482271db1fb5836f1a16cd2f1626",
     "references/case-retrieval.md": "48fa23a69206b1294a984c8481e2405e96af0af6efcd89fda022168f9a8b043b",
-    "references/complete-poster.md": "788fdbce086b0bfd62fdc0badda15d25460bfbf032e57bb178de509099d21fe6",
+    "references/complete-poster.md": "b7bad8e7302945451c0e9121d65a7c8ae6efe0dbac9dedc2d306973d82f5c7e3",
     "references/cross-ai.md": "ffcd3f098dcfb6a3a75314f8ecb9d21576a575916fd3822484bf59db1ac69539",
     "references/cultural-review.md": "9c225509ac577b522e4b9a2e4583ccdc1a684c179c69aecde9aee3e2ac3d2e74",
-    "references/final-review.md": "38aadf3d2b846d944bacf834f6516d0b5051f6c91abbd0bca8a1acbec4af276f",
+    "references/final-review.md": "2fd07d60872898356132b36e1957b26211bef8ecc591f3620e755d570cc330e4",
     "references/layout-catalog.md": "79d769f2f68a16bde93ca8753633da77190a6265a4ec854b781ee2d531eb2a83",
     "references/layout-images/layout-01.png": "a64a2a0d315d6812ea1998a92db4723b2bce99a4ccc76e0c276167edc1579a7c",
     "references/layout-images/layout-02.png": "c60ef5cd5b560c05b066a5ca5b82baeef08ec6bba2a50df1604feb3f66ceb4be",
@@ -59,7 +59,8 @@
     "references/tag-recommendations.md": "00e5a5afac770e6f517f51de0cb921146e5f9112a34ab98865af6d482c28219b",
     "references/timing.md": "251db0d84e04a78b0f34b3873f2a1cbfc1a40653f010071d16bd3427a503bac5",
     "references/visual-recipes.md": "f75a2ca805efa5a2822cde07ceaa46e341ddfeb6badbcaa16a2fa5351c091624",
-    "references/workflow.md": "9ae6432dd4de28cb807122ad86f8c44dcf8946bb3c294bb3a395b70d37ab080e",
+    "references/workflow.md": "1fe1eeb9edfeed38c9daabd81b231380d9d19b1d0584670704f612f08afab059",
+    "scripts/apply_original_logos.cjs": "2846c19e34d14b17a1c315f6bd26b64c63f53096c5bfef77127110b299cf6f52",
     "scripts/check_aspect.py": "47225227e85eecba078724a12b2ade79ea0a42d9e24d26a9807fc3885b2856c4",
     "scripts/make_catalog.py": "c87e1051577b431011dd592c8f84b9eea9b57cd2dc3cc1e3b9b6f8e26c1fd815",
     "scripts/quarantine_asset.py": "0ac4cc04d918f7c46dca021eec88ecc13d9f164853e17f51e76a5d62df406ca6",
@@ -67,6 +68,6 @@
     "scripts/retrieve_cases.py": "abe5ffc94263ebb5c695b940e671af44c3e5a63842dae8700fc32aa1e5c44cec",
     "scripts/sample_palette.py": "4140be0ce6cadd5a3ef511286da523e1ed4cacb9372b1fcd74588047e9c2d6c2",
     "scripts/timing.py": "73a137bded74d2f5144a5dfab197d3ad91d05b01547fcffd963eaab27fb261a1",
-    "SKILL.md": "8c2ed0746e9587c97a33c576db461ba987290b8676f9743116025fc0fa6920f2"
+    "SKILL.md": "bab0597074bf6f0db816faaa9f396c3b9feb1f1ad91b254e01ee8506092647b8"
   }
 }
